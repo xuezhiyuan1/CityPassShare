@@ -9,4 +9,5 @@ public interface ResaultCallBack<T> {
     void onError(String errorMsg);
     void notNet(String netData);
     void onErrorParams(String errorParams);
+
 }
