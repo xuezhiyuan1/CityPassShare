@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="baidu_key">VYGemHFZ3KxDhyAg8T3qXR0B</string>
 
     <string name="app_name">城市通</string>
@@ -55,4 +57,5 @@
     <string name="delete_reply_hint">确认要删除该楼层评论吗？</string>
     <string name="delete_tiezi_hint">确认要删除帖子吗？</string>
     <string name="tencent_appid">1102147502</string>
+
 </resources>
