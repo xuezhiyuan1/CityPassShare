@@ -18,6 +18,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //开启全局捕获异常
         MyCrashHandler.getInstance().init(getApplicationContext());
     }
 }

@@ -16,12 +16,12 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp">
 
-            <com.example.think.citypass.zxm.myview.RoundImageView
+            <com.example.think.citypass.myview.RoundImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ccoo_dra_head_bg" />
 
-            <com.example.think.citypass.zxm.myview.RoundImageView
+            <com.example.think.citypass.myview.RoundImageView
                 android:id="@+id/main_theall_right_head_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="标题"
+                android:text="延庆在线"
                 android:textColor="@color/white"
                 android:textSize="22dp" />
 
@@ -102,7 +102,16 @@
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
-               <include layout="@layout/headview"/>
+               <include
+                   android:id="@+id/mainone_headerview"
+                   layout="@layout/headview"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+               </LinearLayout>
+
 
            </LinearLayout>
 

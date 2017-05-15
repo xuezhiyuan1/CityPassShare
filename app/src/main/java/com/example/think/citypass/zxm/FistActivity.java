@@ -7,7 +7,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.example.think.citypass.R;
-import com.example.think.citypass.zxm.myview.XCSlideMenu;
+import com.example.think.citypass.myview.XCSlideMenu;
 
 /**
  * Created by 张萌 on 2017/5/14.
