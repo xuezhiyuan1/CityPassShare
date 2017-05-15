@@ -85,7 +85,6 @@ public class RetrofitUtil implements IHttp {
                 }
             });
         }
-
     }
 
     private <T> T getGeneric(String jsonData, ResaultCallBack<T> callBack) {
