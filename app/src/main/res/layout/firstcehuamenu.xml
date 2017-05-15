@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.example.think.citypass.activity.XCSlideMenu
+    android:id="@+id/slideMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_theall_bg"
+    android:scrollbars="none" >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/myleftview" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            >
+            <include layout="@layout/botttomview" />
+            <TextView
+                android:id="@+id/btnSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/btn_bg"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:textColor="#FFF"
+                android:layout_margin="10dp"
+                android:text="切换菜单" />
+        </LinearLayout>
+    </LinearLayout>
+</com.example.think.citypass.activity.XCSlideMenu>
+</RelativeLayout>
