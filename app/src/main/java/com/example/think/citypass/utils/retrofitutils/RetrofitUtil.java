@@ -94,6 +94,4 @@ public class RetrofitUtil implements IHttp {
         T t = gson.fromJson(jsonData, typeArguments[0]);
         return t;
     }
-
-
 }
