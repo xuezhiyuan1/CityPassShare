@@ -1,4 +1,4 @@
-package com.example.think.citypass.zxm;
+package com.example.think.citypass.activity.zxm;
 
 import android.app.Activity;
 import android.os.Bundle;

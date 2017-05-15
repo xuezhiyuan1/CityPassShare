@@ -1,4 +1,4 @@
-package com.example.think.citypass.utils.retrofitutils;
+package com.example.think.citypass.utils.sharepreferencesutil;
 
 import android.content.Context;
 import android.content.SharedPreferences;
