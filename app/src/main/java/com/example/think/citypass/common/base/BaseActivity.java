@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.think.citypass.activity.App;
+import com.example.think.citypass.App;
 
 /**
  * Created by think on 2017/5/14.
