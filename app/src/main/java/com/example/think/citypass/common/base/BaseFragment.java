@@ -26,13 +26,13 @@ public abstract class BaseFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         this.view = view;
-        getView(view);
+        getView();
         initData();
         initListener();
         loadData();
     }
 
-    protected View getView(View view) {
+    public View getView() {
         return this.view;
     }
 
