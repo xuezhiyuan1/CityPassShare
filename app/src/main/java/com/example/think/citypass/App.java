@@ -12,7 +12,7 @@ import com.example.think.citypass.common.base.BaseFragment;
 public class App extends Application {
 
     public static BaseActivity activity;
-    public static BaseFragment fragment;
+    public static BaseFragment lastFragment;
 
     @Override
     public void onCreate() {

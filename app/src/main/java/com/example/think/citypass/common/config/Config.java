@@ -5,4 +5,9 @@ package com.example.think.citypass.common.config;
  */
 
 public class Config {
+    //SharedPreferences保存的Key以及注释
+    //--------------------------------------------
+    //guideKey--控制是否首次开启应用进入导航页
+
+
 }
