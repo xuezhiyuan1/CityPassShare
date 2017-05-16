@@ -27,6 +27,7 @@ public abstract class BaseFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         this.view = view;
         getView();
+        initView(view);
         initData();
         initListener();
         loadData();
@@ -43,6 +44,11 @@ public abstract class BaseFragment extends Fragment {
      * @return
      */
     protected abstract int layoutId();
+
+    /**
+     * 初始化控件
+     */
+    protected abstract void initView(View view);
 
     /**
      * 初始化对象

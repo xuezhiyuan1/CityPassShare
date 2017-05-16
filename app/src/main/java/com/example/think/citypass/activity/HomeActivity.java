@@ -9,6 +9,8 @@ import android.widget.Toast;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
+import com.example.think.citypass.fragment.xzy.FindFragment;
+import com.example.think.citypass.fragment.xzy.LoadFragment;
 
 /**
  * Created by ASUS on 2017/5/15.
@@ -32,6 +34,19 @@ public class HomeActivity extends BaseActivity {
             }
         }
     };
+
+    private void exit() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(HomeActivity.this, "再次点击退出程序",
+                    Toast.LENGTH_SHORT).show();
+            // 利用handler延迟发送更改状态信息
+            mHandler.sendEmptyMessageDelayed(BACK, 2000);
+        } else {
+            finish();
+            System.exit(0);
+        }
+    }
 
     @Override
     protected int layoutId() {
@@ -69,7 +84,7 @@ public class HomeActivity extends BaseActivity {
 //                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.DiscoverBtn:
-//                        FragmentBuilder.getInstance().show().builder();
+                        FragmentBuilder.getInstance().show(LoadFragment.class).builder();
                         break;
 
                 }
@@ -91,18 +106,7 @@ public class HomeActivity extends BaseActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private void exit() {
-        if (!isExit) {
-            isExit = true;
-            Toast.makeText(HomeActivity.this, "再次点击退出程序",
-                    Toast.LENGTH_SHORT).show();
-            // 利用handler延迟发送更改状态信息
-            mHandler.sendEmptyMessageDelayed(BACK, 2000);
-        } else {
-            finish();
-            System.exit(0);
-        }
-    }
+
 
 
     @Override
