@@ -2,7 +2,6 @@ package com.example.think.citypass;
 
 import android.app.Application;
 
-import com.example.think.citypass.catchexception.MyCrashHandler;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 
@@ -20,6 +19,6 @@ public class App extends Application {
         super.onCreate();
 
         //开启全局捕获异常
-        MyCrashHandler.getInstance().init(getApplicationContext());
+//        MyCrashHandler.getInstance().init(getApplicationContext());
     }
 }

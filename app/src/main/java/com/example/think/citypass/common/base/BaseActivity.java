@@ -1,5 +1,7 @@
 package com.example.think.citypass.common.base;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -20,15 +22,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         App.activity = this;
         setContentView(layoutId());
         fragmentManager = getSupportFragmentManager();
+        initView();
         initData();
         initListener();
         loadData();
     }
 
+
     /**
-     * @return返回View对象
+     * 返回View对象
      */
+
     protected abstract int layoutId();
+
+    /**
+     * 初始化资源Id
+     */
+    protected abstract void initView();
 
     /**
      * 初始化对象
@@ -46,5 +56,14 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void loadData();
 
+    public void setIntent(Context context, Class<? extends BaseActivity> toClass) {
+        Intent intent = new Intent(context, toClass);
+        context.startActivity(intent);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        App.activity = this;
+    }
 }
