@@ -9,8 +9,8 @@ import android.widget.Toast;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
-import com.example.think.citypass.fragment.xzy.FindFragment;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
+import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 
 /**
  * Created by ASUS on 2017/5/15.
@@ -75,7 +75,7 @@ public class HomeActivity extends BaseActivity {
 //                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.NaoNaoBtn:
-//                        FragmentBuilder.getInstance().show().builder();
+                        FragmentBuilder.getInstance().show(NaonaoFragment.class).builder();
                         break;
                     case R.id.SheQuBtn:
 //                        FragmentBuilder.getInstance().show().builder();

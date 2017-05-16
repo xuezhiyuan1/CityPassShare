@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected View view;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,18 +23,11 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        this.view = view;
-        getView();
         initView(view);
         initData();
         initListener();
         loadData();
     }
-
-    public View getView() {
-        return this.view;
-    }
-
 
     /**
      * 加载一个视图
@@ -44,6 +35,7 @@ public abstract class BaseFragment extends Fragment {
      * @return
      */
     protected abstract int layoutId();
+
 
     /**
      * 初始化控件
