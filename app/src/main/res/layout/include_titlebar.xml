@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#d12b26">
+    <!--  Activity头镖  Include引用 -->
+    <com.example.think.citypass.myview.RoundImageView
+        android:id="@+id/TitleBar_imageView"
+        android:layout_margin="5dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:src="@drawable/main_intro1" />
+
+    <TextView
+        android:id="@+id/Title_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="延庆在线"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+
+    <ImageButton
+        android:id="@+id/title_choose1"
+        android:layout_width="20dp"
+        android:focusableInTouchMode="true"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/Title_Text"
+        android:background="@mipmap/ccoo_icon_jiantou_down"/>
+
+    <ImageView
+        android:id="@+id/title_choose2"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_toEndOf="@+id/title_choose1"
+        android:background="@mipmap/btn_remind_normal" />
+
+    <ImageView
+        android:id="@+id/title_choose3"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/title_choose2"
+        android:src="@mipmap/jiahao" />
+
+
+</RelativeLayout>
