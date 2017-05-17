@@ -72,5 +72,4 @@ public class NaonaoDiFragment extends BaseFragment {
             handler.sendEmptyMessageDelayed(0, 2000);
         }
     }
-
 }
