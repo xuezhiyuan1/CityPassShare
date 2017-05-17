@@ -11,6 +11,7 @@ import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
+import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 
 /**
@@ -63,7 +64,7 @@ public class HomeActivity extends BaseActivity {
     protected void initData() {
 
 //        第一次进入显示的Fragment
-//        FragmentBuilder.getInstance().show().builder();
+        FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
     }
 
     @Override
@@ -73,7 +74,7 @@ public class HomeActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.TouTiaoBtn:
-//                        FragmentBuilder.getInstance().show().builder();
+                        FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
                         break;
                     case R.id.NaoNaoBtn:
                         FragmentBuilder.getInstance().show(NaonaoFragment.class).builder();

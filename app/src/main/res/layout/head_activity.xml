@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    my:umanoPanelHeight="450dp"
-    my:umanoShadowHeight="40dp">
+    my:umanoPanelHeight="400dp"
+    my:umanoShadowHeight="40dp"
+    my:umanoParallaxOffset="100dp"
+    my:umanoScrollableView="@+id/mListView"
+    >
 
     <!-- 内容 -->
 
@@ -103,7 +106,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_marginLeft="3dp"
-                    android:src="@mipmap/my_main_women" />
+                    android:src="@drawable/my_main_women" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -221,11 +224,11 @@
                         android:id="@+id/dengji_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
+                        android:background="@drawable/ccoo_drawable_dengji_bg_blue"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="Lv.12"
-                        android:background="@drawable/ccoo_bg_dengji2"
                         android:textColor="#ffffff"
                         android:textSize="11dp" />
 
@@ -317,7 +320,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/zhuanbi_layout"
+                        android:id="@+id/sign_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -344,7 +347,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/huabi_layout"
+                        android:id="@+id/choujiang_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -374,7 +377,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/choujiang_layout"
+                        android:id="@+id/zhuanbi_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -401,7 +404,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/haoli_layout"
+                        android:id="@+id/huabi_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -426,19 +429,23 @@
         </LinearLayout>
     </LinearLayout>
 
-
-
-
-        <!--<include
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/contentview"/>-->
-    <ListView
-        android:id="@+id/mListView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+      <!-- <include layout="@layout/head_two_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+        </include>-->
+
+        <ListView
+            android:id="@+id/mListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+    </LinearLayout>
 
 
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
