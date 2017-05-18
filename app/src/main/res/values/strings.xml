@@ -14,7 +14,7 @@
     <string name="text_empty_search">没有搜索记录</string>
     <string name="text_subscribe">订阅服务</string>
     <string name="text_cancle">取消</string>
-    <string name="btn_contact_add">添加到通讯录</string>
+    <string name="btn_back_out">退出登录</string>
     <string name="contactCreationFailure">添加失败</string>
     <string name="text_add">添加</string>
     <string name="text_post">发帖</string>
