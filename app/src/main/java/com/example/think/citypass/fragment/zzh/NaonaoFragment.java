@@ -5,13 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
-
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by ASUS on 2017/5/16.

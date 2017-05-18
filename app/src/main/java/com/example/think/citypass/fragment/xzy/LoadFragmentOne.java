@@ -1,18 +1,24 @@
 package com.example.think.citypass.fragment.xzy;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.think.citypass.App;
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
+import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.common.config.FragmentBuilder;
 
 /**
  * Created by think on 2017/5/16.
  */
 
-public class LoadFragment extends BaseFragment {
+public class LoadFragmentOne extends BaseFragment {
+    private LinearLayout city_money_choujiang;
     private LinearLayout linearLayout;
     @Override
     protected int layoutId() {
@@ -31,6 +37,7 @@ public class LoadFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         linearLayout = (LinearLayout) view.findViewById(R.id.in_loading);
+        city_money_choujiang = (LinearLayout) view.findViewById(R.id.city_money_choujiang);
     }
 
     @Override
@@ -40,7 +47,12 @@ public class LoadFragment extends BaseFragment {
 
     @Override
     protected void initListener() {
+        city_money_choujiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 
     @Override

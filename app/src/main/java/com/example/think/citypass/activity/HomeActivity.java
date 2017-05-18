@@ -14,7 +14,7 @@ import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
-import com.example.think.citypass.fragment.xzy.LoadFragment;
+import com.example.think.citypass.fragment.xzy.LoadFragmentOne;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 
@@ -86,13 +86,13 @@ public class HomeActivity extends BaseActivity {
                         FragmentBuilder.getInstance().show(NaonaoFragment.class).builder();
                         break;
                     case R.id.SheQuBtn:
-//                        FragmentBuilder.getInstance().show().builder();
+//
                         break;
                     case R.id.ShengHuoBtn:
                         FragmentBuilder.getInstance().show(AllRecruitmentFragment.class).builder();
                         break;
                     case R.id.DiscoverBtn:
-                        FragmentBuilder.getInstance().show(LoadFragment.class).builder();
+                        FragmentBuilder.getInstance().show(LoadFragmentOne.class).builder();
                         break;
 
                 }

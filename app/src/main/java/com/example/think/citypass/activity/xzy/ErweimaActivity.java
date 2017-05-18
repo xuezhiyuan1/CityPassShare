@@ -1,6 +1,5 @@
 package com.example.think.citypass.activity.xzy;
 
-import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 
 /**

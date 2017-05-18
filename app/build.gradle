@@ -2,13 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
-    aaptOptions{
-        cruncherEnabled = false
-        useNewCruncher = false
-    }
-
+    buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "com.example.think.citypass"
         minSdkVersion 15
@@ -37,13 +31,10 @@ dependencies {
     //autolayout屏幕适配
     compile 'com.zhy:autolayout:1.4.3'
     compile 'com.android.support:design:25.0.1'
-
-    //轮播图依赖  RollPagerView
-    compile 'com.jude:rollviewpager:1.2.9'
     //recyelerview
     compile 'com.android.support:recyclerview-v7:25.0.1'
     compile 'com.sothree.slidinguppanel:library:3.3.1'
 
-
-
+//轮播图依赖  RollPagerView
+    compile 'com.jude:rollviewpager:1.2.9'
 }
