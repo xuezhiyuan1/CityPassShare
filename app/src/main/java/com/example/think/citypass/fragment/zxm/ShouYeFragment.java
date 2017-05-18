@@ -2,16 +2,24 @@ package com.example.think.citypass.fragment.zxm;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.zxm.CityChoiceActivity;
+import com.example.think.citypass.activity.zxm.FindhouseActivity;
+import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
 import com.jude.rollviewpager.RollPagerView;
@@ -27,6 +35,8 @@ zhangxiaomeng
  */
 
 public class ShouYeFragment extends BaseFragment {
+   ImageButton  imageButton1,imageButton2,imageButton3;
+    Button findwork_lay,findhouse_lay,fenlei,tongchengh;
 
     private ArrayList<ModelOneBean> mList = new ArrayList<>();
     private MyAdapter myAdapter;
@@ -58,6 +68,12 @@ public class ShouYeFragment extends BaseFragment {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
         listView = (ListView) view.findViewById(R.id.mListView);
         View view1 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.head_two_activity, null);
+        findwork_lay= (Button) view1.findViewById(R.id.findwork_layout);
+        findhouse_lay= (Button) view1.findViewById(R.id.findhouse_layout);
+        fenlei= (Button) view1.findViewById(R.id.fenleilife_layout);
+        tongchengh= (Button) view1.findViewById(R.id.tongcheng_layout);
+        View  view2=LayoutInflater.from(getActivity()).inflate(R.layout.include_titlebar,null);
+        imageButton1= (ImageButton) view2.findViewById(R.id.title_choose1);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);
 
         myAdapter = new MyAdapter(getActivity(),mList);
@@ -80,16 +96,9 @@ public class ShouYeFragment extends BaseFragment {
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
-
             }
-
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
-
-
-
-
-
             }
         });
 
@@ -99,6 +108,35 @@ public class ShouYeFragment extends BaseFragment {
                 slidingUpPanelLayout.setPanelState(com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
+
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "选择城市", Toast.LENGTH_SHORT).show();
+                Intent  intent=new Intent(getContext(), CityChoiceActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findwork_lay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "找工作", Toast.LENGTH_SHORT).show();
+                Intent  intent=new Intent(getContext(), FindworkActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findhouse_lay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "找房子", Toast.LENGTH_SHORT).show();
+                Intent  intent=new Intent(getContext(), FindhouseActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

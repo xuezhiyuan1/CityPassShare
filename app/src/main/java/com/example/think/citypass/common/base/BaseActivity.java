@@ -25,8 +25,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView();
         initData();
         initListener();
-        loadData();
+
     }
+
 
 
     /**
@@ -65,5 +66,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         App.activity = this;
+        loadData();
     }
 }

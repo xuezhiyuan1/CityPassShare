@@ -1,17 +1,12 @@
 package com.example.think.citypass.activity;
 
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.think.citypass.R;
-import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
-import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
@@ -23,7 +18,6 @@ import com.example.think.citypass.fragment.zzh.NaonaoFragment;
  */
 
 public class HomeActivity extends BaseActivity {
-    private TextView mCityMoney;
 
     private RadioGroup mRadioGroup;
 
@@ -63,7 +57,6 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void initView() {
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
-        mCityMoney= (TextView) findViewById(R.id.My_City_Money);
     }
 
     @Override
@@ -89,26 +82,14 @@ public class HomeActivity extends BaseActivity {
 //                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.ShengHuoBtn:
-                        FragmentBuilder.getInstance().show(AllRecruitmentFragment.class).builder();
+//                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.DiscoverBtn:
                         FragmentBuilder.getInstance().show(LoadFragment.class).builder();
                         break;
 
                 }
-                mCityMoney.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        switch (v.getId()){
-                            case R.id.My_City_Money:
-                                Intent intent=new Intent(HomeActivity.this, MyMoneyActivity.class);
-                                startActivity(intent);
-                                break;
-                        }
-                    }
-                });
             }
-
         });
     }
 
@@ -125,6 +106,9 @@ public class HomeActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
+
 
     @Override
     protected void onDestroy() {

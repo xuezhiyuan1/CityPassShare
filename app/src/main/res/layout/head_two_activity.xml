@@ -93,7 +93,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/findwork_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -101,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/findwork_layout"
                 android:background="@mipmap/ico_jiudian"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -112,7 +113,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/findhouse_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -120,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/findhouse_layout"
                 android:background="@mipmap/ico_hunjia"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -133,7 +135,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/fenleilife_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_marginTop="3dp"
@@ -141,6 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/fenleilife_layout"
                 android:background="@mipmap/ico_quanbu"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -153,7 +156,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/tongcheng_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -161,6 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/tongcheng_layout"
                 android:background="@mipmap/ico_teyue"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />

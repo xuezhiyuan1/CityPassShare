@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    my:umanoPanelHeight="400dp"
+    my:umanoPanelHeight="450dp"
     my:umanoShadowHeight="40dp"
     my:umanoParallaxOffset="100dp"
     my:umanoScrollableView="@+id/mListView"
