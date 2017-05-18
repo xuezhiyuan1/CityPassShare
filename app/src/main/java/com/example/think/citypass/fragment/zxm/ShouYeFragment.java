@@ -3,11 +3,7 @@ package com.example.think.citypass.fragment.zxm;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -17,18 +13,13 @@ import android.widget.TextView;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.fragment.zzh.naonao.MyAdapter;
 import com.example.think.citypass.model.bean.ModelOneBean;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-
 import java.util.ArrayList;
-import java.util.List;
-
-import static com.sothree.slidinguppanel.library.R.styleable.SlidingUpPanelLayout;
 
 /**
 zhangxiaomeng
@@ -64,7 +55,7 @@ public class ShouYeFragment extends BaseFragment {
      */
     @Override
     public void initView(View view) {
-        slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpane);
+        slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
         listView = (ListView) view.findViewById(R.id.mListView);
         View view1 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.head_two_activity, null);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);

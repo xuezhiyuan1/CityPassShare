@@ -2,6 +2,7 @@ package com.example.think.citypass.fragment.xzy;
 
 
 import android.view.View;
+
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 
@@ -12,6 +13,7 @@ import com.example.think.citypass.common.base.BaseFragment;
  */
 
 public class FindFragment extends BaseFragment {
+
 
     @Override
     protected int layoutId() {

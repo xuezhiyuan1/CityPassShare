@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.think.citypass.myview.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:my="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/SlidingUpane"
+    android:id="@+id/SlidingUpaneHead"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
@@ -448,4 +449,4 @@
     </LinearLayout>
 
 
-</com.example.think.citypass.myview.SlidingUpPanelLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
