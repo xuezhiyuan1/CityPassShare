@@ -20,6 +20,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
 import com.jude.rollviewpager.RollPagerView;
@@ -37,7 +38,7 @@ zhangxiaomeng
 public class ShouYeFragment extends BaseFragment {
    ImageButton  imageButton1,imageButton2,imageButton3;
     Button findwork_lay,findhouse_lay,fenlei,tongchengh;
-
+LinearLayout  haoli,zhuanbi,choujiang,huabi;
     private ArrayList<ModelOneBean> mList = new ArrayList<>();
     private MyAdapter myAdapter;
 
@@ -66,6 +67,10 @@ public class ShouYeFragment extends BaseFragment {
     @Override
     public void initView(View view) {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
+        zhuanbi= (LinearLayout) view.findViewById(R.id.zhuanbi_layout);
+        huabi= (LinearLayout) view.findViewById(R.id.huabi_layout);
+        haoli= (LinearLayout) view.findViewById(R.id.haoli_layout);
+        choujiang= (LinearLayout) view.findViewById(R.id.choujiang_layout);
         listView = (ListView) view.findViewById(R.id.mListView);
         View view1 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.head_two_activity, null);
         findwork_lay= (Button) view1.findViewById(R.id.findwork_layout);
@@ -136,6 +141,19 @@ public class ShouYeFragment extends BaseFragment {
                 startActivity(intent);
             }
         });
+
+
+        zhuanbi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeZBActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
     }
 

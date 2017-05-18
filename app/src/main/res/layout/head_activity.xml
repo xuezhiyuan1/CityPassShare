@@ -321,7 +321,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/sign_layout"
+                        android:id="@+id/zhuanbi_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -348,7 +348,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/choujiang_layout"
+                        android:id="@+id/huabi_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -378,7 +378,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/zhuanbi_layout"
+                        android:id="@+id/choujiang_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -405,7 +405,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/huabi_layout"
+                        android:id="@+id/haoli_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
