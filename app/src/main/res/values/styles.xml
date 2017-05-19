@@ -11,5 +11,9 @@
         <item name="android:layout_width">18dp</item>
         <item name="android:layout_height">18dp</item>
     </style>
-
+    <!--PopupWindow出现的动画-->
+    <style name="Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_dismis</item>
+    </style>
 </resources>

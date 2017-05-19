@@ -4,15 +4,20 @@ package com.example.think.citypass.fragment.zxm;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +29,15 @@ import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
+import com.example.think.citypass.myview.MyAnimalUtils;
+import com.example.think.citypass.myview.MyGradeView;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
 zhangxiaomeng
@@ -37,11 +45,21 @@ zhangxiaomeng
  */
 
 public class ShouYeFragment extends BaseFragment {
-   ImageButton  imageButton1,imageButton2,imageButton3;
+   ImageButton imageButton1,imageButton2;
+    ImageView im3;
     Button findwork_lay,findhouse_lay,fenlei,tongchengh;
-LinearLayout  haoli,zhuanbi,choujiang,huabi;
+    LinearLayout haoli,zhuanbi,choujiang,huabi;
     private ArrayList<ModelOneBean> mList = new ArrayList<>();
     private MyAdapter myAdapter;
+
+    private MyGradeView linkPageGridview;
+    private PopupWindow popupWindow;
+    private View view;
+    private GVAdapter gvAdapter;
+    private List<String> mlist;
+    private List<Integer> mDList;
+    private RelativeLayout layout;
+    private Handler handler = new Handler();
 
 
     // 移动因子, 是一个百分比, 比如手指移动了100px, 那么View就只移动50px 目的是达到一个延迟的效果
@@ -53,6 +71,7 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
     private RollPagerView rollPagerView;
     private ListView listView;
   //  private Banner_Adapter banner_adapter;
+
 
 
     @Override
@@ -78,24 +97,51 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
         findhouse_lay= (Button) view1.findViewById(R.id.findhouse_layout);
         fenlei= (Button) view1.findViewById(R.id.fenleilife_layout);
         tongchengh= (Button) view1.findViewById(R.id.tongcheng_layout);
-        View  view2=LayoutInflater.from(getActivity()).inflate(R.layout.include_titlebar,null);
-        imageButton1= (ImageButton) view2.findViewById(R.id.title_choose1);
+        imageButton1= (ImageButton) view1.findViewById(R.id.title_choose1);
+        imageButton2= (ImageButton) view1.findViewById(R.id.title_choose2);
+        im3= (ImageView) view1.findViewById(R.id.title_choose3);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);
 
+
+       View  vi=LayoutInflater.from(getContext()).inflate(R.layout.ppmb,null);
+//        View  vv=LayoutInflater.from(getContext()).inflate(R.layout.ppmb,null);
+        linkPageGridview = (MyGradeView) vi.findViewById(R.id.link_page_gridview);
+
+        layout= (RelativeLayout) vi.findViewById(R.id.layout);
         myAdapter = new MyAdapter(getActivity(),mList);
         listView.setAdapter(myAdapter);
         getPhoto();
         //添加头部
        listView.addHeaderView(view1);
 
-
-
     }
 
     @Override
     protected void initData() {
+        /**8
+         * 给GridView添加数据
+          */
+        adddata();
+        getPopup();
+        }
 
-    }
+        private void adddata(){
+            mlist=new ArrayList<>();
+            mlist.add("发帖子");
+            mlist.add("发照片");
+            mlist.add("小视频");
+            mlist.add("有奖爆料");
+            mlist.add("分类信息");
+            mlist.add("二维码");
+            mDList=new ArrayList<>();
+            mDList.add(R.drawable.ico_quanbu);
+            mDList.add(R.drawable.baby_camera);
+            mDList.add(R.drawable.ico_meishi);
+            mDList.add(R.drawable.ico_qinzi);
+            mDList.add(R.drawable.ic_jianli_icon);
+            mDList.add(R.drawable.ic_liulan);
+
+        }
 
     @Override
     protected void initListener() {
@@ -119,7 +165,7 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "选择城市", Toast.LENGTH_SHORT).show();
-                Intent  intent=new Intent(getContext(), CityChoiceActivity.class);
+                Intent intent=new Intent(getContext(), CityChoiceActivity.class);
                 startActivity(intent);
             }
         });
@@ -163,8 +209,73 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
 
 
 
+        im3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "点击加号", Toast.LENGTH_SHORT).show();
+               onViewClicke();
+
+            }
+        });
+
+
+
+
+
     }
 
+
+
+    public void onViewClicke() {
+        /*首先执行 加号的动画*/
+        MyAnimalUtils.pictureAnimal(im3,getContext());
+        popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                    /*执行popupwindow 出现的动画*/
+                MyAnimalUtils.getGVDHB(linkPageGridview, getContext(), false);
+            }
+        }, 400);
+    }
+
+    private void getPopup() {
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.ppmb, null);
+        view.getBackground().setAlpha(200);
+        RelativeLayout layout = (RelativeLayout) view.findViewById(R.id.layout);
+        popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setBackgroundDrawable(null);
+        linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
+        GVAdapter  gvAdapter = new GVAdapter(mDList, mlist, getContext());
+        linkPageGridview.setAdapter(gvAdapter);
+        popupWindow.setAnimationStyle(R.style.Animation);
+
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*让每一个item先消失*/
+                MyAnimalUtils.getGVDHB(linkPageGridview, getContext(), true);
+                /*得到一共有几个item 然后乘以每个item 消失的时间*/
+                /*获得item 消失一共用了多长时间*/
+                long i = (linkPageGridview.getChildCount() + 1) * 160;
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        /*在item 消失点后让popupWindow消失*/
+                        popupWindow.dismiss();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                /*在PopupWindow消失后 让加号执行逆时针动作*/
+                                MyAnimalUtils.pictureAnimala(im3, getContext());
+                            }
+                        }, 100);
+                    }
+                }, i);
+            }
+        });
+    }
 
 
 
@@ -187,6 +298,7 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
      * <p>
      * 首页的那个效果，反正就是那个效果。
      */
+
 
        private void  getPhoto(){
         //设置播放时间间隔
@@ -288,6 +400,153 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
             private TextView mText_Name, mText_Address,textView;
         }
     }
+
+
+
+
+    /**
+     * 张晓萌
+     * gridview的适配器
+     */
+
+    class GVAdapter extends BaseAdapter{
+
+        private List<Integer> mDList;
+        private List<String> mlist;
+        private Context context;
+        private  TextView textView;
+
+        public GVAdapter(List<Integer> mDList, List<String> mlist, Context context) {
+            this.mDList = mDList;
+            this.mlist = mlist;
+            this.context = context;
+        }
+
+        @Override
+        public int getCount() {
+            return mlist.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return mlist.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Holder h=new Holder();
+            convertView= LayoutInflater.from(context).inflate(R.layout.gv_item,null);
+            h.textView= (TextView) convertView.findViewById(R.id.textA);
+            h.imageView= (ImageView) convertView.findViewById(R.id.imageA);
+            h.textView.setText(mlist.get(position));
+            h.imageView.setImageResource(mDList.get(position));
+            convertView.setVisibility(View.INVISIBLE);
+            return convertView;
+        }
+         class Holder{
+            private TextView textView;
+            private ImageView imageView;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    class popupMoban {
+        public  void getPopup(final Context context, PopupWindow popupWindow, RelativeLayout layout, GridView linkPageGridview, final ImageView imageView, BaseAdapter adapter, final Handler handler, List<Integer> mDList, List<String> mlist) {
+            View view = LayoutInflater.from(context).inflate(R.layout.ppmb, null);
+            view.getBackground().setAlpha(200);
+            layout= (RelativeLayout) view.findViewById(R.id.layout);
+            popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            popupWindow.setOutsideTouchable(true);
+            popupWindow.setBackgroundDrawable(null);
+            linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
+            adapter = new GVAdapter(mDList,mlist, context);
+            linkPageGridview.setAdapter(adapter);
+            popupWindow.setAnimationStyle(R.style.Animation);
+
+            final GridView finalLinkPageGridview = linkPageGridview;
+            final PopupWindow finalPopupWindow = popupWindow;
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                /*让每一个item先消失*/
+                    MyAnimalUtils.getGVDHB(finalLinkPageGridview,context,true);
+                /*得到一共有几个item 然后乘以每个item 消失的时间*/
+                /*获得item 消失一共用了多长时间*/
+                    long i = finalLinkPageGridview.getChildCount() * 160;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                        /*在item 消失点后让popupWindow消失*/
+                            finalPopupWindow.dismiss();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                /*在PopupWindow消失后 让加号执行逆时针动作*/
+                                    MyAnimalUtils.pictureAnimala(imageView,context);
+                                }
+                            }, 100);
+                        }
+                    },i);
+                }
+            });
+        }
+
+        public  void getPopupa(final Context context, final ImageView imageView, List<Integer> mDList, List<String> mlist) {
+            final Handler handler=new Handler();
+            View view = LayoutInflater.from(context).inflate(R.layout.ppmb, null);
+            view.getBackground().setAlpha(200);
+            RelativeLayout layout= (RelativeLayout) view.findViewById(R.id.layout);
+            PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            popupWindow.setOutsideTouchable(true);
+            popupWindow.setBackgroundDrawable(null);
+            GridView linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
+            GVAdapter adapter = new GVAdapter(mDList,mlist, context);
+            linkPageGridview.setAdapter(adapter);
+            popupWindow.setAnimationStyle(R.style.Animation);
+
+            final GridView finalLinkPageGridview = linkPageGridview;
+            final PopupWindow finalPopupWindow = popupWindow;
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                /*让每一个item先消失*/
+                    MyAnimalUtils.getGVDHB(finalLinkPageGridview,context,true);
+                /*得到一共有几个item 然后乘以每个item 消失的时间*/
+                /*获得item 消失一共用了多长时间*/
+                    long i = finalLinkPageGridview.getChildCount() * 160;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                        /*在item 消失点后让popupWindow消失*/
+                            finalPopupWindow.dismiss();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                /*在PopupWindow消失后 让加号执行逆时针动作*/
+                                    MyAnimalUtils.pictureAnimala(imageView,context);
+                                }
+                            }, 100);
+                        }
+                    },i);
+                }
+            });
+        }
+    }
+
+
 
 
 }
