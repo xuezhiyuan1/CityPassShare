@@ -20,6 +20,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
@@ -152,6 +153,13 @@ LinearLayout  haoli,zhuanbi,choujiang,huabi;
         });
 
 
+        huabi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeHuabi.class);
+                startActivity(intent);
+            }
+        });
 
 
 

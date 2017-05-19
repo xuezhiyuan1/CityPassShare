@@ -7,6 +7,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
@@ -82,7 +83,7 @@ public class HomeActivity extends BaseActivity {
 //                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.ShengHuoBtn:
-//                        FragmentBuilder.getInstance().show().builder();
+                        FragmentBuilder.getInstance().show(AllRecruitmentFragment.class).builder();
                         break;
                     case R.id.DiscoverBtn:
                         FragmentBuilder.getInstance().show(LoadFragment.class).builder();
