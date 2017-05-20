@@ -20,7 +20,6 @@ public class AllRecruitmentFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-
     }
 
     @Override
@@ -31,6 +30,7 @@ public class AllRecruitmentFragment extends BaseFragment {
 
     @Override
     protected void initListener() {
+
 
     }
 

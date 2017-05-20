@@ -1,5 +1,6 @@
 package com.example.think.citypass.myview;
 
+
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
@@ -11,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.think.citypass.R;
-
 
 /**
  * Created by ASUS on 2017/5/13.

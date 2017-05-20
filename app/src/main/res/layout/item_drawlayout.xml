@@ -193,7 +193,7 @@
             android:src="@drawable/main_left6" />
 
         <TextView
-            android:id="@+id/My_City_Money"
+            android:id="@+id/My_City_MoneyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
