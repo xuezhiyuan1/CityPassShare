@@ -77,11 +77,12 @@
         android:id="@+id/naonaoTabLayout"
         android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:background="@color/naonaoTabLayout"
         app:tabIndicatorColor="@color/red_text_shallow"
         app:tabSelectedTextColor="@color/red_text_shallow"
         app:tabTextColor="@color/black" />
 
-    <android.support.v4.view.ViewPager
+    <com.example.think.citypass.myview.ChildViewPager
         android:id="@+id/naonaoViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

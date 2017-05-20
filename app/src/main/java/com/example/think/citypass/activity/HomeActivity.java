@@ -63,6 +63,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
         mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
         mSheZhi= (TextView) findViewById(R.id.SheZhi);

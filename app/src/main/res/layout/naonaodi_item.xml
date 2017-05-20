@@ -44,14 +44,14 @@
 
         </RelativeLayout>
 
-        <ImageView
+        <com.example.think.citypass.myview.RoundImageView
             android:id="@+id/userImage"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/level_relay"
-            android:scaleType="fitXY" />
+            android:background="@drawable/login_icon_account" />
 
         <TextView
             android:id="@+id/userNameText"
@@ -76,7 +76,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/dengji"
+            android:id="@+id/naonao_level"
             android:layout_width="wrap_content"
             android:layout_height="14dp"
             android:layout_marginLeft="5dp"
