@@ -9,6 +9,7 @@
     <ImageView
         android:id="@+id/tv_back"
         android:layout_width="50dp"
+        android:layout_margin="7dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_back"
         android:gravity="center"

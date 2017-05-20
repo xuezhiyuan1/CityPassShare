@@ -27,6 +27,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.ShouyeFenleiLife;
 import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeNotice;
@@ -258,6 +259,13 @@ public class ShouYeFragment extends BaseFragment {
             }
         });
 
+        fenlei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(), ShouyeFenleiLife.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -330,31 +338,6 @@ public class ShouYeFragment extends BaseFragment {
 //        }
 
 
-//               Map<String,String> map=new HashMap<>();
-//        map.put("param","\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":10,\"page\":1,\"siteID\":2482},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2482},\"customerID\":8001,\"version\":\"4.6\"}");
-////        map.put("Content-Type","application/x-www-form-urlencoded");
-//        RetrofitUtil.getInstance().postRetrofit("http://appnew.ccoo.cn/appserverapi.ashx", map, new ResaultCallBack<Object>() {
-//            @Override
-//            public void onSuccess(Object o) {
-//                Log.i("--mydata---",o.toString());
-//            }
-//
-//            @Override
-//            public void onError(String errorMsg) {
-//                Log.i("--errorMsg---",errorMsg);
-//            }
-//
-//            @Override
-//            public void notNet(String netData) {
-//                Log.i("--netData---",netData);
-//            }
-//
-//            @Override
-//            public void onErrorParams(String errorParams) {
-//                Log.i("--errorParams---",errorParams);
-//            }
-//        });
-
 
 
         Map<String, String> params = new HashMap<>();
@@ -380,48 +363,6 @@ public class ShouYeFragment extends BaseFragment {
     }
 
 
-    private void shouyeData(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Map<String,String> map=new HashMap<>();
-                map.put("param","{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
-
-                OkhttpUtils.getInstance().POST("http://appnew.ccoo.cn/appserverapi.ashx", map, new OkhttpCallback() {
-                    @Override
-                    public void onSuccess(String msg) {
-                        Log.i("---data",msg);
-                        Gson  gson=new Gson();
-                        ShouyeDataEntity shouyeDataEntity = gson.fromJson(msg, ShouyeDataEntity.class);
-                        List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = shouyeDataEntity.getServerInfo().getHeadTInfoList();
-                        for(int i=0;i<headTInfoList.size();i++){
-                            List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean.DataBean> data = headTInfoList.get(i).getData();
-                            for(int  a=0;a<data.size();i++){
-                                String title = data.get(a).getTitle();
-                                String image = data.get(a).getImage();
-                                int count = data.get(a).getVariable1();
-                                String author = data.get(a).getVariable8();
-                                ShouyeModelBean  shouyeModelBean=new ShouyeModelBean(title,count+"",author,image);
-                                datalist.add(shouyeModelBean);
-
-                                myAdapter.notifyDataSetChanged();
-                            }
-                        }
-
-
-
-
-                    }
-
-                    @Override
-                    public void onError(String error) {
-                        Log.i("----error",error);
-                    }
-                });
-
-            }
-        }).start();
-    }
 
     /**
      * 对SlidingUpPanelLayout进行监听   你懂得   实现
@@ -521,8 +462,8 @@ public class ShouYeFragment extends BaseFragment {
             }
             ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean stu = mList.get(position);
             hodler.mText_Name.setText(stu.getData().get(0).getTitle()+ "");
-            hodler.mText_Address.setText(stu.getData().get(0).getVariable1()+ "");
-            hodler.textView.setText(stu.getData().get(0).getVariable8());
+            hodler.mText_Address.setText(stu.getData().get(0).getVariable8()+ "");
+            hodler.textView.setText(stu.getData().get(0).getVariable1()+"");
             Glide.with(getContext()).load(stu.getData().get(0).getImage()).into(hodler.imageView);
             return convertView;
 
