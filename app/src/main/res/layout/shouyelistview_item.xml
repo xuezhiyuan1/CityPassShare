@@ -9,6 +9,7 @@
         <TextView
             android:id="@+id/modelone_item_title"
             android:text="今日阳光明媚今日多云转晴"
+            android:singleLine="true"
             android:layout_marginTop="8dp"
             android:textColor="#000"
             android:textSize="18sp"

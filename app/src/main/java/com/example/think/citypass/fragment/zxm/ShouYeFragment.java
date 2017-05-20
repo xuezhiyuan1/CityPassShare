@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
@@ -31,16 +33,24 @@ import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
+import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
+import com.example.think.citypass.model.http.callback.OkhttpCallback;
+import com.example.think.citypass.utils.http.HttpCallBack;
+import com.example.think.citypass.utils.http.RetrofitImpl;
+import com.example.think.citypass.utils.retrofitutils.OkhttpUtils;
+import com.google.gson.Gson;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
 zhangxiaomeng
@@ -61,6 +71,8 @@ public class ShouYeFragment extends BaseFragment {
     private GVAdapter gvAdapter;
     private List<String> mlist;
     private List<Integer> mDList;
+    private ArrayList<ShouyeModelBean>  datalist=new ArrayList<>();
+    private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>  dataList=new ArrayList<>();
     private RelativeLayout layout;
     private Handler handler = new Handler();
 
@@ -111,7 +123,7 @@ public class ShouYeFragment extends BaseFragment {
         linkPageGridview = (MyGradeView) vi.findViewById(R.id.link_page_gridview);
 
         layout= (RelativeLayout) vi.findViewById(R.id.layout);
-        myAdapter = new MyAdapter(getActivity(),mList);
+        myAdapter = new MyAdapter(getActivity(),dataList);
         listView.setAdapter(myAdapter);
         getPhoto();
         //添加头部
@@ -308,16 +320,107 @@ public class ShouYeFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
+//        shouyeData();
         // 几何参数
-        for (int i = 0; i < 30; i++) {
-            ModelOneBean stu = new ModelOneBean("今夜阳光明媚,今夜多云转晴...","28331","亚索");
-            ModelOneBean stu1 = new ModelOneBean("来试试我的‘运气’和三代鬼彻的‘诅咒’……哪一个比较强！如果我输了，就表示我的运气真的很差...","822135","尾田荣一郎");
-            mList.add(stu);
-            mList.add(stu1);
-        }
+//        for (int i = 0; i < 30; i++) {
+//            ModelOneBean stu = new ModelOneBean("今夜阳光明媚,今夜多云转晴...","28331","亚索");
+//            ModelOneBean stu1 = new ModelOneBean("来试试我的‘运气’和三代鬼彻的‘诅咒’……哪一个比较强！如果我输了，就表示我的运气真的很差...","822135","尾田荣一郎");
+//            mList.add(stu);
+//            mList.add(stu1);
+//        }
+
+
+//               Map<String,String> map=new HashMap<>();
+//        map.put("param","\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":10,\"page\":1,\"siteID\":2482},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2482},\"customerID\":8001,\"version\":\"4.6\"}");
+////        map.put("Content-Type","application/x-www-form-urlencoded");
+//        RetrofitUtil.getInstance().postRetrofit("http://appnew.ccoo.cn/appserverapi.ashx", map, new ResaultCallBack<Object>() {
+//            @Override
+//            public void onSuccess(Object o) {
+//                Log.i("--mydata---",o.toString());
+//            }
+//
+//            @Override
+//            public void onError(String errorMsg) {
+//                Log.i("--errorMsg---",errorMsg);
+//            }
+//
+//            @Override
+//            public void notNet(String netData) {
+//                Log.i("--netData---",netData);
+//            }
+//
+//            @Override
+//            public void onErrorParams(String errorParams) {
+//                Log.i("--errorParams---",errorParams);
+//            }
+//        });
 
 
 
+        Map<String, String> params = new HashMap<>();
+        params.put("param", "{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
+//        params.put("param", "{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
+                RetrofitImpl.getInstance().Post(ShouyeDataEntity.class, "http://appnew.ccoo.cn/appserverapi.ashx", params, new HttpCallBack() {
+            @Override
+            public void onSuccessful(Object success) {
+
+                ShouyeDataEntity newsbean = (ShouyeDataEntity) success;
+                List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = newsbean.getServerInfo().getHeadTInfoList();
+                dataList.addAll(headTInfoList);
+                Log.d("ShouYeFragment", "mList.size():" + dataList.size());
+                myAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                Log.e("--error",errorMessage);
+            }
+        });
+
+    }
+
+
+    private void shouyeData(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Map<String,String> map=new HashMap<>();
+                map.put("param","{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
+
+                OkhttpUtils.getInstance().POST("http://appnew.ccoo.cn/appserverapi.ashx", map, new OkhttpCallback() {
+                    @Override
+                    public void onSuccess(String msg) {
+                        Log.i("---data",msg);
+                        Gson  gson=new Gson();
+                        ShouyeDataEntity shouyeDataEntity = gson.fromJson(msg, ShouyeDataEntity.class);
+                        List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = shouyeDataEntity.getServerInfo().getHeadTInfoList();
+                        for(int i=0;i<headTInfoList.size();i++){
+                            List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean.DataBean> data = headTInfoList.get(i).getData();
+                            for(int  a=0;a<data.size();i++){
+                                String title = data.get(a).getTitle();
+                                String image = data.get(a).getImage();
+                                int count = data.get(a).getVariable1();
+                                String author = data.get(a).getVariable8();
+                                ShouyeModelBean  shouyeModelBean=new ShouyeModelBean(title,count+"",author,image);
+                                datalist.add(shouyeModelBean);
+
+                                myAdapter.notifyDataSetChanged();
+                            }
+                        }
+
+
+
+
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        Log.i("----error",error);
+                    }
+                });
+
+            }
+        }).start();
     }
 
     /**
@@ -380,9 +483,9 @@ public class ShouYeFragment extends BaseFragment {
      */
     class MyAdapter extends BaseAdapter {
         private Context mContext;
-        private ArrayList<ModelOneBean> mList;
+        private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> mList;
 
-        public MyAdapter(Context mContext, ArrayList<ModelOneBean> mList) {
+        public MyAdapter(Context mContext, ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> mList) {
             this.mContext = mContext;
             this.mList = mList;
         }
@@ -407,18 +510,20 @@ public class ShouYeFragment extends BaseFragment {
             Hodler hodler = null;
             if (convertView == null) {
                 hodler = new Hodler();
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.modelone_item, null);
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.shouyelistview_item, null);
                 hodler.mText_Name = (TextView) convertView.findViewById(R.id.modelone_item_title);
                 hodler.mText_Address = (TextView) convertView.findViewById(R.id.modelone_item_author);
                 hodler.textView= (TextView) convertView.findViewById(R.id.modelone_itemcount);
+                hodler.imageView= (ImageView) convertView.findViewById(R.id.modelone_image);
                 convertView.setTag(hodler);
             } else {
                 hodler = (Hodler) convertView.getTag();
             }
-            ModelOneBean stu = mList.get(position);
-            hodler.mText_Name.setText(stu.getTitle() + "");
-            hodler.mText_Address.setText(stu.getAuthor() + "");
-            hodler.textView.setText(stu.getCount());
+            ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean stu = mList.get(position);
+            hodler.mText_Name.setText(stu.getData().get(0).getTitle()+ "");
+            hodler.mText_Address.setText(stu.getData().get(0).getVariable1()+ "");
+            hodler.textView.setText(stu.getData().get(0).getVariable8());
+            Glide.with(getContext()).load(stu.getData().get(0).getImage()).into(hodler.imageView);
             return convertView;
 
         }
