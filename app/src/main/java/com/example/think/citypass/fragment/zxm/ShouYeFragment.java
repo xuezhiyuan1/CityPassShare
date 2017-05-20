@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -58,7 +59,7 @@ zhangxiaomeng
  * 重首页点击  加载 Fragment  用来完成首页业务
  */
 
-public class ShouYeFragment extends BaseFragment {
+public class ShouYeFragment extends BaseFragment implements AbsListView.OnScrollListener{
    ImageButton imageButton1,imageButton2;
     ImageView im3;
     Button findwork_lay,findhouse_lay,fenlei,tongchengh;
@@ -76,7 +77,11 @@ public class ShouYeFragment extends BaseFragment {
     private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>  dataList=new ArrayList<>();
     private RelativeLayout layout;
     private Handler handler = new Handler();
-
+    private int visibleLastIndex = 0;   //最后的可视项索引
+    private int visibleItemCount;       // 当前窗口可见项总数
+    private int datasize = 38;          //模拟数据集的条数
+    private View loadMoreView;
+    private Button loadMoreButton;
 
     // 移动因子, 是一个百分比, 比如手指移动了100px, 那么View就只移动50px 目的是达到一个延迟的效果
     private static final float MOVE_FACTOR = 0.5f;
@@ -271,8 +276,6 @@ public class ShouYeFragment extends BaseFragment {
 
     }
 
-
-
     public void onViewClicke() {
         /*首先执行 加号的动画*/
         MyAnimalUtils.pictureAnimal(im3,getContext());
@@ -324,8 +327,6 @@ public class ShouYeFragment extends BaseFragment {
         });
     }
 
-
-
     @Override
     protected void loadData() {
 //        shouyeData();
@@ -336,9 +337,6 @@ public class ShouYeFragment extends BaseFragment {
 //            mList.add(stu);
 //            mList.add(stu1);
 //        }
-
-
-
 
         Map<String, String> params = new HashMap<>();
         params.put("param", "{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
@@ -363,13 +361,11 @@ public class ShouYeFragment extends BaseFragment {
     }
 
 
-
     /**
      * 对SlidingUpPanelLayout进行监听   你懂得   实现
      * <p>
      * 首页的那个效果，反正就是那个效果。
      */
-
 
        private void  getPhoto(){
         //设置播放时间间隔
@@ -389,6 +385,15 @@ public class ShouYeFragment extends BaseFragment {
         //mRollViewPager.setHintView(null);
     }
 
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+    }
 
     /***
      * 轮播图的适配器
@@ -417,8 +422,6 @@ public class ShouYeFragment extends BaseFragment {
             return imgs.length;
         }
     }
-
-
     /***
      * listview的适配器
      */
@@ -474,9 +477,6 @@ public class ShouYeFragment extends BaseFragment {
             ImageView  imageView;
         }
     }
-
-
-
 
     /**
      * 张晓萌
