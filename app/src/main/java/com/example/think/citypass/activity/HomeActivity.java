@@ -15,6 +15,7 @@ import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragmentOne;
+import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 
@@ -92,9 +93,8 @@ public class HomeActivity extends BaseActivity {
                         FragmentBuilder.getInstance().show(AllRecruitmentFragment.class).builder();
                         break;
                     case R.id.DiscoverBtn:
-                        FragmentBuilder.getInstance().show(LoadFragmentOne.class).builder();
+                        FragmentBuilder.getInstance().show(LoadFragmentTwo.class).builder();
                         break;
-
                 }
                 mCityMoney.setOnClickListener(new View.OnClickListener() {
                     @Override

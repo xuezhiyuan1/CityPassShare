@@ -47,11 +47,11 @@
             <include
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                layout="@layout/find_bbs_item"/>
+                layout="@layout/find_quanzi_item"/>
             <include
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                layout="@layout/find_bbs_item"/>
+                layout="@layout/find_wenshi_item"/>
 
             </LinearLayout>
     </LinearLayout>

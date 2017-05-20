@@ -12,7 +12,8 @@
         android:id="@+id/in_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/layout_loading"></include>
+        layout="@layout/layout_loading"
+        android:visibility="gone"></include>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -137,7 +138,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="城市币抽奖"/>
-
                     </LinearLayout>
 
                     <ImageView
@@ -146,6 +146,7 @@
                         android:src="@color/line"/>
 
                     <LinearLayout
+                        android:id="@+id/talk_city"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

@@ -28,7 +28,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/title_textview"
+                android:id="@+id/title_textview_hot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="城事"
@@ -53,8 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_weight="1"
-        android:background="#fd8e36"
-        android:visibility="invisible"
+        android:background="#7aafef"
         android:layout_marginLeft="5dp"
         android:orientation="horizontal" >
 

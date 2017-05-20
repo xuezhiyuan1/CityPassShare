@@ -35,7 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(layoutId());
         fragmentManager = getSupportFragmentManager();
         initView();
-        StatusBarCompat.compat(activity);
         initData();
         initListener();
         loadData();
