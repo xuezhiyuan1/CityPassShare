@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+     <include
+        layout="@layout/shezhi_title"></include>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:background="#e6e3e3"></LinearLayout>
         <TextView
+            android:id="@+id/My_Persson"
             android:layout_marginTop="18dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:text="个人信息"
@@ -34,6 +38,7 @@
         android:background="#e6e3e3"
         ></LinearLayout>
         <TextView
+            android:id="@+id/Message_TiXing"
             android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -59,6 +64,7 @@
         android:background="#e6e3e3"
         ></LinearLayout>
         <TextView
+            android:id="@+id/My_Passworld"
             android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -84,6 +90,7 @@
         android:background="#e6e3e3"
         ></LinearLayout>
     <TextView
+        android:id="@+id/JianYi_FanKui"
         android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -96,6 +103,7 @@
         android:background="#e6e3e3"
         ></LinearLayout>
     <TextView
+        android:id="@+id/GuanYu_WoMen"
         android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"

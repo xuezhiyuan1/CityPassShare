@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
     <include
         android:id="@+id/titleRea_newflats_info"
@@ -128,10 +129,15 @@
             <LinearLayout
                 android:id="@+id/zhaopin_lay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="87dp"
                 android:background="@color/white"
                 android:orientation="horizontal"
                 android:padding="10dp">
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/All_ListView"
+                    tools:listitem="dandn"></ListView>
 
                 <TextView
                     android:id="@+id/QuanZhizhaopin_text1"
@@ -283,6 +289,10 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/task_mymeda_rightarrow2" />
             </RelativeLayout>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/All_HouseList"></ListView>
 
             <View
                 android:layout_width="match_parent"
@@ -517,7 +527,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:background="@drawable/shape_more_huati">
-                <TextView
+                <EditText
                     android:id="@+id/hint_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -707,7 +717,7 @@
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="30dp"
             android:background="@color/line" />
     </LinearLayout>
     </ScrollView>

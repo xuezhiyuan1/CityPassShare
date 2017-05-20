@@ -67,8 +67,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.zxm.FindhouseActivity"/>
+        <activity android:name=".activity.zxm.CityChoiceActivity"/>
+        <activity android:name=".activity.zxm.FindworkActivity"/>
+        <activity android:name=".activity.zxm.ShouyeHuabi"/>
+        <activity android:name=".activity.zxm.ShouyeZBActivity"/>
+
+
         <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
+        <activity android:name=".activity.lxl.job.MyMoneyActivity"/>
+        <activity android:name=".activity.shezhi.SheZhiActivity"></activity>
+        <activity android:name=".activity.shezhi.MessageInfoActivity"></activity>
+        <activity android:name=".activity.shezhi.MyPasswordActivity"></activity>
         <!--&lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt;-->
         <!--<meta-data-->
         <!--android:name="design_width"-->

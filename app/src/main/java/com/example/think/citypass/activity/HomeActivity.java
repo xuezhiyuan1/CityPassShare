@@ -1,13 +1,18 @@
 package com.example.think.citypass.activity;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
+import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
+import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
@@ -19,6 +24,7 @@ import com.example.think.citypass.fragment.zzh.NaonaoFragment;
  */
 
 public class HomeActivity extends BaseActivity {
+    private TextView mText,mCityMoney,mSheZhi;
 
     private RadioGroup mRadioGroup;
 
@@ -58,6 +64,36 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void initView() {
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
+        mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
+        mSheZhi= (TextView) findViewById(R.id.SheZhi);
+        mSheZhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.SheZhi:
+                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
+                        Toast.makeText(HomeActivity.this, "点击事件", Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        break;
+//                    case R.id.My_City_MoneyText:
+//                        Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
+//                        startActivity(intent1);
+//                        break;
+
+                }
+            }
+        });
+        mCityMoney.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
+                        startActivity(intent1);
+
+            }
+        });
+
     }
 
     @Override
@@ -66,7 +102,6 @@ public class HomeActivity extends BaseActivity {
 //        第一次进入显示的Fragment
         FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
     }
-
     @Override
     protected void initListener() {
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -89,9 +124,26 @@ public class HomeActivity extends BaseActivity {
                         FragmentBuilder.getInstance().show(LoadFragment.class).builder();
                         break;
 
+
                 }
             }
         });
+//        mText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                switch (v.getId()){
+//                    case R.id.SheZhi:
+//                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
+//                        startActivity(intent);
+//                        break;
+//                    case R.id.My_City_Money:
+//                        Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
+//                        startActivity(intent1);
+//                        break;
+//                }
+//            }
+//        });
     }
 
     @Override
@@ -116,4 +168,8 @@ public class HomeActivity extends BaseActivity {
         super.onDestroy();
         FragmentBuilder.clean();
     }
+
 }
+
+
+
