@@ -229,13 +229,13 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         });
 
 
-        haoli.setOnClickListener(new View.OnClickListener() {
+        /*haoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent  intent=new Intent(getContext(), ShouyeHaoli.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
         im3.setOnClickListener(new View.OnClickListener() {

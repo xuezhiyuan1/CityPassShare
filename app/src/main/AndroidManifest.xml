@@ -68,6 +68,7 @@
         </activity>
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.GuideActivity" />
+        <activity android:name=".activity.zxm.ShouyeHaoli"></activity>
         <activity android:name=".activity.zxm.CityChoiceActivity"></activity>
         <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
         <!--&lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt;-->
