@@ -25,10 +25,13 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
+import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ModelOneBean;
+import com.example.think.citypass.model.bean.ShouyeModelBean;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
 import com.jude.rollviewpager.RollPagerView;
@@ -208,6 +211,14 @@ public class ShouYeFragment extends BaseFragment {
         });
 
 
+        haoli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeHaoli.class);
+                startActivity(intent);
+            }
+        });
+
 
         im3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +229,22 @@ public class ShouYeFragment extends BaseFragment {
             }
         });
 
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(), ShouyeNotice.class);
+                startActivity(intent);
+            }
+        });
+
+
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(),CityChoiceActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -398,6 +425,7 @@ public class ShouYeFragment extends BaseFragment {
 
         class Hodler {
             private TextView mText_Name, mText_Address,textView;
+            ImageView  imageView;
         }
     }
 

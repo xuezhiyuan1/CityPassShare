@@ -64,7 +64,7 @@ public class ShouyeZBActivity extends BaseActivity {
     /***
      * 用于viewpager的适配器
      */
-    class  ViewpagerAdapter  extends FragmentPagerAdapter{
+    static class  ViewpagerAdapter  extends FragmentPagerAdapter{
         ArrayList<String>  titleList;
         ArrayList<BaseFragment>  fragmentArrayList;
 
