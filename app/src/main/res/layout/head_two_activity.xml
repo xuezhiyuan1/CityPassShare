@@ -5,14 +5,62 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:nestedScrollingEnabled="false"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/include_titlebar"/>
+        android:layout_height="50dp"
+        android:background="#d12b26">
+        <!--  Activity头镖  Include引用 -->
+        <com.example.think.citypass.myview.RoundImageView
+            android:id="@+id/TitleBar_imageView"
+            android:layout_margin="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:src="@drawable/main_intro1" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/Title_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="延庆在线"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
+
+
+        <ImageButton
+            android:id="@+id/title_choose1"
+            android:layout_width="20dp"
+            android:focusableInTouchMode="true"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@id/Title_Text"
+            android:background="@mipmap/ccoo_icon_jiantou_down"/>
+
+        <ImageButton
+            android:id="@+id/title_choose2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="28dp"
+            android:layout_toRightOf="@+id/title_choose1"
+            android:background="@mipmap/btn_remind_normal" />
+
+        <ImageView
+            android:id="@+id/title_choose3"
+            android:background="#00000000"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/title_choose2"
+            android:src="@mipmap/jiahao" />
+
+
+    </RelativeLayout>
+
+
 
     <LinearLayout
         android:id="@+id/nologin_layout"
@@ -93,7 +141,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/findwork_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -101,6 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/findwork_layout"
                 android:background="@mipmap/ico_jiudian"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -112,7 +161,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/findhouse_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -120,6 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/findhouse_layout"
                 android:background="@mipmap/ico_hunjia"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -133,7 +183,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/fenleilife_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_marginTop="3dp"
@@ -141,6 +191,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/fenleilife_layout"
                 android:background="@mipmap/ico_quanbu"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
@@ -153,7 +204,7 @@
 
         <LinearLayout
             android:background="@drawable/layoutselector"
-            android:id="@+id/tongcheng_layout"
+
             android:orientation="vertical"
             android:layout_weight="1"
             android:gravity="center"
@@ -161,6 +212,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/tongcheng_layout"
                 android:background="@mipmap/ico_teyue"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
