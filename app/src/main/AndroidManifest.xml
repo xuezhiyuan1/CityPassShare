@@ -67,11 +67,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.zxm.FindhouseActivity"/>
+        <activity android:name=".activity.zxm.ShouyeFenleiLife"/>
         <activity android:name=".activity.zxm.CityChoiceActivity"/>
-        <activity android:name=".activity.zxm.FindworkActivity"/>
-        <activity android:name=".activity.zxm.ShouyeHuabi"/>
         <activity android:name=".activity.zxm.ShouyeZBActivity"/>
+        <activity android:name=".activity.zxm.ShouyeNoticePhone"/>
+        <activity android:name=".activity.zxm.ShouyeHuabi"/>
+        <activity android:name=".activity.zxm.ShouyeHaoli"/>
+        <activity android:name=".activity.zxm.FindworkActivity"/>
+        <activity android:name=".activity.zxm.ShouyeNotice"/>
+        <activity android:name=".activity.zxm.FindhouseActivity"/>
+        <activity android:name=".activity.zxm.LoginActivity"/>
+        <activity android:name=".activity.zxm.RegisterActivity"/>
+        <activity android:name=".activity.zxm.WebView_Activity"/>
 
 
         <activity android:name=".activity.GuideActivity" />
