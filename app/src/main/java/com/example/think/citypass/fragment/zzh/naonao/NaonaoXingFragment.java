@@ -13,8 +13,11 @@ import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NaonaoDiFragment extends BaseFragment {
+/**
+ * Created by ASUS on 2017/5/16.
+ */
 
+public class NaonaoXingFragment extends BaseFragment {
     private RelativeLayout layout;
     private MRefreshUtils mRefreshUtils;
 
@@ -43,7 +46,7 @@ public class NaonaoDiFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         headView = View.inflate(App.activity, R.layout.cover_ranking_item, null);
-        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg3);
+        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg2);
     }
 
     @Override
@@ -55,7 +58,6 @@ public class NaonaoDiFragment extends BaseFragment {
         mRefreshUtils.addHeadView(headView);
 
         mRefreshUtils.setAdapter(1,new NaonaoAdapter(data));
-
 
     }
 

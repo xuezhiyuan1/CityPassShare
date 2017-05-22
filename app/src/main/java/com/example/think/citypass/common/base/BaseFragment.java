@@ -14,11 +14,23 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
+    private View view;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(layoutId(), container, false);
+        view = inflater.inflate(layoutId(), container, false);
+        return view;
     }
+
+
+
+   public View getFragmentLayoutView(){
+        return view;
+    }
+
+
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

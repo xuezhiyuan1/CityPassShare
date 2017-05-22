@@ -17,12 +17,13 @@ import android.widget.ImageView;
 
 import com.example.think.citypass.R;
 
+
 /**
  * Created by 张萌 on 2017/5/15.
  */
 
 @SuppressLint("AppCompatCustomView")
-public class RoundImageView   extends ImageView {
+public class RoundImageView extends ImageView {
     private int mBorderThickness = 0;
     private Context mContext;
     private int defaultColor = 0xFFFFFFFF;

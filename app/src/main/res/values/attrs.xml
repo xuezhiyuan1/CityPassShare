@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <declare-styleable name="roundedimageview">
         <attr name="border_thickness" format="dimension" />
         <attr name="border_inside_color" format="color" />
@@ -18,16 +17,16 @@
     </declare-styleable>
 
     <declare-styleable name="AudioRoundProgressBar">
-        <attr name="roundColor" format="color"/>
-        <attr name="roundProgressColor" format="color"/>
-        <attr name="audioRoundWidth" format="dimension"/>
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="audioRoundWidth" format="dimension" />
         <attr name="textColor" format="color" />
         <attr name="textSize" format="dimension" />
-        <attr name="max" format="integer"/>
-        <attr name="textIsDisplayable" format="boolean"/>
+        <attr name="max" format="integer" />
+        <attr name="textIsDisplayable" format="boolean" />
         <attr name="style">
-            <enum name="STROKE" value="0"/>
-            <enum name="FILL" value="1"/>
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
         </attr>
     </declare-styleable>
 
