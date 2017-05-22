@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
@@ -14,21 +15,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ASUS on 2017/5/16.
+ * Created by ASUS on 2017/5/22.
  */
 
-public class NaonaoWangFragment extends BaseFragment {
+public class ShaituFragment extends BaseFragment {
     private MRefreshUtils mRefreshUtils;
 
-    private List<String> data = new ArrayList<>();
-
-    private View headView;
+    private List<String> data;
 
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
+                for (int i = 0; i < 5; i++) {
+                    data.add("大黄蜂");
+                }
                 mRefreshUtils.requestData();
             }
         }
@@ -36,30 +38,19 @@ public class NaonaoWangFragment extends BaseFragment {
 
     @Override
     protected int layoutId() {
-
-
-
         return R.layout.naonao_refreshlist;
     }
 
     @Override
     protected void initView(View view) {
-        headView = View.inflate(App.activity, R.layout.cover_ranking_item, null);
-        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg1);
     }
 
     @Override
     protected void initData() {
         data = new ArrayList<>();
-
-        mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(),  onListStateListener);
-
-        mRefreshUtils.addHeadView(headView);
-
-        mRefreshUtils.setAdapter(1,new NaonaoAdapter(data));
-
-
-
+        mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(), onListStateListener);
+        mRefreshUtils.setItemDecoration(5);
+        mRefreshUtils.setAdapter(2, new ShaituAdapter(data));
     }
 
     @Override
@@ -75,11 +66,17 @@ public class NaonaoWangFragment extends BaseFragment {
     private MRefreshUtils.OnListStateListener onListStateListener = new MRefreshUtils.OnListStateListener() {
         @Override
         public void onLoadMore() {
-            if (data.size() == 0 || data.isEmpty()) {
+            if (data.size() > 10) {
                 mRefreshUtils.setNoMore(true);
             } else {
                 handler.sendEmptyMessageDelayed(1, 2000);
             }
+
+//            if (data.size() == 0 || data.isEmpty()) {
+//                mRefreshUtils.setNoMore(true);
+//            } else {
+//                handler.sendEmptyMessageDelayed(1, 2000);
+//            }
 //            if (data.size() >= 60) {
 //                mRefreshUtils.setNoMore(true);
 //            } else
@@ -97,7 +94,7 @@ public class NaonaoWangFragment extends BaseFragment {
 //            }
 //            data.addAll(data1);
 //            mRefreshUtils.setPageNums(data.size() / 10 + 1);
-//
+            Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
 //            adapter.notifyDataSetChanged();
             mRefreshUtils.showNormal();
             if (Refresh) {

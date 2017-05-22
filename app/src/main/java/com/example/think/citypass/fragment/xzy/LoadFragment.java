@@ -8,10 +8,6 @@ import android.widget.LinearLayout;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 
-/**
- * Created by think on 2017/5/16.
- */
-
 public class LoadFragment extends BaseFragment {
     private LinearLayout linearLayout;
     @Override
@@ -30,7 +26,7 @@ public class LoadFragment extends BaseFragment {
     });
     @Override
     protected void initView(View view) {
-        linearLayout = (LinearLayout) view.findViewById(R.id.in_loading);
+        linearLayout = (LinearLayout) view.findViewById(R.id.ll_loading);
     }
 
     @Override

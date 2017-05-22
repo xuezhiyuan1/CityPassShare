@@ -5,7 +5,6 @@ import android.os.Message;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
@@ -13,16 +12,10 @@ import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ASUS on 2017/5/16.
- */
-
-public class NaonaoWangFragment extends BaseFragment {
+public class WangyouFragment extends BaseFragment {
     private MRefreshUtils mRefreshUtils;
 
-    private List<String> data = new ArrayList<>();
-
-    private View headView;
+    private List<String> data;
 
     private Handler handler = new Handler() {
         @Override
@@ -36,30 +29,18 @@ public class NaonaoWangFragment extends BaseFragment {
 
     @Override
     protected int layoutId() {
-
-
-
         return R.layout.naonao_refreshlist;
     }
 
     @Override
     protected void initView(View view) {
-        headView = View.inflate(App.activity, R.layout.cover_ranking_item, null);
-        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg1);
     }
 
     @Override
     protected void initData() {
         data = new ArrayList<>();
-
-        mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(),  onListStateListener);
-
-        mRefreshUtils.addHeadView(headView);
-
-        mRefreshUtils.setAdapter(1,new NaonaoAdapter(data));
-
-
-
+        mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(), onListStateListener);
+        mRefreshUtils.setAdapter(1, new WangyouAdapter());
     }
 
     @Override

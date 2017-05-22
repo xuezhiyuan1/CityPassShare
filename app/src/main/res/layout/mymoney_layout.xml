@@ -290,7 +290,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
-        <com.www.ccoocity.view.XListView
+        <com.example.think.citypass.myview.XListView
             android:id="@+id/lv"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"

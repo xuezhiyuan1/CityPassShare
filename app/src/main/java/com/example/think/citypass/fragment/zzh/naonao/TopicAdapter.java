@@ -22,7 +22,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tv.setText("111");
+        holder.tv.setText("人气11");
     }
 
     @Override

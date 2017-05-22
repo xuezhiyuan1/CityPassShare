@@ -3,6 +3,7 @@ package com.example.think.citypass.activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
@@ -25,6 +27,8 @@ import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 
 public class HomeActivity extends BaseActivity {
     private TextView mText,mCityMoney,mSheZhi;
+
+    private DrawerLayout mDrawerLayout;
 
     private RadioGroup mRadioGroup;
 
@@ -63,7 +67,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.mDrawerLayout);
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
         mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
         mSheZhi= (TextView) findViewById(R.id.SheZhi);
@@ -129,6 +133,30 @@ public class HomeActivity extends BaseActivity {
                 }
             }
         });
+
+        mDrawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                CeLaUtils.slideAnim(mDrawerLayout, drawerView, slideOffset);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
+
+
 //        mText.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
