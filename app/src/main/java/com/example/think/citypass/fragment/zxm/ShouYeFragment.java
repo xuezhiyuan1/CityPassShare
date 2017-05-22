@@ -60,8 +60,8 @@ zhangxiaomeng
  */
 
 public class ShouYeFragment extends BaseFragment implements AbsListView.OnScrollListener{
-   ImageButton imageButton1,imageButton2;
-    ImageView im3;
+   ImageButton imageButton1;
+    ImageView im3,imageButton2;
     Button findwork_lay,findhouse_lay,fenlei,tongchengh;
     LinearLayout haoli,zhuanbi,choujiang,huabi;
     private ArrayList<ModelOneBean> mList = new ArrayList<>();
@@ -119,7 +119,7 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         fenlei= (Button) view1.findViewById(R.id.fenleilife_layout);
         tongchengh= (Button) view1.findViewById(R.id.tongcheng_layout);
         imageButton1= (ImageButton) view1.findViewById(R.id.title_choose1);
-        imageButton2= (ImageButton) view1.findViewById(R.id.title_choose2);
+        imageButton2= (ImageView) view1.findViewById(R.id.title_choose2);
         im3= (ImageView) view1.findViewById(R.id.title_choose3);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);
 
@@ -229,13 +229,13 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         });
 
 
-        /*haoli.setOnClickListener(new View.OnClickListener() {
+        haoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent  intent=new Intent(getContext(), ShouyeHaoli.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         im3.setOnClickListener(new View.OnClickListener() {

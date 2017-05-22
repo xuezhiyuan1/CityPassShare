@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e1e0e0"
+    >
+    <RelativeLayout
+        android:background="#f13030"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <LinearLayout
+            android:id="@+id/findhouse_close"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/btn_back_normal"
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                android:text="关闭"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:layout_marginTop="9dp"
+                android:layout_toRightOf="@id/image1"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:text="二手信息"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/findhouse_more"
+            android:src="@drawable/new_con_share_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/framstyle"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+
+                <EditText
+                    android:id="@+id/findhouse_edittext"
+                    android:layout_weight="10"
+                    android:hint="请输入二手物品关键词"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0.4dp"
+                    android:background="#f444"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/findhouse_search"
+                    android:layout_weight="2"
+                    android:src="@drawable/sousuo"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="全部"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="二手手机"
+                    android:gravity="center"
+                    android:textColor="#0857ab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="二手家电"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="电脑配件"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="数码产品"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="二手家具"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="办公用品/设备"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="家具/日用品"
+                    android:gravity="center"
+                    android:textColor="#0857ab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="号码/虚拟用品"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:textColor="#0857ab"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="服装/鞋帽/箱包"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="户外/运动/棋牌"
+                    android:gravity="center"
+                    android:textColor="#0857ab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="礼品/工艺/收藏品"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:textColor="#0857ab"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="美容/保健/成人"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="母婴/儿童/玩具"
+                    android:gravity="center"
+                    android:textColor="#0857ab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="图书/文教/乐器"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:textColor="#0857ab"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="其他二手"
+                    android:textColor="#0857ab"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="1dp"
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:text="上门收购"
+                    android:gravity="center"
+                    android:textColor="#0857ab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:background="#b4b0b0"
+                    android:layout_width="0.5dp"
+
+                    android:layout_margin="7dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:textColor="#0857ab"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+
+<RelativeLayout
+    android:layout_marginTop="5dp"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="30dp">
+    <TextView
+        android:text="二手家电"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ea0a0a"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</RelativeLayout>
+<LinearLayout
+    android:orientation="horizontal"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="30dp">
+    <TextView
+        android:layout_weight="1"
+        android:text="全部"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_weight="1"
+        android:text="电视机"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_weight="1"
+        android:text="洗衣机"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+</LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="空调"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="冰箱"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="冰柜"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="生活家电"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="厨卫家电"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="影音家电"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="其他"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+            <RelativeLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:text="数码产品"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#ea0a0a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="全部"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="相机/相机配件"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="摄像机/DV"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="MP3/MP4/ipod"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="游戏机"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="电子书/kindle"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="其他数码"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="其他"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <TextView
+                android:background="#c7c2c2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

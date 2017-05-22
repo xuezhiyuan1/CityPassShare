@@ -1,11 +1,19 @@
 package com.example.think.citypass.fragment.xzy;
 
+import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.xzy.FindActivity;
+import com.example.think.citypass.activity.xzy.FindCityThings;
+import com.example.think.citypass.activity.zxm.FindhouseActivity;
+import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.common.config.Urls;
 import com.example.think.citypass.model.entity.FindBean;
@@ -19,12 +27,13 @@ import java.util.Map;
  * Created by think on 2017/5/19.
  */
 
-public class LoadFragmentTwo extends BaseFragment {
+public class LoadFragmentTwo extends BaseFragment implements View.OnClickListener{
     //热门事   One
     private ImageView imageView;
     private TextView textView1;
     private TextView textView2;
     private TextView textView3;
+    LinearLayout  bglsyout,bglayout2;
     //热门事   Two
     private ImageView imageView2;
     private TextView textView4;
@@ -79,6 +88,10 @@ public class LoadFragmentTwo extends BaseFragment {
         textView1 = (TextView) view.findViewById(R.id.title_textview);
         textView2 = (TextView) view.findViewById(R.id.title_textview_hot);
         textView3 = (TextView) view.findViewById(R.id.content_textview);
+        bglsyout= (LinearLayout) view.findViewById(R.id.bg_layout);
+        bglsyout.setOnClickListener(this);
+        bglayout2= (LinearLayout) view.findViewById(R.id.bg_layout2);
+        bglayout2.setOnClickListener(this);
         //热门事   Two
         imageView2 = (ImageView) view.findViewById(R.id.bg_imagview2);
         textView4 = (TextView) view.findViewById(R.id.title_textview2);
@@ -104,7 +117,9 @@ public class LoadFragmentTwo extends BaseFragment {
         //百事通
         imageView15 = (ImageView) view.findViewById(R.id.imageView_baishitong1);
         imageView16 = (ImageView) view.findViewById(R.id.imageView_baishitong2);
+        imageView16.setOnClickListener(this);
         imageView17 = (ImageView) view.findViewById(R.id.imageView_baishitong3);
+        imageView17.setOnClickListener(this);
         imageView18 = (ImageView) view.findViewById(R.id.imageView_baishitong4);
         imageView19 = (ImageView) view.findViewById(R.id.imageView_baishitong5);
         imageView20 = (ImageView) view.findViewById(R.id.imageView_baishitong6);
@@ -243,5 +258,32 @@ public class LoadFragmentTwo extends BaseFragment {
     protected void loadData() {
 
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bg_layout:
+                Toast.makeText(getContext(), "城事", Toast.LENGTH_SHORT).show();
+                Intent  intent=new Intent(getContext(), FindCityThings.class);
+                startActivity(intent);
+                break;
+            case R.id.bg_layout2:
+                Toast.makeText(getContext(), "活动", Toast.LENGTH_SHORT).show();
+                Intent  intent2=new Intent(getContext(), FindActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.imageView_baishitong2:
+                Toast.makeText(getContext(), "找工作", Toast.LENGTH_SHORT).show();
+                Intent  intent3=new Intent(getContext(), FindworkActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.imageView_baishitong3:
+                Toast.makeText(getContext(), "找房子", Toast.LENGTH_SHORT).show();
+                Intent  intent4=new Intent(getContext(), FindhouseActivity.class);
+                startActivity(intent4);
+                break;
+
+        }
     }
 }
