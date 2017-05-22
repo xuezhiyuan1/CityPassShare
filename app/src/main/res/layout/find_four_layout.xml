@@ -51,11 +51,11 @@
                 <include
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    layout="@layout/find_store_item"/>
+                    layout="@layout/find_store_item2"/>
                 <include
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    layout="@layout/find_store_item"/>
+                    layout="@layout/find_store_item3"/>
                 </LinearLayout>
 
             <TextView

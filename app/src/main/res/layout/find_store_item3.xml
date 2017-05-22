@@ -43,7 +43,7 @@
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="家具"
+                        android:text="酒店"
                         android:textColor="@color/color_333"
                         android:textSize="18dp" />
 
@@ -53,13 +53,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:singleLine="true"
-                        android:text="装修采购地图"
+                        android:text="同城酒店大全"
                         android:textColor="@color/color_999"
                         android:textSize="14dp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageview1"
+                    android:id="@+id/imageview5"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:adjustViewBounds="true"
@@ -102,7 +102,7 @@
                         android:id="@+id/title2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="汽车"
+                        android:text="名店"
                         android:textColor="@color/color_333"
                         android:textSize="18dp" />
 
@@ -112,24 +112,22 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:singleLine="true"
-                        android:text="找到最佳销售商"
+                        android:text="爱逛街 找品牌"
                         android:textColor="@color/color_999"
                         android:textSize="14dp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageview2"
+                    android:id="@+id/imageview6"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
             </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/line" />
-    </LinearLayout>
-
-
+</LinearLayout>

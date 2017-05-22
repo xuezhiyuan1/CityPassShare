@@ -329,8 +329,7 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
 
     @Override
     protected void loadData() {
-//        shouyeData();
-        // 几何参数
+//        shouyeData();// 几何参数
 //        for (int i = 0; i < 30; i++) {
 //            ModelOneBean stu = new ModelOneBean("今夜阳光明媚,今夜多云转晴...","28331","亚索");
 //            ModelOneBean stu1 = new ModelOneBean("来试试我的‘运气’和三代鬼彻的‘诅咒’……哪一个比较强！如果我输了，就表示我的运气真的很差...","822135","尾田荣一郎");

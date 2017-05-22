@@ -79,6 +79,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+
+
                         android:clickable="true"
                         android:background="@drawable/find_selector_layout"
                         android:orientation="vertical">
