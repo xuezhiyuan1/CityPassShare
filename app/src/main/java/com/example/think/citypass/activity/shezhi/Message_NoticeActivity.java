@@ -1,15 +1,16 @@
-package com.example.think.citypass.activity.zxm;
+package com.example.think.citypass.activity.shezhi;
 
+import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 
 /**
- * Created by 张萌 on 2017/5/22.
+ * Created by d on 2017/5/22.
  */
 
-public class RegisterActivity  extends BaseActivity {
+public class Message_NoticeActivity extends BaseActivity {
     @Override
     protected int layoutId() {
-        return 0;
+        return R.layout.shouye_notice;
     }
 
     @Override

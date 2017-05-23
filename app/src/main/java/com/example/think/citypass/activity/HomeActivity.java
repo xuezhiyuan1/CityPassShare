@@ -80,11 +80,6 @@ public class HomeActivity extends BaseActivity {
                         Toast.makeText(HomeActivity.this, "点击事件", Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         break;
-//                    case R.id.My_City_MoneyText:
-//                        Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
-//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
-//                        startActivity(intent1);
-//                        break;
 
                 }
             }
@@ -157,22 +152,6 @@ public class HomeActivity extends BaseActivity {
         });
 
 
-//        mText.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()){
-//                    case R.id.SheZhi:
-//                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                    case R.id.My_City_Money:
-//                        Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
-//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
-//                        startActivity(intent1);
-//                        break;
-//                }
-//            }
-//        });
     }
 
     @Override
@@ -188,9 +167,6 @@ public class HomeActivity extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-
-
 
     @Override
     protected void onDestroy() {

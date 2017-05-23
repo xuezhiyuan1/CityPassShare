@@ -8,6 +8,7 @@
         android:id="@+id/titleRea"
         layout="@layout/title_job_single" />
 
+
     <LinearLayout
         android:id="@+id/array_tab_layout"
         android:layout_width="fill_parent"
@@ -107,7 +108,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_line" >
 
-        <com.www.ccoocity.widget.MyListView
+        <com.example.think.citypass.myview.XListView
             android:id="@+id/table_list"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"

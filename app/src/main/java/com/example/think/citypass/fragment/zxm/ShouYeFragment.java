@@ -23,7 +23,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
@@ -39,11 +38,8 @@ import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
-import com.example.think.citypass.model.http.callback.OkhttpCallback;
 import com.example.think.citypass.utils.http.HttpCallBack;
 import com.example.think.citypass.utils.http.RetrofitImpl;
-import com.example.think.citypass.utils.retrofitutils.OkhttpUtils;
-import com.google.gson.Gson;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
@@ -254,8 +250,6 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
                 startActivity(intent);
             }
         });
-
-
         imageButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -467,7 +461,7 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
             hodler.mText_Name.setText(stu.getData().get(0).getTitle()+ "");
             hodler.mText_Address.setText(stu.getData().get(0).getVariable8()+ "");
             hodler.textView.setText(stu.getData().get(0).getVariable1()+"");
-            Glide.with(getContext()).load(stu.getData().get(0).getImage()).into(hodler.imageView);
+//            Glide.with(getContext()).load(stu.getData().get(0).getImage()).into(hodler.imageView);
             return convertView;
 
         }
