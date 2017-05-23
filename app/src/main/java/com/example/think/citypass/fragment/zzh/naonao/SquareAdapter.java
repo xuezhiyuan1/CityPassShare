@@ -29,7 +29,7 @@ public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 30;
+        return 3;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

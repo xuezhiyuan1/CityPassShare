@@ -3,15 +3,16 @@ package com.example.think.citypass.fragment.zzh;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoWangFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
+import com.example.think.citypass.fragment.zzh.naonao.ShaituFragment;
 import com.example.think.citypass.fragment.zzh.naonao.SquareFragment;
 import com.example.think.citypass.fragment.zzh.naonao.TopicFragment;
+import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
 import com.example.think.citypass.myview.ChildViewPager;
 
 import java.util.ArrayList;
@@ -22,8 +23,6 @@ public class NaonaoFragment extends BaseFragment {
     private TabLayout tabLayout;
 
     private ChildViewPager viewPager;
-
-    private LinearLayout linearLayout;
 
     private String[] titles = {"闹闹帝", "闹闹王", "闹闹星", "广场", "话题", "推荐", "晒图", "网友自荐"};
 
@@ -38,7 +37,6 @@ public class NaonaoFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        linearLayout = (LinearLayout) view.findViewById(R.id.ll_loading);
         tabLayout = (TabLayout) view.findViewById(R.id.naonaoTabLayout);
         viewPager = (ChildViewPager) view.findViewById(R.id.naonaoViewPager);
     }
@@ -59,12 +57,16 @@ public class NaonaoFragment extends BaseFragment {
         SquareFragment squareFragment = new SquareFragment();
         TopicFragment topicFragment = new TopicFragment();
         SquareFragment squareFragment1 = new SquareFragment();
+        ShaituFragment shaituFragment = new ShaituFragment();
+        WangyouFragment wangyouFragment = new WangyouFragment();
         data.add(naonaoDiFragment);
         data.add(naonaoWangFragment);
         data.add(naonaoXingFragment);
         data.add(squareFragment);
         data.add(topicFragment);
         data.add(squareFragment1);
+        data.add(shaituFragment);
+        data.add(wangyouFragment);
     }
 
     @Override
@@ -75,6 +77,5 @@ public class NaonaoFragment extends BaseFragment {
     @Override
     protected void loadData() {
         viewPager.setCurrentItem(3);
-
     }
 }

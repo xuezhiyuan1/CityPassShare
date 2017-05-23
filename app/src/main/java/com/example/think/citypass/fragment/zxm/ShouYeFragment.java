@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -24,10 +26,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeFenleiLife;
 import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
@@ -49,49 +53,77 @@ import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
 zhangxiaomeng
  * 重首页点击  加载 Fragment  用来完成首页业务
  */
 
-public class ShouYeFragment extends BaseFragment implements AbsListView.OnScrollListener{
-   ImageButton imageButton1;
-    ImageView im3,imageButton2;
-    Button findwork_lay,findhouse_lay,fenlei,tongchengh;
+public class ShouYeFragment extends BaseFragment {
+    LinearLayout findwork_lay,findhouse_lay,fenlei,tongchengh;
     LinearLayout haoli,zhuanbi,choujiang,huabi;
-    private ArrayList<ModelOneBean> mList = new ArrayList<>();
+    private Boolean isLoadMore = false;
+    private int pageSize = 10;
+    private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>   mll = new ArrayList<>();
+    private View inflate;
+    private View footView;
+    private int  page = 1 ;
     private MyAdapter myAdapter;
+    TextView  logintext;
 
-    private MyGradeView linkPageGridview;
-    private PopupWindow popupWindow;
-    private View view;
-    private GVAdapter gvAdapter;
-    private List<String> mlist;
-    private List<Integer> mDList;
     private ArrayList<ShouyeModelBean>  datalist=new ArrayList<>();
     private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>  dataList=new ArrayList<>();
     private RelativeLayout layout;
-    private Handler handler = new Handler();
-    private int visibleLastIndex = 0;   //最后的可视项索引
-    private int visibleItemCount;       // 当前窗口可见项总数
-    private int datasize = 38;          //模拟数据集的条数
-    private View loadMoreView;
-    private Button loadMoreButton;
+
+
 
     // 移动因子, 是一个百分比, 比如手指移动了100px, 那么View就只移动50px 目的是达到一个延迟的效果
     private static final float MOVE_FACTOR = 0.5f;
 
     // 松开手指后, 界面回到正常位置需要的动画时间
     private static final int ANIM_TIME = 300;
-  private SlidingUpPanelLayout slidingUpPanelLayout;
+    private SlidingUpPanelLayout slidingUpPanelLayout;
     private RollPagerView rollPagerView;
     private ListView listView;
-  //  private Banner_Adapter banner_adapter;
+    //  private Banner_Adapter banner_adapter;
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    String str = (String) msg.obj;
+                    Gson gson = new Gson();
+                    ShouyeDataEntity NewsBean = gson.fromJson(str, ShouyeDataEntity.class);
+                    List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = NewsBean.getServerInfo().getHeadTInfoList();
+                    mll.addAll(headTInfoList);
+                    int i = headTInfoList.get(0).getTheirID();
+                    Log.d("ShouYeFragment", "i:" + i);
+                    myAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+    };
+
+
 
 
 
@@ -108,28 +140,26 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
     @Override
     public void initView(View view) {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
+        int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.54);
+        slidingUpPanelLayout.setPanelHeight(height);
         zhuanbi= (LinearLayout) view.findViewById(R.id.zhuanbi_layout);
         huabi= (LinearLayout) view.findViewById(R.id.huabi_layout);
         haoli= (LinearLayout) view.findViewById(R.id.haoli_layout);
         choujiang= (LinearLayout) view.findViewById(R.id.choujiang_layout);
         listView = (ListView) view.findViewById(R.id.mListView);
         View view1 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.head_two_activity, null);
-        findwork_lay= (Button) view1.findViewById(R.id.findwork_layout);
-        findhouse_lay= (Button) view1.findViewById(R.id.findhouse_layout);
-        fenlei= (Button) view1.findViewById(R.id.fenleilife_layout);
-        tongchengh= (Button) view1.findViewById(R.id.tongcheng_layout);
-        imageButton1= (ImageButton) view1.findViewById(R.id.title_choose1);
-        imageButton2= (ImageView) view1.findViewById(R.id.title_choose2);
-        im3= (ImageView) view1.findViewById(R.id.title_choose3);
+        logintext= (TextView) view1.findViewById(R.id.denglu_textview);
+
+        findwork_lay= (LinearLayout) view1.findViewById(R.id.findwork_layout);
+        findhouse_lay= (LinearLayout) view1.findViewById(R.id.findhouse_layout);
+        fenlei= (LinearLayout) view1.findViewById(R.id.fenleilife_layout);
+        tongchengh= (LinearLayout) view1.findViewById(R.id.tongcheng_layout);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);
 
 
-       View  vi=LayoutInflater.from(getContext()).inflate(R.layout.ppmb,null);
-//        View  vv=LayoutInflater.from(getContext()).inflate(R.layout.ppmb,null);
-        linkPageGridview = (MyGradeView) vi.findViewById(R.id.link_page_gridview);
 
-        layout= (RelativeLayout) vi.findViewById(R.id.layout);
-        myAdapter = new MyAdapter(getActivity(),dataList);
+
+        myAdapter = new MyAdapter(getActivity(),mll);
         listView.setAdapter(myAdapter);
         getPhoto();
         //添加头部
@@ -139,30 +169,11 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
 
     @Override
     protected void initData() {
-        /**8
-         * 给GridView添加数据
-          */
-        adddata();
-        getPopup();
-        }
 
-        private void adddata(){
-            mlist=new ArrayList<>();
-            mlist.add("发帖子");
-            mlist.add("发照片");
-            mlist.add("小视频");
-            mlist.add("有奖爆料");
-            mlist.add("分类信息");
-            mlist.add("二维码");
-            mDList=new ArrayList<>();
-            mDList.add(R.drawable.ico_quanbu);
-            mDList.add(R.drawable.baby_camera);
-            mDList.add(R.drawable.ico_meishi);
-            mDList.add(R.drawable.ico_qinzi);
-            mDList.add(R.drawable.ic_jianli_icon);
-            mDList.add(R.drawable.ic_liulan);
+
 
         }
+
 
     @Override
     protected void initListener() {
@@ -178,19 +189,14 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         slidingUpPanelLayout.setFadeOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                slidingUpPanelLayout.setPanelState(com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED);
+                slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
 
-        imageButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "选择城市", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getContext(), CityChoiceActivity.class);
-                startActivity(intent);
-            }
-        });
 
+        /**8
+         * z找工作
+         */
         findwork_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,6 +207,9 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         });
 
 
+        /**
+         * 找房子
+         */
         findhouse_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -209,7 +218,10 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
                 startActivity(intent);
             }
         });
-
+//
+        /**
+         * 赚币
+         */
 
         zhuanbi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,17 +230,22 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
                 startActivity(intent);
             }
         });
-
-
+//
+/**
+ * 花币
+ */
         huabi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent  intent=new Intent(getContext(), ShouyeHuabi.class);
                 startActivity(intent);
+//                ghgghghghgh
+                ///dsadsadsadsadsas
             }
         });
-
-
+        /**
+         * 好礼
+         */
         haoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -236,34 +253,11 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
                 startActivity(intent);
             }
         });
+//
 
-
-        im3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "点击加号", Toast.LENGTH_SHORT).show();
-               onViewClicke();
-
-            }
-        });
-
-        imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getContext(), ShouyeNotice.class);
-                startActivity(intent);
-            }
-        });
-
-
-        imageButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  intent=new Intent(getContext(),CityChoiceActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        /**8
+         * 分类内容
+         */
         fenlei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -272,91 +266,33 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
             }
         });
 
+        /***
+         * 登录或者注册
+         */
 
-
-    }
-
-    public void onViewClicke() {
-        /*首先执行 加号的动画*/
-        MyAnimalUtils.pictureAnimal(im3,getContext());
-        popupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                    /*执行popupwindow 出现的动画*/
-                MyAnimalUtils.getGVDHB(linkPageGridview, getContext(), false);
-            }
-        }, 400);
-    }
-
-    private void getPopup() {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.ppmb, null);
-        view.getBackground().setAlpha(200);
-        RelativeLayout layout = (RelativeLayout) view.findViewById(R.id.layout);
-        popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setBackgroundDrawable(null);
-        linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
-        GVAdapter  gvAdapter = new GVAdapter(mDList, mlist, getContext());
-        linkPageGridview.setAdapter(gvAdapter);
-        popupWindow.setAnimationStyle(R.style.Animation);
-
-        layout.setOnClickListener(new View.OnClickListener() {
+        logintext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*让每一个item先消失*/
-                MyAnimalUtils.getGVDHB(linkPageGridview, getContext(), true);
-                /*得到一共有几个item 然后乘以每个item 消失的时间*/
-                /*获得item 消失一共用了多长时间*/
-                long i = (linkPageGridview.getChildCount() + 1) * 160;
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        /*在item 消失点后让popupWindow消失*/
-                        popupWindow.dismiss();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                /*在PopupWindow消失后 让加号执行逆时针动作*/
-                                MyAnimalUtils.pictureAnimala(im3, getContext());
-                            }
-                        }, 100);
-                    }
-                }, i);
+                Intent  intent=new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
+
+        /***8
+         * listview分页加载监听事件
+         */
+        listener();
+
+
     }
+
 
     @Override
     protected void loadData() {
-//        shouyeData();// 几何参数
-//        for (int i = 0; i < 30; i++) {
-//            ModelOneBean stu = new ModelOneBean("今夜阳光明媚,今夜多云转晴...","28331","亚索");
-//            ModelOneBean stu1 = new ModelOneBean("来试试我的‘运气’和三代鬼彻的‘诅咒’……哪一个比较强！如果我输了，就表示我的运气真的很差...","822135","尾田荣一郎");
-//            mList.add(stu);
-//            mList.add(stu1);
-//        }
-
-        Map<String, String> params = new HashMap<>();
-        params.put("param", "{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
-//        params.put("param", "{\"appName\":\"CcooCity\",\"Param\":{\"pageSize\":20,\"page\":1,\"siteID\":2422},\"requestTime\":\"2017-05-09 18:43:22\",\"customerKey\":\"6A2861840C7B1164C1C48876EAEEFF37\",\"Method\":\"PHSocket_GetHeadlinesInfoO\",\"Statis\":{\"PhoneId\":\"866622010080020\",\"System_VersionNo\":\"Android 4.4.2\",\"UserId\":0,\"PhoneNum\":\"\",\"SystemNo\":2,\"PhoneNo\":\"Lenovo Z90-3\",\"SiteId\":2422},\"customerID\":8001,\"version\":\"4.6\"}");
-                RetrofitImpl.getInstance().Post(ShouyeDataEntity.class, "http://appnew.ccoo.cn/appserverapi.ashx", params, new HttpCallBack() {
-            @Override
-            public void onSuccessful(Object success) {
-
-                ShouyeDataEntity newsbean = (ShouyeDataEntity) success;
-                List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = newsbean.getServerInfo().getHeadTInfoList();
-                dataList.addAll(headTInfoList);
-                Log.d("ShouYeFragment", "mList.size():" + dataList.size());
-                myAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onError(String errorMessage) {
-                Log.e("--error",errorMessage);
-            }
-        });
-
+        /***
+         * 执行网络请求,加载网络数据
+         */
+        loadDataNet();
     }
 
 
@@ -384,15 +320,6 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         //mRollViewPager.setHintView(null);
     }
 
-    @Override
-    public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-    }
-
-    @Override
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-    }
 
     /***
      * 轮播图的适配器
@@ -477,147 +404,139 @@ public class ShouYeFragment extends BaseFragment implements AbsListView.OnScroll
         }
     }
 
-    /**
-     * 张晓萌
-     * gridview的适配器
+
+    /**8
+     * 加载网络数据,
      */
-
-    class GVAdapter extends BaseAdapter{
-
-        private List<Integer> mDList;
-        private List<String> mlist;
-        private Context context;
-        private  TextView textView;
-
-        public GVAdapter(List<Integer> mDList, List<String> mlist, Context context) {
-            this.mDList = mDList;
-            this.mlist = mlist;
-            this.context = context;
+    protected void loadDataNet() {
+        JSONObject jo = new JSONObject();
+        try {
+            jo.put("siteID", 2422);
+            jo.put("pageSize", pageSize );
+            jo.put("page",page++);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time = df.format(new Date().getTime());
+        JSONObject pp = new JSONObject();
+        try {
+            pp.put("appName", "CcooCity");
+            pp.put("Param", jo);
+            pp.put("requestTime", time);
+            pp.put("customerKey", "6A2861840C7B1164C1C48876EAEEFF37");
+            pp.put("Method", "PHSocket_GetHeadlinesInfoO");
+            pp.put("Statis", createTongji());
+            pp.put("customerID", 8001);
+            pp.put("version", "4.6");
 
-        @Override
-        public int getCount() {
-            return mlist.size();
-        }
 
-        @Override
-        public Object getItem(int position) {
-            return mlist.get(position);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        String str = pp.toString();
+        Log.d("ShouYeFragment", str);
 
-        @Override
-        public long getItemId(int position) {
-            return position;
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        FormBody.Builder formBody = new FormBody.Builder();
+        Map<String, String> param = new HashMap<>();
+        param.put("param", str);
+        if (param != null && param.size() > 0) {
+            Set<String> set = param.keySet();
+            for (String key : set) {
+                String value = param.get(key);
+                formBody.add(key, value);
+            }
         }
+        Request request = new Request.Builder()
+                .url("http://appnew.ccoo.cn/appserverapi.ashx")
+                .post(formBody.build())
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Toast.makeText(getContext(), "加载失败，请重新加载。。。", Toast.LENGTH_SHORT).show();
+            }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            Holder h=new Holder();
-            convertView= LayoutInflater.from(context).inflate(R.layout.gv_item,null);
-            h.textView= (TextView) convertView.findViewById(R.id.textA);
-            h.imageView= (ImageView) convertView.findViewById(R.id.imageA);
-            h.textView.setText(mlist.get(position));
-            h.imageView.setImageResource(mDList.get(position));
-            convertView.setVisibility(View.INVISIBLE);
-            return convertView;
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String string = response.body().string();
+                Message msg = new Message();
+                msg.obj = string;
+                msg.what = 1;
+                handler.sendMessage(msg);
+
+
+            }
+        });
+
+
+    }
+
+    public static JSONObject createTongji() {
+        JSONObject pp = new JSONObject();
+        try {
+            pp.put("PhoneId", "866622010080020");
+            pp.put("System_VersionNo", "Android " + android.os.Build.VERSION.RELEASE);
+            pp.put("UserId", "0");
+            pp.put("PhoneNum", "");
+            pp.put("SystemNo", 2);
+            pp.put("PhoneNo", "android.os.Build.MODEL");
+            pp.put("SiteId", "2422");
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-         class Holder{
-            private TextView textView;
-            private ImageView imageView;
-        }
+        return pp;
     }
 
 
+    /**
+     * 对SlidingUpPanelLayout进行监听   你懂得   实现
+     * <p>
+     * 首页的那个效果，反正就是那个效果。
+     */
+    protected void listener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(getContext(),WebView_Activity.class);
+//                startActivity(intent);
+
+                Toast.makeText(getContext(), "暂无详情", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-
-
-
-
-
-
-    class popupMoban {
-        public  void getPopup(final Context context, PopupWindow popupWindow, RelativeLayout layout, GridView linkPageGridview, final ImageView imageView, BaseAdapter adapter, final Handler handler, List<Integer> mDList, List<String> mlist) {
-            View view = LayoutInflater.from(context).inflate(R.layout.ppmb, null);
-            view.getBackground().setAlpha(200);
-            layout= (RelativeLayout) view.findViewById(R.id.layout);
-            popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            popupWindow.setOutsideTouchable(true);
-            popupWindow.setBackgroundDrawable(null);
-            linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
-            adapter = new GVAdapter(mDList,mlist, context);
-            linkPageGridview.setAdapter(adapter);
-            popupWindow.setAnimationStyle(R.style.Animation);
-
-            final GridView finalLinkPageGridview = linkPageGridview;
-            final PopupWindow finalPopupWindow = popupWindow;
-            layout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                /*让每一个item先消失*/
-                    MyAnimalUtils.getGVDHB(finalLinkPageGridview,context,true);
-                /*得到一共有几个item 然后乘以每个item 消失的时间*/
-                /*获得item 消失一共用了多长时间*/
-                    long i = finalLinkPageGridview.getChildCount() * 160;
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                        /*在item 消失点后让popupWindow消失*/
-                            finalPopupWindow.dismiss();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                /*在PopupWindow消失后 让加号执行逆时针动作*/
-                                    MyAnimalUtils.pictureAnimala(imageView,context);
-                                }
-                            }, 100);
-                        }
-                    },i);
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState == SCROLL_STATE_IDLE && isLoadMore) {
+                    Toast.makeText(getContext(), "loading...", Toast.LENGTH_SHORT).show();
+                    Log.e("TAG", "ListView开始分页加载");
+                    listView.addFooterView(inflate);
+                    loadData();
+                    listView.removeFooterView(inflate);
+                    myAdapter.notifyDataSetChanged();
+                    isLoadMore = false;
                 }
-            });
-        }
+            }
 
-        public  void getPopupa(final Context context, final ImageView imageView, List<Integer> mDList, List<String> mlist) {
-            final Handler handler=new Handler();
-            View view = LayoutInflater.from(context).inflate(R.layout.ppmb, null);
-            view.getBackground().setAlpha(200);
-            RelativeLayout layout= (RelativeLayout) view.findViewById(R.id.layout);
-            PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            popupWindow.setOutsideTouchable(true);
-            popupWindow.setBackgroundDrawable(null);
-            GridView linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
-            GVAdapter adapter = new GVAdapter(mDList,mlist, context);
-            linkPageGridview.setAdapter(adapter);
-            popupWindow.setAnimationStyle(R.style.Animation);
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if (firstVisibleItem + visibleItemCount == totalItemCount) {
+                    isLoadMore = true;
 
-            final GridView finalLinkPageGridview = linkPageGridview;
-            final PopupWindow finalPopupWindow = popupWindow;
-            layout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                /*让每一个item先消失*/
-                    MyAnimalUtils.getGVDHB(finalLinkPageGridview,context,true);
-                /*得到一共有几个item 然后乘以每个item 消失的时间*/
-                /*获得item 消失一共用了多长时间*/
-                    long i = finalLinkPageGridview.getChildCount() * 160;
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                        /*在item 消失点后让popupWindow消失*/
-                            finalPopupWindow.dismiss();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                /*在PopupWindow消失后 让加号执行逆时针动作*/
-                                    MyAnimalUtils.pictureAnimala(imageView,context);
-                                }
-                            }, 100);
-                        }
-                    },i);
+
                 }
-            });
-        }
+            }
+        });
+
     }
+
 
 
 

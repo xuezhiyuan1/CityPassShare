@@ -67,10 +67,9 @@ public class MRefreshUtils {
         view.startAnimation(animation);
     }
 
-    public void addHeadView(View view){
+    public void addHeadView(View view) {
         mRecyclerView.addHeaderView(view);
     }
-
 
 
     public MRefreshUtils(Context context, RelativeLayout layout, OnListStateListener stateListener) {
@@ -146,6 +145,9 @@ public class MRefreshUtils {
         }
     }
 
+    public void setItemDecoration(int decoration) {
+        mRecyclerView.addItemDecoration(new StaggeredGridSpaceItemDecoration(context, decoration));
+    }
 
     public void setAdapter(int type, RecyclerView.Adapter adapter) {
         adapter.setHasStableIds(true);

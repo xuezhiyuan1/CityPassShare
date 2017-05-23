@@ -6,10 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class MRecyclerView extends RecyclerView {
     private int mPageCount = 0;
     //adapter没有数据的时候显示,类似于listView的emptyView
     private View mEmptyView;
-    private View mFootView;
+    private RelativeLayout mFootView;
     private final AdapterDataObserver mDataObserver = new DataObserver();
     public MRecyclerView(Context context) {
         this(context, null);
@@ -75,8 +75,6 @@ public class MRecyclerView extends RecyclerView {
         mHeaderViews.add(view);
         if (mWrapAdapter != null) {
             mWrapAdapter.notifyDataSetChanged();
-        }else{
-            Log.e("TAG","适配器为空=========");
         }
     }
 
@@ -102,7 +100,7 @@ public class MRecyclerView extends RecyclerView {
         }
     }
 
-    public void setFootView(final View view) {
+    public void setFootView(final RelativeLayout view) {
         mFootView = view;
     }
 
@@ -308,7 +306,6 @@ public class MRecyclerView extends RecyclerView {
                     mEmptyView.setVisibility(View.VISIBLE);
                     MRecyclerView.this.setVisibility(View.GONE);
                 } else {
-
                     mEmptyView.setVisibility(View.GONE);
                     MRecyclerView.this.setVisibility(View.VISIBLE);
                 }

@@ -92,9 +92,9 @@ public class SquareFragment extends BaseFragment {
 //
             Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
             mRefreshUtils.showNormal();
-//            if (Refresh) {
-//                mRefreshUtils.startUpdate(10);
-//            }
+            if (Refresh) {
+                mRefreshUtils.startUpdate(10);
+            }
 
         }
 

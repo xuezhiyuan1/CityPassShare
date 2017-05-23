@@ -19,13 +19,13 @@ public class NaonaoAdapter extends RecyclerView.Adapter<NaonaoAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.list_item, null));
+        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.naonaodi_item, null));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tv.setText("111");
+        holder.tv.setText("大黄蜂");
     }
 
     @Override
@@ -39,7 +39,7 @@ public class NaonaoAdapter extends RecyclerView.Adapter<NaonaoAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.itemTv);
+            tv = (TextView) itemView.findViewById(R.id.userNameText);
         }
     }
 }

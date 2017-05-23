@@ -18,7 +18,6 @@ import java.util.List;
  */
 
 public class NaonaoXingFragment extends BaseFragment {
-    private RelativeLayout layout;
     private MRefreshUtils mRefreshUtils;
 
     private List<String> data = new ArrayList<>();
@@ -99,9 +98,9 @@ public class NaonaoXingFragment extends BaseFragment {
 //
 //            adapter.notifyDataSetChanged();
             mRefreshUtils.showNormal();
-//            if (Refresh) {
-//                mRefreshUtils.startUpdate(10);
-//            }
+            if (Refresh) {
+                mRefreshUtils.startUpdate(10);
+            }
 
         }
 
