@@ -1,6 +1,8 @@
 package com.example.think.citypass.fragment.xzy;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.xzy.FindActivity;
 import com.example.think.citypass.activity.xzy.FindCityThings;
+import com.example.think.citypass.activity.xzy.Sao1SaoActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
@@ -33,6 +36,7 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
     private TextView textView1;
     private TextView textView2;
     private TextView textView3;
+    //城事    活动
     LinearLayout  bglsyout,bglayout2;
     //热门事   Two
     private ImageView imageView2;
@@ -74,8 +78,10 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
     private ImageView imageView28;
     private ImageView imageView29;
     private ImageView imageView30;
-
-
+    //二维码
+    private ImageView erweima;
+    //无网络加载试图
+    LinearLayout linearLayout;
     @Override
     protected int layoutId() {
         return R.layout.find_fragement;
@@ -89,9 +95,8 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         textView2 = (TextView) view.findViewById(R.id.title_textview_hot);
         textView3 = (TextView) view.findViewById(R.id.content_textview);
         bglsyout= (LinearLayout) view.findViewById(R.id.bg_layout);
-        bglsyout.setOnClickListener(this);
         bglayout2= (LinearLayout) view.findViewById(R.id.bg_layout2);
-        bglayout2.setOnClickListener(this);
+
         //热门事   Two
         imageView2 = (ImageView) view.findViewById(R.id.bg_imagview2);
         textView4 = (TextView) view.findViewById(R.id.title_textview2);
@@ -135,10 +140,26 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         imageView28 = (ImageView) view.findViewById(R.id.imageView_title6);
         imageView29 = (ImageView) view.findViewById(R.id.imageView_title7);
         imageView30 = (ImageView) view.findViewById(R.id.imageView_title8);
+        //二维码
+        erweima = (ImageView) view.findViewById(R.id.right_image_erweima_find);
+        //无网络加载试图
+        linearLayout = (LinearLayout) view.findViewById(R.id.ll_loading);
     }
-
+    Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            if(msg.what == 200){
+                linearLayout.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "加载成功", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
+    });
     @Override
     protected void initData() {
+        //无网络加载试图
+        handler.sendEmptyMessageDelayed(200,2000);
+        //添加数据
         Map<String, String> map = new HashMap<>();
         map.put("param", "{\"customerID\":8001,\"requestTime\":\"2017-05-16 15:25:59\",\"Method\":\"PHSocket_GetAppSetInfo\",\"customerKey\":\"CEE365A69C5ADE99398408693ABAEE95\",\"appName\":\"CityGeneral\",\"version\":\"1.0\",\"Param\":{\"siteID\":2488,\"type\":3},\"Statis\":{\"SiteId\":0,\"UserId\":0,\"PhoneNo\":\"Le X620\",\"SystemNo\":2,\"System_VersionNo\":\"Android 6.0\",\"PhoneId\":\"\",\"PhoneNum\":\"0\"}}");
         RetrofitUtil.getInstance().postRetrofit(Urls.FINDPAGE, map, new ResaultCallBack() {
@@ -251,7 +272,11 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initListener() {
-
+        //二维码
+        erweima.setOnClickListener(this);
+        //城市  生活
+        bglsyout.setOnClickListener(this);
+        bglayout2.setOnClickListener(this);
     }
 
     @Override
@@ -283,6 +308,11 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
                 Intent  intent4=new Intent(getContext(), FindhouseActivity.class);
                 startActivity(intent4);
                 break;
+            case R.id.right_image_erweima_find:
+                Intent intentErweima = new Intent(getContext(), Sao1SaoActivity.class);
+                startActivity(intentErweima);
+                break;
+
 
         }
     }

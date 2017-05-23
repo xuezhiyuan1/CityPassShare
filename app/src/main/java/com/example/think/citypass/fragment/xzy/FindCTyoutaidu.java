@@ -1,4 +1,4 @@
-package com.example.think.citypass.fragment.xzy.findcitything;
+package com.example.think.citypass.fragment.xzy;
 
 import android.view.View;
 

@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class FindworkActivity extends BaseActivity {
     LinearLayout  close_line,lookmore1,lookmore2;
-    ImageView  more_image;
     ListviewAdapter  adapter;
     ArrayList<ModelOneBean>  list;
     TextView  quanzhi_text,jianzhi_text,qiuzhi_text,yewu_text,
@@ -41,8 +40,6 @@ public class FindworkActivity extends BaseActivity {
         lookmore2= (LinearLayout) findViewById(R.id.findwork_lookmore2);
 
 
-
-        more_image= (ImageView) findViewById(R.id.findwork_more);
 
         quanzhi_text= (TextView) findViewById(R.id.findwork_quanzhi);
         jianzhi_text= (TextView) findViewById(R.id.findwork_jianzhi);

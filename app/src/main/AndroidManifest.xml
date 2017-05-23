@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.think.citypass">
 
-    <!--<uses-permission android:name="android.permission.SEND_SMS" />-->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -29,7 +29,8 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -68,28 +69,34 @@
         </activity>
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.zxm.ShouyeHaoli"></activity>
-        <activity android:name=".activity.zxm.CityChoiceActivity"></activity>
-        <activity android:name=".activity.zxm.FindhouseActivity"/>
-        <activity android:name=".activity.zxm.ShouyeZBActivity"/>
-        <activity android:name=".activity.zxm.ShouyeNoticePhone"/>
-        <activity android:name=".activity.zxm.ShouyeHuabi"/>
-        <activity android:name=".activity.zxm.ShouyeFenleiLife"/>
-        <activity android:name=".activity.zxm.ShouyeNotice"/>
-        <activity android:name=".activity.zxm.FindworkActivity"/>
+        <activity android:name=".activity.zxm.ShouyeHaoli" />
+        <activity android:name=".activity.zxm.CityChoiceActivity" />
+        <activity android:name=".activity.zxm.FindhouseActivity" />
+        <activity android:name=".activity.zxm.ShouyeZBActivity" />
+        <activity android:name=".activity.zxm.ShouyeNoticePhone" />
+        <activity android:name=".activity.zxm.ShouyeHuabi" />
+        <activity android:name=".activity.zxm.ShouyeFenleiLife" />
+        <activity android:name=".activity.zxm.ShouyeNotice" />
+        <activity android:name=".activity.zxm.FindworkActivity" />
+        <!-- 二维码  扫描 -->
+
+        <activity android:name=".activity.xzy.Sao1SaoActivity" />
+        <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
+        <activity android:name=".activity.lxl.job.MyMoneyActivity" />
+        <activity android:name=".activity.xzy.FindCityThings" />
+        <activity android:name=".activity.xzy.FindActivity" />
+        <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="design_width" -->
+        <!-- android:value="774"></meta-data> -->
+        <!-- <meta-data -->
+        <!-- android:name="design_height" -->
+        <!-- android:value="1430"></meta-data> -->
+        <activity android:name=".activity.xzy.TextActivity">
 
 
-        <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
+        </activity>
 
-        <activity android:name=".activity.xzy.FindCityThings"/>
-        <activity android:name=".activity.xzy.FindActivity"/>
-        <!--&lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt;-->
-        <!--<meta-data-->
-        <!--android:name="design_width"-->
-        <!--android:value="774"></meta-data>-->
-        <!--<meta-data-->
-        <!--android:name="design_height"-->
-        <!--android:value="1430"></meta-data>-->
     </application>
 
 </manifest>

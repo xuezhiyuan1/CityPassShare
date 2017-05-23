@@ -5,12 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-
+import android.view.View;
+import android.widget.ImageView;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.fragment.xzy.findcitything.FindCTyoutaidu;
-import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
+import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +19,13 @@ import java.util.List;
  * Created by think on 2017/5/22.
  */
 
-public class FindActivity  extends BaseActivity {
+public class FindActivity  extends BaseActivity implements View.OnClickListener {
     TabLayout tabLayout;
     ViewPager viewPager;
     List<String> stringList;
     List<BaseFragment>  fragmentList;
     ViewpagerAdapter adapter;
+    ImageView imageView;
     @Override
     protected int layoutId() {
         return R.layout.find_activity;
@@ -34,7 +35,7 @@ public class FindActivity  extends BaseActivity {
     protected void initView() {
         tabLayout= (TabLayout) findViewById(R.id.findcitything_tablayout);
         viewPager= (ViewPager) findViewById(R.id.findcitything_viewpager);
-
+        imageView = (ImageView) findViewById(R.id.image_citything);
     }
 
     @Override
@@ -70,13 +71,22 @@ public class FindActivity  extends BaseActivity {
     }
 
     @Override
-    protected void initListener() {
-
+    protected void initListener()  {
+       imageView.setOnClickListener(this);
     }
 
     @Override
     protected void loadData() {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.image_citything:
+                finish();
+                break;
+        }
     }
 
 

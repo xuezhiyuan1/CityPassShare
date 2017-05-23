@@ -6,11 +6,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-
+import android.widget.ImageView;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.fragment.xzy.findcitything.FindCTyoutaidu;
+import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
 
 import java.util.ArrayList;
@@ -20,12 +20,13 @@ import java.util.List;
  * Created by think on 2017/5/22.
  */
 
-public class FindCityThings  extends BaseActivity {
+public class FindCityThings  extends BaseActivity implements View.OnClickListener{
     TabLayout  tabLayout;
     ViewPager  viewPager;
     List<String>  stringList;
     List<BaseFragment>  fragmentList;
     ViewpagerAdapter  adapter;
+    ImageView imageView;
     @Override
     protected int layoutId() {
         return R.layout.findcitything;
@@ -33,9 +34,9 @@ public class FindCityThings  extends BaseActivity {
 
     @Override
     protected void initView() {
-     tabLayout= (TabLayout) findViewById(R.id.findcitything_tablayout);
+        tabLayout= (TabLayout) findViewById(R.id.findcitything_tablayout);
         viewPager= (ViewPager) findViewById(R.id.findcitything_viewpager);
-
+        imageView = (ImageView) findViewById(R.id.image1);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class FindCityThings  extends BaseActivity {
 
     @Override
     protected void initListener() {
-
+       imageView.setOnClickListener(this);
     }
 
     @Override
@@ -76,10 +77,19 @@ public class FindCityThings  extends BaseActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.image1:
+                finish();
+                break;
+        }
+    }
+
 
     class  ViewpagerAdapter   extends FragmentPagerAdapter{
           List<String>  stringList;
-        List<BaseFragment>  fragmentList;
+          List<BaseFragment>  fragmentList;
         public ViewpagerAdapter(FragmentManager fm,List<String>  stringList,List<BaseFragment>  fragmentList) {
             super(fm);
             this.stringList=stringList;

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="baidu_key">VYGemHFZ3KxDhyAg8T3qXR0B</string>
-
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
     <string name="app_name">城市通</string>
     <string name="desc">desc</string>
     <string name="text_scan_remind">温馨提示：用手机扫描餐桌上的二维码，直接进入餐厅主页然后就可以手机点菜了∩_∩！</string>

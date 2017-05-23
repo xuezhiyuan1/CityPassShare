@@ -4,9 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <include
+        android:id="@+id/in_clude"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        layout="@layout/ease_widget_title_bar"/>
+        android:layout_height="50dp"
+        layout="@layout/ease_widget_title_bar_find"/>
+
+    <include
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        layout="@layout/layout_loading">
+
+    </include>
 
     <include
         android:id="@+id/sc_include"
