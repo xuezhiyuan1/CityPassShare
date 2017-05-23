@@ -48,10 +48,10 @@ public class CityChoiceActivity  extends BaseActivity {
          public void onClick(View v) {
              if(isSet){
                  isSet=false;
-//                 citylay.setBackgroundResource(R.drawable.isset);
-//                 homeimage.setImageResource(R.drawable.city_choice_pen);
-//                 likeimage.setImageResource(R.drawable.city_choice_pen);
-//                 jobimage.setImageResource(R.drawable.city_choice_pen);
+                 citylay.setBackgroundResource(R.drawable.isset);
+                 homeimage.setImageResource(R.drawable.city_choice_pen);
+                 likeimage.setImageResource(R.drawable.city_choice_pen);
+                 jobimage.setImageResource(R.drawable.city_choice_pen);
 
 
              }else{

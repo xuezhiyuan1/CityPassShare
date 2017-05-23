@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <include
-
             android:layout_height="50dp"
             android:layout_width="match_parent"
             layout="@layout/include_titlebar"/>
@@ -22,21 +21,25 @@
 
 
 
-   <LinearLayout
-       android:id="@+id/one"
-       android:layout_alignParentBottom="true"
-       android:layout_width="match_parent"
-       android:layout_height="60dp">
-       <include
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <include
 
-           android:layout_height="60dp"
-           android:layout_width="match_parent"
-           layout="@layout/radiogroup_">
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            layout="@layout/radiogroup_">
 
-       </include>
+        </include>
 
-   </LinearLayout>
+    </LinearLayout>
 
+
+
+    <!--
+    -->
     <FrameLayout
         android:layout_below="@id/top"
         android:layout_above="@id/one"

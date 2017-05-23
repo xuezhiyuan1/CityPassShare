@@ -1,6 +1,5 @@
 package com.example.think.citypass.activity.zxm;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,11 +13,8 @@ import android.widget.ImageView;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zxm.ShouyeHBxiaoliang;
 import com.example.think.citypass.fragment.zxm.ShouyeHBzhonghe;
-import com.example.think.citypass.fragment.zxm.ShouyeZBDaysTask;
-import com.example.think.citypass.fragment.zxm.ShouyeZBSpecialTask;
 import com.example.think.citypass.fragment.zxm.Shouye_huabi_jiage;
 import com.example.think.citypass.myview.TipView;
 import com.jude.rollviewpager.RollPagerView;

@@ -189,7 +189,7 @@ public class ShouYeFragment extends BaseFragment {
         slidingUpPanelLayout.setFadeOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                slidingUpPanelLayout.setPanelState(com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
 

@@ -54,7 +54,7 @@ public class FragmentBuilder {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-            transaction.add(R.id.Home_Frame, baseFragment, simpleName);
+            transaction.add(R.id.Home_Frame1, baseFragment, simpleName);
         }
 
         if (lastFragment != null) {
