@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_gride);
+        setContentView(R.layout.all_life_all);
         //初始化控件
         iniViews();
         //模拟数据源
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private void setDatas() {
         listDatas = new ArrayList<>();
         for(int i=0;i<proName.length;i++){
-            listDatas.add(new ProductListBean(proName[i], R.drawable.img));
+            listDatas.add(new ProductListBean(proName[i], R.drawable.img, R.drawable.img));
         }
     }
 

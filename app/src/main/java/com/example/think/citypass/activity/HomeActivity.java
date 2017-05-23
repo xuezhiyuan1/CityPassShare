@@ -24,6 +24,8 @@ import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
+import com.example.think.citypass.activity.zxm.CityChoiceActivity;
+import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
@@ -34,6 +36,7 @@ import com.example.think.citypass.myview.MyGradeView;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by ASUS on 2017/5/15.
@@ -114,6 +117,7 @@ public class HomeActivity extends BaseActivity {
         getPopup();
 
 //        第一次进入显示的Fragment
+        top.setVisibility(View.VISIBLE);
         FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
     }
     @Override
@@ -123,27 +127,28 @@ public class HomeActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.TouTiaoBtn:
-//                         top.setVisibility(View.VISIBLE);
+                         top.setVisibility(View.VISIBLE);
                         FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
                         break;
                     case R.id.NaoNaoBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
-//                        top.setVisibility(View.GONE);
+                        top.setVisibility(View.GONE);
                         FragmentBuilder.getInstance().show(NaonaoFragment.class).builder();
                         break;
                     case R.id.SheQuBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
-//                        top.setVisibility(View.GONE);
+                        top.setVisibility(View.GONE);
 //                        FragmentBuilder.getInstance().show().builder();
                         break;
                     case R.id.ShengHuoBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
-//                        top.setVisibility(View.GONE);
+                        top.setVisibility(View.GONE);
                         FragmentBuilder.getInstance().show(AllRecruitmentFragment.class).builder();
                         break;
                     case R.id.DiscoverBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
 //                        top.setVisibility(View.GONE);
+                        top.setVisibility(View.GONE);
                         FragmentBuilder.getInstance().show(LoadFragmentTwo.class).builder();
                         break;
 
@@ -224,38 +229,38 @@ public class HomeActivity extends BaseActivity {
 
 
 
-//        titleimage.setOnClickListener(new View.OnClickListener() {
+//     titleimage.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                 Intent  intent1=new Intent(HomeActivity.this, LoginActivity.class);
 //                startActivity(intent1);
 //            }
 //        });
-//
-//        //点击选择城市
-//        im1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent  intent=new Intent(HomeActivity.this, CityChoiceActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//        //点击通知
-//        im2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent  intent=new Intent(HomeActivity.this, ShouyeNotice.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        //点击加号
-//        im3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onViewClicked();
-//            }
-//        });
+
+        //点击选择城市
+       im1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(HomeActivity.this, CityChoiceActivity.class);
+                startActivity(intent);
+            }
+        });
+        //点击通知
+        im2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(HomeActivity.this, ShouyeNotice.class);
+                startActivity(intent);
+            }
+        });
+
+        //点击加号
+        im3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewClicked();
+            }
+        });
 
     }
 

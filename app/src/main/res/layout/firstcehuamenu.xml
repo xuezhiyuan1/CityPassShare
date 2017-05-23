@@ -7,8 +7,8 @@
     android:background="@mipmap/main_theall_bg"
     android:orientation="vertical">
 
-
     <LinearLayout
+        android:background="#fff"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:background="#fff">
 
-            <include layout="@layout/radiogroup_" />
+            <include layout="@layout/activity_toutiao_fragment" />
 
         </LinearLayout>
     </LinearLayout>
