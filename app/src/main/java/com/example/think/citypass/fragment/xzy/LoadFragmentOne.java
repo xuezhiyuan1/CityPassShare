@@ -52,7 +52,7 @@ public class LoadFragmentOne extends BaseFragment implements View.OnClickListene
         return R.layout.find_main;
     }
     //发送空消息2秒后显示界面  即  隐藏Load布局
-//    这是一个测试
+//    这是一个测试，tijiao是白
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
