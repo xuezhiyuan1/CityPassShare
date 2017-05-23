@@ -52,6 +52,7 @@ public class LoadFragmentOne extends BaseFragment implements View.OnClickListene
         return R.layout.find_main;
     }
     //发送空消息2秒后显示界面  即  隐藏Load布局
+//    这是一个测试
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
@@ -146,7 +147,7 @@ public class LoadFragmentOne extends BaseFragment implements View.OnClickListene
                 Intent intent = new Intent(getActivity(),MyMoneyActivity.class);
                 startActivity(intent);
                 break;
-            //kjljkjn
+
             case R.id.talk_city:
                 FragmentBuilder.getInstance().show(NaonaoDiFragment.class).builder();
                 break;
