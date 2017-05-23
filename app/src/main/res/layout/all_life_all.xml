@@ -7,13 +7,13 @@
     <include
         android:id="@+id/titleRea_newflats_info"
         layout="@layout/title" />
+     .
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rec_full_title"
-        >
+        android:layout_below="@+id/rec_full_title">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

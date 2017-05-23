@@ -6,7 +6,7 @@ package com.example.think.citypass.model.http.callback;
 
 public interface ResaultCallBack<T> {
 
-    void onSuccess(T t);
+    void onSuccess(Object pbj);
 
     void onError(String errorMsg);
 

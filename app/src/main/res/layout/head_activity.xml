@@ -6,14 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    my:umanoPanelHeight="450dp"
+    my:umanoPanelHeight="320dp"
     my:umanoShadowHeight="40dp"
     my:umanoParallaxOffset="100dp"
     my:umanoScrollableView="@+id/mListView"
     >
-
     <!-- 内容 -->
-
     <LinearLayout
         android:id="@+id/top_redlay"
         android:layout_width="fill_parent"
@@ -435,11 +433,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-      <!-- <include layout="@layout/head_two_activity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </include>-->
 
         <ListView
             android:id="@+id/mListView"

@@ -49,12 +49,12 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="@color/line" />
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="10dp"
@@ -111,7 +111,7 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <View
+        <ImageView
             android:layout_width="0.5dp"
             android:layout_height="fill_parent"
             android:background="@color/line" />
@@ -162,7 +162,7 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <View
+        <ImageView
             android:layout_width="0.5dp"
             android:layout_height="fill_parent"
             android:background="@color/line" />
@@ -214,12 +214,12 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="@color/line" />
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="10dp"
@@ -235,7 +235,7 @@
         android:textColor="@color/color_999"
         android:textSize="16dp" />
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="@color/line" />
@@ -281,7 +281,7 @@
             android:textColor="@color/color_666" />
     </RelativeLayout>
 
-    <View
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
         android:background="@color/line" />

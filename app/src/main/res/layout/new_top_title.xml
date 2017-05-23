@@ -5,14 +5,13 @@
     android:background="@color/all_top_bg"
     android:gravity="center_vertical" >
 
-    <TextView
-        android:id="@+id/back_text"
+    <ImageView
+        android:id="@+id/btn_back_line"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
         android:background="@drawable/btn_back"
-        android:gravity="center"
-        android:singleLine="true"
-        android:textSize="18dip" />
+        android:contentDescription="@string/desc" />
 
     <TextView
         android:id="@+id/toptitle_text"

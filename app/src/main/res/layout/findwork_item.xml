@@ -10,6 +10,7 @@
     <TextView
         android:id="@+id/findwork_title"
         android:text="招聘工作人"
+        android:textColor="#8b8080"
         android:textSize="16sp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"

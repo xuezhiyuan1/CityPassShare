@@ -82,16 +82,16 @@
         <com.jude.rollviewpager.RollPagerView
             android:id="@+id/mainone_roll"
             android:layout_width="match_parent"
-            android:layout_height="150dp"></com.jude.rollviewpager.RollPagerView>
+            android:layout_height="100dp"></com.jude.rollviewpager.RollPagerView>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="100dp">
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/findwork_layout"
+                android:id="@+id/findwork_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -102,14 +102,16 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp" />
                 <TextView
-                    android:text="找工作"    android:layout_marginTop="5dp"
+                    android:text="找工作"
+                    android:textColor="#5353"
+                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/findhouse_layout"
+                android:id="@+id/findhouse_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -120,6 +122,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp" />
                 <TextView
+                    android:textColor="#5353"
                     android:text="找房子"    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -128,7 +131,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/fenleilife_layout"
+                android:id="@+id/fenleilife_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -139,6 +142,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp" />
                 <TextView
+                    android:textColor="#5353"
                     android:text="分类生活"    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -146,7 +150,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/tongcheng_layout"
+                android:id="@+id/tongcheng_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -157,6 +161,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp" />
                 <TextView
+                    android:textColor="#5353"
                     android:text="同城咨询"
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"

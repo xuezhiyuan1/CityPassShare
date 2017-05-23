@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/modelone_item_author"
                 android:text="第贵子"
-                android:textColor="#cec5c5"
+                android:textColor="#615e5e"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="6dp"
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             <TextView
                 android:id="@+id/modelone_itemcount"
                 android:text="121212"
-                android:textColor="#cec5c5"
+                android:textColor="#918d8d"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

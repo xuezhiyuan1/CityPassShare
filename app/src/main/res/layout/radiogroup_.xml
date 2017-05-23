@@ -5,13 +5,14 @@
     android:orientation="vertical">
 
 
+
     <RadioGroup
         android:id="@+id/Bottom_Group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:background="@color/line"
+        android:background="#fafaf9"
         android:weightSum="5">
 
         <RadioButton
@@ -75,7 +76,6 @@
             android:text="发现"
             android:textColor="@drawable/main_radiogroup" />
     </RadioGroup>
-
     <FrameLayout
         android:id="@+id/Home_Frame"
         android:layout_above="@id/Bottom_Group"

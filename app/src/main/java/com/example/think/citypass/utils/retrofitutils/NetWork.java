@@ -22,5 +22,5 @@ public interface NetWork {
 
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> getLoadpost(@Url String url, @FieldMap Map<String, String> params);
+    Call<ResponseBody> getLoadpost(@Url String url, @FieldMap Map<String, String> paramse);
 }

@@ -1,30 +1,24 @@
 package com.example.think.citypass.fragment.xzy;
 
-
 import android.view.View;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 
-
-
 /**
- * Created by think on 2017/5/16.
+ * Created by think on 2017/5/22.
  */
 
-public class FindFragment extends BaseFragment {
-
-
+public class FindCTyoutaidu extends BaseFragment{
     @Override
     protected int layoutId() {
-        return R.layout.find_main;
+        return R.layout.shouye_haoli_one;
     }
 
     @Override
     protected void initView(View view) {
 
     }
-
 
     @Override
     protected void initData() {
