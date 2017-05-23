@@ -1,12 +1,15 @@
 package com.example.think.citypass.activity.lxl.job;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
-import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 
@@ -18,8 +21,9 @@ import com.example.think.citypass.common.base.BaseFragment;
 
 public class AllRecruitmentFragment extends BaseFragment {
     private TextView QuanZhi,JianZhi,JianLiKu,worker,house;
-
-
+    //无网络加载试图
+    LinearLayout linearLayout;
+//    private ViewPa
     @Override
     protected int layoutId() {
         return R.layout.all_life_all;
@@ -32,12 +36,25 @@ public class AllRecruitmentFragment extends BaseFragment {
         JianLiKu= (TextView) view.findViewById(R.id.JianLiKuzhaopin_text3);
         worker= (TextView) view.findViewById(R.id.job_textworker);
         house= (TextView) view.findViewById(R.id.house_textHouse);
+        //无网络加载试图
+        linearLayout = (LinearLayout) view.findViewById(R.id.ll_loading);
     }
 
     @Override
     protected void initData() {
 
     }
+
+    Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            if(msg.what == 200){
+                linearLayout.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "加载成功", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
+    });
     @Override
     protected void initListener() {
            QuanZhi.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +88,7 @@ public class AllRecruitmentFragment extends BaseFragment {
         house.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3=new Intent(getContext(), FindhouseActivity.class);
+                Intent intent3=new Intent(getContext(), FingSouseActivity.class);
                 startActivity(intent3);
             }
         });
@@ -79,6 +96,6 @@ public class AllRecruitmentFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
-
+        handler.sendEmptyMessageDelayed(200,2000);
     }
 }

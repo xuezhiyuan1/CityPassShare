@@ -67,8 +67,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.lxl.job.JobActivity"/>
         <activity android:name=".activity.GuideActivity" />
+        <activity android:name=".activity.shezhi.SheZhiActivity"></activity>
+        <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
+        <activity android:name=".activity.shezhi.MessageInfoActivity"></activity>
+        <activity android:name=".activity.shezhi.MyPasswordActivity"></activity>
+        <activity android:name=".activity.lxl.job.JianLiKuActivity"></activity>
+        <activity android:name=".activity.lxl.job.Recruitment_JianZhiActivity"></activity>
+        <activity android:name=".activity.lxl.job.Recuitment_QuanZhiActivity"></activity>
+        <activity android:name=".activity.lxl.job.FindWorkActivity"></activity>
+        <activity android:name=".activity.lxl.job.FingSouseActivity"></activity>
+        <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.zxm.ShouyeHaoli" />
         <activity android:name=".activity.zxm.CityChoiceActivity" />
         <activity android:name=".activity.zxm.FindhouseActivity" />
@@ -82,7 +92,6 @@
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
-        <activity android:name=".activity.lxl.job.MyMoneyActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />
         <activity android:name=".activity.xzy.FindActivity" />
         <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->

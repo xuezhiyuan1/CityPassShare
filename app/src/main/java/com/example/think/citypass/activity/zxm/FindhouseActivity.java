@@ -13,7 +13,6 @@ import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.model.bean.ModelOneBean;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by 张萌 on 2017/5/18.
@@ -26,7 +25,7 @@ public class FindhouseActivity  extends BaseActivity {
     FangchanAdapter fangchanAdapter;
     @Override
     protected int layoutId() {
-        return R.layout.shouye_findhouse;
+        return R.layout.seek_house_ccoo;
     }
 
     @Override

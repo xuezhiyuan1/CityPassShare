@@ -1,4 +1,4 @@
-package com.example.think.citypass.activity;
+package com.example.think.citypass.activity.lxl.job;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;

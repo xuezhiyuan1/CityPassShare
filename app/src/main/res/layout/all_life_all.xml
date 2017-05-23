@@ -8,7 +8,11 @@
         android:id="@+id/titleRea_newflats_info"
         layout="@layout/title" />
      .
-
+    <include
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        layout="@layout/layout_loading"
+        android:visibility="gone"></include>
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
@@ -191,6 +195,16 @@
                     android:id="@+id/All_Life_List"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></ListView>
+              <android.support.v4.view.ViewPager
+                  android:id="@+id/life_viewpage"
+                  android:layout_width="match_parent"
+                  android:layout_height="100dp">
+
+
+              </android.support.v4.view.ViewPager>
+
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -294,6 +308,7 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/task_mymeda_rightarrow2" />
             </RelativeLayout>
+
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -385,12 +400,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp">
 
-                        <ImageView
-                            android:id="@+id/houses_image1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop" />
-
                         <TextView
                             android:id="@+id/houses_title1"
                             android:layout_width="match_parent"
@@ -402,6 +411,15 @@
                             android:text="老房子装修套餐"
                             android:textColor="@color/white"
                             android:textSize="16dp" />
+
+                        <ImageView
+                            android:id="@+id/houses_image1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
                     </RelativeLayout>
 
                     <TextView

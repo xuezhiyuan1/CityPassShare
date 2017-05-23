@@ -24,13 +24,9 @@ import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
 import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
-import com.example.think.citypass.activity.zxm.CityChoiceActivity;
-import com.example.think.citypass.activity.zxm.LoginActivity;
-import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.common.base.BaseActivity;
-import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.common.config.FragmentBuilder;
-import com.example.think.citypass.fragment.xzy.LoadFragment;
+import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 import com.example.think.citypass.myview.MyAnimalUtils;
@@ -97,7 +93,7 @@ public class HomeActivity extends BaseActivity {
         layout= (RelativeLayout) vi.findViewById(R.id.layout);
         linkPageGridview = (MyGradeView) vi.findViewById(R.id.link_page_gridview);
 
-        titleimage= (ImageView) findViewById(R.id.titleBar_imageView);
+//        titleimage= (ImageView) findViewById(R.id.titleBar_imageView);
         im1= (ImageView) findViewById(R.id.title_choose1);
         im2= (ImageView) findViewById(R.id.title_choose2);
         im3= (ImageView) findViewById(R.id.title_choose3);
@@ -148,7 +144,7 @@ public class HomeActivity extends BaseActivity {
                     case R.id.DiscoverBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
 //                        top.setVisibility(View.GONE);
-                        FragmentBuilder.getInstance().show(LoadFragment.class).builder();
+                        FragmentBuilder.getInstance().show(LoadFragmentTwo.class).builder();
                         break;
 
 
