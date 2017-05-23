@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="#d12b26">
+    android:background="#cc0202">
     <!--  Activity头镖  Include引用 -->
     <com.example.think.citypass.myview.RoundImageView
-        android:id="@+id/TitleBar_imageView"
+        android:id="@+id/titleBar_imageView"
         android:layout_margin="5dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -23,27 +23,35 @@
         android:textSize="25dp" />
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/title_choose1"
+        android:layout_toRightOf="@id/Title_Text"
         android:layout_width="20dp"
+        android:layout_marginLeft="5dp"
         android:focusableInTouchMode="true"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
         android:background="@mipmap/ccoo_icon_jiantou_down"/>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/title_choose2"
         android:layout_width="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/title_choose1"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:background="@mipmap/btn_remind_normal" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/title_choose3"
         android:background="#00000000"
-        android:layout_width="30dp"
-        android:layout_height="match_parent"
+        android:layout_width="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
         android:layout_alignParentTop="true"
         android:src="@mipmap/jiahao" />
 

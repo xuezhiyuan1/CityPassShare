@@ -91,7 +91,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/findwork_layout"
+                android:id="@+id/findwork_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -109,7 +109,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/findhouse_layout"
+                android:id="@+id/findhouse_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -128,7 +128,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/fenleilife_layout"
+                android:id="@+id/fenleilife_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -146,7 +146,7 @@
 
             <LinearLayout
                 android:background="@drawable/layoutselector"
-                android:id="@+id/tongcheng_layout"
+                android:id="@+id/tongcheng_layout1"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center"

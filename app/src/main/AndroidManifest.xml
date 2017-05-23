@@ -78,7 +78,6 @@
         <activity android:name=".activity.zxm.FindhouseActivity"/>
         <activity android:name=".activity.zxm.LoginActivity"/>
         <activity android:name=".activity.zxm.RegisterActivity"/>
-        <activity android:name=".activity.zxm.WebView_Activity"/>
 
 
         <activity android:name=".activity.GuideActivity" />
