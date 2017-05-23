@@ -146,6 +146,7 @@ public class LoadFragmentOne extends BaseFragment implements View.OnClickListene
                 Intent intent = new Intent(getActivity(),MyMoneyActivity.class);
                 startActivity(intent);
                 break;
+            //kjljkjn
             case R.id.talk_city:
                 FragmentBuilder.getInstance().show(NaonaoDiFragment.class).builder();
                 break;
