@@ -78,11 +78,10 @@
         <activity android:name=".activity.zxm.FindhouseActivity"/>
         <activity android:name=".activity.zxm.LoginActivity"/>
         <activity android:name=".activity.zxm.RegisterActivity"/>
-
-
        <activity android:name=".activity.JobActivity"/>
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.shezhi.SheZhiActivity"></activity>
+        <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
         <activity android:name=".activity.shezhi.MessageInfoActivity"></activity>
         <activity android:name=".activity.shezhi.MyPasswordActivity"></activity>
         <activity android:name=".activity.lxl.job.JianLiKuActivity"></activity>

@@ -1,20 +1,16 @@
 package com.example.think.citypass.activity;
 
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
-import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
-import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragment;
@@ -26,8 +22,6 @@ import com.example.think.citypass.fragment.zzh.NaonaoFragment;
  */
 
 public class HomeActivity extends BaseActivity {
-    private TextView mText,mCityMoney,mSheZhi;
-
     private DrawerLayout mDrawerLayout;
 
     private RadioGroup mRadioGroup;
@@ -69,30 +63,30 @@ public class HomeActivity extends BaseActivity {
     protected void initView() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.mDrawerLayout);
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
-        mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
-        mSheZhi= (TextView) findViewById(R.id.SheZhi);
-        mSheZhi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.SheZhi:
-                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
-                        Toast.makeText(HomeActivity.this, "点击事件", Toast.LENGTH_SHORT).show();
-                        startActivity(intent);
-                        break;
-
-                }
-            }
-        });
-        mCityMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
-                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
-                        startActivity(intent1);
-
-            }
-        });
+//        mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
+//        mSheZhi= (TextView) findViewById(R.id.SheZhi);
+//        mSheZhi.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                switch (v.getId()){
+//                    case R.id.SheZhi:
+//                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
+//                        Toast.makeText(HomeActivity.this, "点击事件", Toast.LENGTH_SHORT).show();
+//                        startActivity(intent);
+//                        break;
+//
+//                }
+//            }
+//        });
+//        mCityMoney.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
+//                        startActivity(intent1);
+//
+//            }
+//        });
 
     }
 
