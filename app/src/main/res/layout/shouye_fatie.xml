@@ -144,46 +144,13 @@
     </ScrollView>
 
 
+<LinearLayout
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
-        <LinearLayout
-            android:id="@+id/one"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#E7E7E7"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp" >
-
-            <ImageView
-                android:id="@+id/tiezi_biaoqing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/cover_main_laugh_n" />
-
-            <ImageView
-                android:id="@+id/tiezi_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/cover_main_camera_n" />
-
-            <ImageView
-                android:id="@+id/tiezi_lixiren"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/daoju" />
-
-            <ImageView
-                android:id="@+id/tiezi_daoju"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/reply_bottom_aite_noral" />
-        </LinearLayout>
 
     <LinearLayout
         android:layout_above="@id/one"
@@ -215,4 +182,51 @@
             android:layout_height="wrap_content"
             android:background="@drawable/delete_friend" />-->
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E7E7E7"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/tiezi_biaoqing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cover_main_laugh_n" />
+
+        <ImageView
+            android:id="@+id/tiezi_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cover_main_camera_n" />
+
+        <ImageView
+            android:id="@+id/tiezi_lixiren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/daoju" />
+
+        <ImageView
+            android:id="@+id/tiezi_daoju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/reply_bottom_aite_noral" />
+    </LinearLayout>
+    <ListView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/after_listview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></ListView>
+
+
+</LinearLayout>
+
 </RelativeLayout>

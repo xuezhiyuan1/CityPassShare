@@ -1,7 +1,12 @@
 package com.example.think.citypass.activity.zxm;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,7 +15,15 @@ import com.baidu.location.BDLocationListener;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.baidumap.LocationService;
+import com.example.think.citypass.activity.zxm.upphoto.logic.FileTraversal;
+import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListActivity;
+import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListAdapter;
+import com.example.think.citypass.activity.zxm.upphoto.logic.Util;
 import com.example.think.citypass.common.base.BaseActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by 张萌 on 2017/5/24.
@@ -18,9 +31,17 @@ import com.example.think.citypass.common.base.BaseActivity;
 
 public class ShouyeSendTie   extends BaseActivity {
     private LocationService locationService;
+    ListView listView;
+    ArrayList<String> listfile=new ArrayList<String>();
+
     ImageView  photoimage;
     TextView  textViewloc;
     String addrStr;
+
+    ListView alistView;
+    ArrayList<String> alistfile=new ArrayList<String>();
+
+
     @Override
     protected int layoutId() {
         return R.layout.shouye_fatie;
@@ -34,12 +55,42 @@ public class ShouyeSendTie   extends BaseActivity {
 
     @Override
     protected void initData() {
+        alistView=(ListView) findViewById(R.id.after_listview);
+        Bundle bundle= getIntent().getExtras();
+        if (bundle!=null) {
+            if (bundle.getStringArrayList("files")!=null) {
+                alistfile= bundle.getStringArrayList("files");
+                alistView.setVisibility(View.VISIBLE);
+                ArrayAdapter<String> arryAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listfile);
+                alistView.setAdapter(arryAdapter);
+            }
+        }
+
+
+        listView=(ListView) findViewById(R.id.after_listview);
+        bundle = getIntent().getExtras();
+
+        if (bundle!=null) {
+            if (bundle.getStringArrayList("files")!=null) {
+                listfile= bundle.getStringArrayList("files");
+                listView.setVisibility(View.VISIBLE);
+                ArrayAdapter<String> arryAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listfile);
+                listView.setAdapter(arryAdapter);
+            }
+        }
 
     }
 
     @Override
     protected void initListener() {
-
+    photoimage.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass(ShouyeSendTie.this,ImgFileListActivity.class);
+            startActivity(intent);
+        }
+    });
     }
 
     @Override

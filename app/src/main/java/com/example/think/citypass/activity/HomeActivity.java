@@ -374,6 +374,7 @@ public class HomeActivity extends BaseActivity {
                     
                     case 1:
                         Toast.makeText(HomeActivity.this, "发照片", Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
                         Toast.makeText(HomeActivity.this, "发视频", Toast.LENGTH_SHORT).show();

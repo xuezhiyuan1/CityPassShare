@@ -1,17 +1,16 @@
-package com.example.think.citypass.activity.lxl.job;
+package com.example.think.citypass.activity.zxm;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 
 /**
- * Created by d on 2017/5/24.
+ * Created by 张萌 on 2017/5/24.
  */
 
-public class Two_houseActivity extends BaseActivity {
+public class ShouyeSendPhoto   extends BaseActivity{
     @Override
     protected int layoutId() {
-//        return R.layout.twohouse_activity;
-        return 0;
+        return R.layout.photo_choice;
     }
 
     @Override

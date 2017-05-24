@@ -10,7 +10,8 @@ import com.example.think.citypass.common.base.BaseActivity;
 public class NewHouseActivity extends BaseActivity {
     @Override
     protected int layoutId() {
-        return R.layout.new_house;
+//        return R.layout.new_house;
+        return 0;
     }
 
     @Override
