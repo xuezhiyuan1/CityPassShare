@@ -78,7 +78,6 @@
         <activity android:name=".activity.lxl.job.Recuitment_QuanZhiActivity"></activity>
         <activity android:name=".activity.lxl.job.FindWorkActivity"></activity>
         <activity android:name=".activity.lxl.job.FingSouseActivity"></activity>
-        <activity android:name=".activity.lxl.job.MainActivity"></activity>
         <activity android:name=".activity.lxl.job.Two_houseActivity"></activity>
         <activity android:name=".activity.lxl.job.NewHouseActivity"></activity>
         <activity android:name=".activity.HomeActivity" />

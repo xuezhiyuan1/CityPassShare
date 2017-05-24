@@ -6,7 +6,6 @@ import android.os.Vibrator;
 
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
-import com.baidu.mapapi.SDKInitializer;
 import com.example.think.citypass.activity.zxm.baidumap.LocationService;
 import com.example.think.citypass.activity.zxm.baidumap.MyLocationListener;
 import com.example.think.citypass.common.base.BaseActivity;
@@ -36,6 +35,6 @@ public class App extends Application {
          */
         locationService = new LocationService(getApplicationContext());
         mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
-        SDKInitializer.initialize(getApplicationContext());
+//        SDKInitializer.initialize(getApplicationContext());
     }
 }

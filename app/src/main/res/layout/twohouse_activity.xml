@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/house_title"></include>
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/shape_more_huati">
+
+        <com.www.ccoocity.widget.XEditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@null"
+            android:paddingLeft="15dp"
+            android:drawableLeft="@drawable/search_input_left"
+            android:drawablePadding="5dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"/>
+        <TextView
+            android:id="@+id/hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:drawableLeft="@drawable/search_input_left"
+            android:text=" 请输入房源关键词 入小区名称"
+            android:textSize="14dp"
+            android:textColor="@color/color_999"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/array_tab_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_below="@id/titleRea"
+        android:background="@color/white_lower"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_arrow_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="区域"
+            android:textColor="#787878"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0.5dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0"
+            android:layout_margin="10dip"
+            android:background="@color/grayline" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_salary"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:drawableRight="@drawable/ic_arrow_down"-->
+        <!--android:ellipsize="end"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dip"-->
+        <!--android:singleLine="true"-->
+        <!--android:text="月薪"-->
+        <!--android:textColor="#787878"-->
+        <!--android:textSize="15sp" />-->
+
+        <TextView
+            android:layout_width="0.5dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0"
+            android:layout_margin="10dip"
+            android:background="@color/grayline" />
+
+        <TextView
+            android:id="@+id/tv_edu"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_arrow_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="户型"
+            android:textColor="#787878"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0.5dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0"
+            android:layout_margin="10dip"
+            android:background="@color/grayline" />
+
+        <TextView
+            android:id="@+id/tv_exp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_arrow_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dip"
+            android:singleLine="true"
+            android:text="价格"
+            android:textColor="#787878"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text_more"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_arrow_down"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dip"
+            android:singleLine="true"
+            android:text="更多"
+            android:textColor="#787878"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_below="@id/array_tab_layout"
+        android:background="@color/grayline" />
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_line" >
+
+        <com.example.think.citypass.myview.XListView
+            android:id="@+id/table_list"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="#00000000" />
+
+        <LinearLayout
+            android:id="@+id/linear_fail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_fault"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="20sp"
+             android:gravity="center_horizontal"
+             android:text="暂无数据。。。"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

@@ -14,6 +14,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 
+
 /**
  * Created by d on 2017/5/16.
  * 这是我的“生活”模块
@@ -89,13 +90,6 @@ public class AllRecruitmentFragment extends BaseFragment {
             }
         });
 
-//        worker.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent2=new Intent(getContext(), FindworkActivity.class);
-//                startActivity(intent2);
-//            }
-//        });
         house.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
