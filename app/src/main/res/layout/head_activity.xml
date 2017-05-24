@@ -179,6 +179,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/shouye_caifu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -200,6 +201,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/shouye_dengji"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -242,6 +244,7 @@
                 </LinearLayout>
 
                 <RelativeLayout
+                    android:id="@+id/shouye_xuanzhang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

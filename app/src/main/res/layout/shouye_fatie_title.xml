@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="@color/all_top_bg">
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="#f03732"
+    android:layout_height="50dp">
+
     <ImageView
         android:id="@+id/btn_back"
         android:layout_width="50dp"
@@ -10,14 +11,6 @@
         android:layout_centerVertical="true"
         android:background="@drawable/btn_back"
         android:contentDescription="@string/desc" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/btn_back"
-        android:layout_centerVertical="true"
-        android:text="关闭"
-        android:textColor="#fff"
-        android:textSize="20sp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -25,17 +18,22 @@
         android:layout_alignParentRight="true"
         android:orientation="horizontal">
 
-
-
-        <TextView
-            android:id="@+id/publish"
+        <ImageView
+            android:id="@+id/btn_more"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_alignParentRight="true"
-            android:text="发布" />
+            android:layout_height="50dp"
+            android:background="@drawable/btn_news"
+            android:contentDescription="@string/desc"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/btn_edit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_edit"
+            android:contentDescription="@string/desc"
+            android:scaleType="centerInside" />
 
 
     </LinearLayout>
@@ -48,7 +46,7 @@
         android:layout_centerVertical="true"
         android:gravity="center_vertical|left"
         android:singleLine="true"
-        android:text="帖子发布"
+        android:text="标题"
         android:textColor="@color/white"
         android:textIsSelectable="false"
         android:textSize="20dp" />
