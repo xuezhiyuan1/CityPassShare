@@ -81,16 +81,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-
-        </activity>
-        <activity android:name=".activity.zxm.baiduloc.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.zxm.ShouyeHaoli" />
