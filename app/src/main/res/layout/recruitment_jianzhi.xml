@@ -5,6 +5,7 @@
     android:background="@color/gray_bg"
     android:orientation="vertical" >
     <include
+        android:id="@+id/Qun"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         layout="@layout/layout_titlebar2" />

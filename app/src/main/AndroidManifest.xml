@@ -78,6 +78,9 @@
         <activity android:name=".activity.lxl.job.Recuitment_QuanZhiActivity"></activity>
         <activity android:name=".activity.lxl.job.FindWorkActivity"></activity>
         <activity android:name=".activity.lxl.job.FingSouseActivity"></activity>
+        <activity android:name=".activity.lxl.job.MainActivity"></activity>
+        <activity android:name=".activity.lxl.job.Two_houseActivity"></activity>
+        <activity android:name=".activity.lxl.job.NewHouseActivity"></activity>
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.zxm.ShouyeHaoli" />
         <activity android:name=".activity.zxm.CityChoiceActivity" />
@@ -94,6 +97,8 @@
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />
         <activity android:name=".activity.xzy.FindActivity" />
+        <activity android:name=".activity.zxm.LoginActivity"></activity>
+        <activity android:name=".activity.zxm.RegisterActivity"></activity>
         <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->
         <!-- <meta-data -->
         <!-- android:name="design_width" -->

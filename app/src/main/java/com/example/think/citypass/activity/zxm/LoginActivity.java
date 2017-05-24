@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 
 /**
@@ -14,12 +15,12 @@ public class LoginActivity  extends BaseActivity {
     TextView  registerText;
     @Override
     protected int layoutId() {
-        return 0;
+        return R.layout.username_login;
     }
 
     @Override
     protected void initView() {
-//   registerText= (TextView) findViewById(R.id.textView_user_register);
+   registerText= (TextView) findViewById(R.id.textView_user_register);
 
     }
 

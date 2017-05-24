@@ -7,7 +7,6 @@
     <include
         android:id="@+id/titleRea_newflats_info"
         layout="@layout/title" />
-     .
     <include
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -189,22 +188,131 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ListView
-                    android:id="@+id/All_Life_List"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></ListView>
-              <android.support.v4.view.ViewPager
-                  android:id="@+id/life_viewpage"
-                  android:layout_width="match_parent"
-                  android:layout_height="100dp">
-
-
-              </android.support.v4.view.ViewPager>
-
-
-
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="全职 "
+                  android:layout_gravity="center_vertical"
+                  android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="客房服务员 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="2小时前"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全职 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="招普工数名，双休 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="2小时前"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全职 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="服务员 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="4小时前"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="兼职 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="兼职保安招聘150元/天——周结 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.90" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="2小时前"/>
             </LinearLayout>
 
             <LinearLayout
@@ -309,11 +417,6 @@
                     android:src="@drawable/task_mymeda_rightarrow2" />
             </RelativeLayout>
 
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/All_HouseList"></ListView>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
@@ -330,7 +433,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/houses_text1"
+                    android:id="@+id/Two_House"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -346,7 +449,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/houses_text2"
+                    android:id="@+id/New_House2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -417,6 +520,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
+                            android:src="@drawable/house1"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -429,7 +533,7 @@
                         android:layout_below="@id/houses_relay1"
                         android:layout_marginTop="10dp"
                         android:singleLine="true"
-                        android:text="洮南家居设计有限公司"
+                        android:text="房天下Fang.com"
                         android:textColor="@color/color_999"
                         android:textSize="14dp" />
 
@@ -471,6 +575,7 @@
                         android:layout_height="120dp">
                         <ImageView
                             android:id="@+id/houses_images1"
+                            android:src="@drawable/house2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop" />
@@ -494,7 +599,7 @@
                         android:layout_below="@id/houses_relays1"
                         android:layout_marginTop="10dp"
                         android:singleLine="true"
-                        android:text="洮南家居设计有限公司"
+                        android:text="房子装修/设计有限公司"
                         android:textColor="@color/color_999"
                         android:textSize="14dp" />
 
@@ -506,7 +611,7 @@
                         android:layout_below="@id/houses_names1"
                         android:layout_marginTop="5dp"
                         android:singleLine="true"
-                        android:text="28.5万"
+                        android:text="面议"
                         android:textColor="@color/red_text" />
 
                     <TextView
@@ -523,7 +628,134 @@
                 </RelativeLayout>
 
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二手房 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="夏都湾小区 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.97" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="05-19"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二手房 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="出售张家口霞城丽景两居现房"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="05-14"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二手房 "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="阳光假日，龙聚山庄楼房出售 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="05-11"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="租房  "
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/footer_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:text="出租300平宅基地盖平方7间，紧 "
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.95" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="05-11"/>
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/house_list_lay"
                 android:layout_width="match_parent"
@@ -721,15 +953,12 @@
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:layout_margin="5dp" />
-
                 <ImageView
-
                     android:id="@+id/yuan2"
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:layout_margin="5dp"
                     android:visibility="gone" />
-
                 <ImageView
                     android:id="@+id/yuan3"
                     android:layout_width="8dp"

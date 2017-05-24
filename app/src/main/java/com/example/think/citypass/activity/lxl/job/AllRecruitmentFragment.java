@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,10 +21,10 @@ import com.example.think.citypass.common.base.BaseFragment;
  */
 
 public class AllRecruitmentFragment extends BaseFragment {
-    private TextView QuanZhi,JianZhi,JianLiKu,worker,house;
+    private TextView QuanZhi,JianZhi,JianLiKu,worker,house,twohouse,newhouse;
+    private RelativeLayout layout;
     //无网络加载试图
     LinearLayout linearLayout;
-//    private ViewPa
     @Override
     protected int layoutId() {
         return R.layout.all_life_all;
@@ -31,19 +32,21 @@ public class AllRecruitmentFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
+        layout= (RelativeLayout) view.findViewById(R.id.job_relay);
         QuanZhi= (TextView) view.findViewById(R.id.QuanZhizhaopin_text1);
         JianZhi= (TextView) view.findViewById(R.id.JianZhizhaopin_text2);
         JianLiKu= (TextView) view.findViewById(R.id.JianLiKuzhaopin_text3);
-        worker= (TextView) view.findViewById(R.id.job_textworker);
+//        worker= (TextView) view.findViewById(R.id.job_textworker);
         house= (TextView) view.findViewById(R.id.house_textHouse);
+        twohouse= (TextView) view.findViewById(R.id.Two_House);
+        newhouse= (TextView) view.findViewById(R.id.New_House2);
         //无网络加载试图
         linearLayout = (LinearLayout) view.findViewById(R.id.ll_loading);
     }
-
     @Override
     protected void initData() {
-
     }
+
 
     Handler handler = new Handler(new Handler.Callback() {
         @Override
@@ -60,7 +63,7 @@ public class AllRecruitmentFragment extends BaseFragment {
            QuanZhi.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent=new Intent(App.activity,JianLiKuActivity.class);
+                   Intent intent=new Intent(App.activity,Recuitment_QuanZhiActivity.class);
                   startActivity(intent);
                }
            });
@@ -78,18 +81,40 @@ public class AllRecruitmentFragment extends BaseFragment {
                 startActivity(intent1);
             }
         });
-        worker.setOnClickListener(new View.OnClickListener() {
+        layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2=new Intent(getContext(), FindworkActivity.class);
                 startActivity(intent2);
             }
         });
+
+//        worker.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent2=new Intent(getContext(), FindworkActivity.class);
+//                startActivity(intent2);
+//            }
+//        });
         house.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent3=new Intent(getContext(), FingSouseActivity.class);
                 startActivity(intent3);
+            }
+        });
+        twohouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4=new Intent(getContext(),Two_houseActivity.class);
+                startActivity(intent4);
+            }
+        });
+        newhouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5=new Intent(getContext(),NewHouseActivity.class);
+                startActivity(intent5);
             }
         });
     }

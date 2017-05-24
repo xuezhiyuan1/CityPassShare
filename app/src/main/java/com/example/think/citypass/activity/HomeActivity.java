@@ -22,8 +22,7 @@ import android.widget.Toast;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.home.CeLaUtils;
-import com.example.think.citypass.activity.lxl.job.AllRecruitmentFragment;
-import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
+import com.example.think.citypass.activity.lxl.job.*;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.ShouyeNotice;

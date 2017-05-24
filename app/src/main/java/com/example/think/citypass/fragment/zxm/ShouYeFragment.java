@@ -7,20 +7,15 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,25 +23,16 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
-import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeFenleiLife;
 import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
-import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.model.bean.ModelOneBean;
 import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
-import com.example.think.citypass.myview.MyAnimalUtils;
-import com.example.think.citypass.myview.MyGradeView;
-import com.example.think.citypass.model.http.callback.OkhttpCallback;
-import com.example.think.citypass.utils.http.HttpCallBack;
-import com.example.think.citypass.utils.http.RetrofitImpl;
-import com.example.think.citypass.utils.retrofitutils.OkhttpUtils;
 import com.google.gson.Gson;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
@@ -403,8 +389,6 @@ public class ShouYeFragment extends BaseFragment {
             ImageView  imageView;
         }
     }
-
-
     /**8
      * 加载网络数据,
      */

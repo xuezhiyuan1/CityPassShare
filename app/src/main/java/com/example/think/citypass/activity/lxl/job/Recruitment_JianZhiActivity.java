@@ -1,5 +1,8 @@
 package com.example.think.citypass.activity.lxl.job;
 
+import android.view.View;
+import android.widget.ImageView;
+
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 
@@ -8,6 +11,7 @@ import com.example.think.citypass.common.base.BaseActivity;
  */
 
 public class Recruitment_JianZhiActivity extends BaseActivity {
+    private ImageView mBack;
     @Override
     protected int layoutId() {
         return R.layout.recruitment_jianzhi;
@@ -15,6 +19,7 @@ public class Recruitment_JianZhiActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mBack= (ImageView) findViewById(R.id.btn_back);
 
     }
 
@@ -30,6 +35,12 @@ public class Recruitment_JianZhiActivity extends BaseActivity {
 
     @Override
     protected void loadData() {
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             viewPagerList.add(gridView);
         }
         //设置ViewPager适配器
-        viewPager.setAdapter(new MyViewPagerAdapter(viewPagerList));
+//        viewPager.setAdapter(new MyViewPagerAdapter(viewPagerList));
         //小圆点指示器
         ivPoints = new ImageView[totalPage];
         for(int i=0;i<ivPoints.length;i++){
@@ -74,16 +74,13 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             layoutParams.leftMargin = 20;//设置点点点view的左边距
             layoutParams.rightMargin = 20;//设置点点点view的右边距
-            points.addView(imageView,layoutParams);
+//            points.addView(imageView,layoutParams);
         }
         //设置ViewPager滑动监听
         viewPager.addOnPageChangeListener(this);
     }
 
     private void iniViews() {
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        //初始化小圆点指示器
-        points = (ViewGroup) findViewById(R.id.points);
     }
 
     private void setDatas() {

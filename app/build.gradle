@@ -23,6 +23,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    /*
+  *引用so库，需要指定so库的位置
+  * */
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+    }
+
 }
 
 dependencies {
