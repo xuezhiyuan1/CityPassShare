@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.baidu.location.d.j.R;
+
 /**
  * Created by 张萌 on 2017/5/24.
  */
@@ -44,18 +46,18 @@ public class ShouyeSendTie   extends BaseActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.shouye_fatie;
+        return com.example.think.citypass.R.layout.shouye_fatie;
     }
 
     @Override
     protected void initView() {
-        photoimage= (ImageView) findViewById(R.id.tiezi_photo);
-        textViewloc= (TextView) findViewById(R.id.text_location);
+        photoimage= (ImageView) findViewById(com.example.think.citypass.R.id.tiezi_photo);
+        textViewloc= (TextView) findViewById(com.example.think.citypass.R.id.text_location);
     }
 
     @Override
     protected void initData() {
-        alistView=(ListView) findViewById(R.id.after_listview);
+        alistView=(ListView) findViewById(com.example.think.citypass.R.id.after_listview);
         Bundle bundle= getIntent().getExtras();
         if (bundle!=null) {
             if (bundle.getStringArrayList("files")!=null) {
@@ -67,7 +69,7 @@ public class ShouyeSendTie   extends BaseActivity {
         }
 
 
-        listView=(ListView) findViewById(R.id.after_listview);
+        listView=(ListView) findViewById(com.example.think.citypass.R.id.after_listview);
         bundle = getIntent().getExtras();
 
         if (bundle!=null) {

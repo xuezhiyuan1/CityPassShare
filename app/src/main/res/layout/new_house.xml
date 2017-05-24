@@ -46,7 +46,6 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="查询"
-            android:background="@drawable/mygroup_comment_select"
             android:layout_weight="0.22" />
         <TextView
             android:layout_width="20dp"
@@ -68,7 +67,7 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="地图看房"
-            android:background="@drawable/mygroup_comment_select"/>
+            android:background="#ff44"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
