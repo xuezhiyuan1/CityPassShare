@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -53,6 +54,7 @@ public class HomeActivity extends BaseActivity {
     private Handler handler = new Handler();
     private List<String> mlist;
     private List<Integer> mDList;
+
     RelativeLayout  layout;
     ImageView  titleimage;
     ImageView  im1,im2,im3;
@@ -181,22 +183,7 @@ public class HomeActivity extends BaseActivity {
         });
 
 
-//        mText.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()){
-//                    case R.id.SheZhi:
-//                        Intent intent=new Intent(HomeActivity.this,SheZhiActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                    case R.id.My_City_Money:
-//                        Toast.makeText(HomeActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
-//                        Intent intent1=new Intent(HomeActivity.this, MyMoneyActivity.class);
-//                        startActivity(intent1);
-//                        break;
-//                }
-//            }
-//        });
+
 
 
 
@@ -260,6 +247,7 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 onViewClicked();
+                popupListner();
             }
         });
 
@@ -310,7 +298,14 @@ public class HomeActivity extends BaseActivity {
     public void onViewClicked() {
         /*首先执行 加号的动画*/
         MyAnimalUtils.pictureAnimal(im3, HomeActivity.this);
+        /***
+         * 执行完加号动画之后,再弹出popupwindow,从底部.
+         */
         popupWindow.showAtLocation(findViewById(R.id.top), Gravity.BOTTOM, 0, 0);
+
+        /***
+         * 每隔400毫秒就执行一次,依次弹出动画
+         */
         handler.postDelayed(new Runnable() {
             public void run() {
           /*执行popupwindow 出现的动画*/
@@ -319,13 +314,20 @@ public class HomeActivity extends BaseActivity {
         }, 400);
     }
 
+    /***
+     * 展示popupwindow
+     */
     private void getPopup() {
         View view = LayoutInflater.from(HomeActivity.this).inflate(R.layout.ppmb, null);
-        view.getBackground().setAlpha(200);
+        /***
+         设置popupwindow透明度
+         数值越大越不透明
+         */
+        view.getBackground().setAlpha(225);
         RelativeLayout layout = (RelativeLayout) view.findViewById(R.id.layout);
         popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setBackgroundDrawable(null);
+        popupWindow.setOutsideTouchable(true);//点击外部消失
+        popupWindow.setBackgroundDrawable(null);//
         linkPageGridview = (MyGradeView) view.findViewById(R.id.link_page_gridview);
         GVAdapter  gvAdapter = new GVAdapter(mDList, mlist, this);
         linkPageGridview.setAdapter(gvAdapter);
@@ -359,6 +361,39 @@ public class HomeActivity extends BaseActivity {
 
 
 
+    private void popupListner(){
+        linkPageGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                View childAt = linkPageGridview.getChildAt(position);
+                switch (position){
+                    case 0:
+                        Toast.makeText(HomeActivity.this, "发帖子", Toast.LENGTH_SHORT).show();
+                        break;
+                    
+                    case 1:
+                        Toast.makeText(HomeActivity.this, "发照片", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        Toast.makeText(HomeActivity.this, "发视频", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case 3:
+                        Toast.makeText(HomeActivity.this, "有奖爆料", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+                        Toast.makeText(HomeActivity.this, "分类信息", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case 5:
+                        Toast.makeText(HomeActivity.this, "二维码", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                
+            }
+        });
+    }
+
 
     /**
      * 张晓萌
@@ -366,7 +401,7 @@ public class HomeActivity extends BaseActivity {
      */
 
     class GVAdapter extends BaseAdapter {
-
+//两个list集合,一个是存储图片的ID,另一个是文字
         private List<Integer> mDList;
         private List<String> mlist;
         private Context context;

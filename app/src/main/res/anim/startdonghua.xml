@@ -4,8 +4,10 @@
     android:duration="500"
     android:fillAfter="true"
     android:fillEnabled="true"
-    android:fromDegrees="0"
     android:pivotX="50%"
     android:pivotY="50%"
+
+    android:fromDegrees="0"
     android:toDegrees="225"></rotate>
+    <!--从0度到225-->
 </set>
