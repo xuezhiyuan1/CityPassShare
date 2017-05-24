@@ -99,6 +99,10 @@
         <activity android:name=".activity.zxm.ShouyeFenleiLife" />
         <activity android:name=".activity.zxm.ShouyeNotice" />
         <activity android:name=".activity.zxm.FindworkActivity" />
+        <activity android:name=".activity.zxm.ShouyeSendTie"/>
+        <activity android:name=".activity.zxm.baidumap.LocationActivity"></activity>
+
+
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />

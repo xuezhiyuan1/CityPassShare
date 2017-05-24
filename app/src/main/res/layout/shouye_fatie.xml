@@ -12,7 +12,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/morelay"
         android:layout_below="@+id/titlebar"
         android:background="@color/white"
         android:fillViewport="true" >
@@ -209,11 +208,11 @@
             android:textColor="@color/item_tv_content"
             android:textSize="12dp" />
 
-        <ImageView
+        <!--<ImageView
             android:layout_marginLeft="3dp"
             android:id="@+id/delete_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/delete_friend" />
+            android:background="@drawable/delete_friend" />-->
     </LinearLayout>
 </RelativeLayout>

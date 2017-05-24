@@ -28,6 +28,7 @@ import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
 import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeNotice;
+import com.example.think.citypass.activity.zxm.ShouyeSendTie;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.common.config.FragmentBuilder;
@@ -369,6 +370,8 @@ public class HomeActivity extends BaseActivity {
                 switch (position){
                     case 0:
                         Toast.makeText(HomeActivity.this, "发帖子", Toast.LENGTH_SHORT).show();
+                        Intent  intent=new Intent(HomeActivity.this, ShouyeSendTie.class);
+                        startActivity(intent);
                         break;
                     
                     case 1:
