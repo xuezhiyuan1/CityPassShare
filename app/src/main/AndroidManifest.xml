@@ -141,9 +141,6 @@
         <activity android:name=".activity.zxm.baidumap.LocationActivity"/>
         <activity android:name=".activity.zxm.ShouyeSendTie"/>
         <activity android:name=".activity.zxm.ShouyeSendPhoto"/>
-        <activity android:name=".activity.zxm.upphoto.choisemorepictures.MainActivity">
-
-        </activity>
         <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity"/>
         <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity"/>
 

@@ -1,27 +1,20 @@
 package com.example.think.citypass.activity.zxm.upphoto.logic;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
 
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridView;
@@ -32,7 +25,6 @@ import android.widget.RelativeLayout;
 
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.ShouyeSendTie;
-import com.example.think.citypass.activity.zxm.upphoto.choisemorepictures.MainActivity;
 
 
 public class ImgsActivity extends Activity {
