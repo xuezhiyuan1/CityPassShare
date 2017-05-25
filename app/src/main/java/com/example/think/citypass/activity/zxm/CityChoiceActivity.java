@@ -1,5 +1,6 @@
 package com.example.think.citypass.activity.zxm;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -53,6 +54,30 @@ public class CityChoiceActivity  extends BaseActivity {
                  jobimage.setImageResource(R.drawable.city_choice_pen);
 
 
+                 hometext2.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         Intent  intent=new Intent();
+                         intent.setClass(CityChoiceActivity.this,CityListActivity.class);
+                         startActivity(intent);
+                     }
+                 });
+
+                 jobtext2.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+
+                     }
+                 });
+
+
+                 liketext2.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+
+                     }
+                 });
+
              }else{
                  isSet=true;
                  citylay.setBackgroundResource(R.drawable.city_choice_bg_shape2);
@@ -62,6 +87,9 @@ public class CityChoiceActivity  extends BaseActivity {
              }
          }
      });
+
+
+
     }
 
     @Override

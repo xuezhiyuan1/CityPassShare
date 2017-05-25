@@ -5,8 +5,8 @@
  <TextView
      android:id="@+id/choiceitem_text"
      android:text="延庆在线"
+     android:layout_marginLeft="10dp"
      android:textSize="18sp"
-     android:gravity="center"
      android:layout_width="match_parent"
      android:layout_height="wrap_content" />
 </LinearLayout>

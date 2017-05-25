@@ -483,13 +483,12 @@
                 android:layout_height="0.5dp"
                 android:layout_weight="0"
                 android:background="@color/line" />
-
-            <com.www.ccoocity.view.MysoclListview
+            <com.example.think.citypass.myview.MysoclListview
                 android:id="@+id/listView_house_like"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:background="@color/white">
-            </com.www.ccoocity.view.MysoclListview>
+            </com.example.think.citypass.myview.MysoclListview>
 
             <TextView
                 android:layout_width="match_parent"
@@ -550,11 +549,11 @@
                 android:layout_weight="0"
                 android:background="@color/grayline" />
 
-            <com.www.ccoocity.view.MysoclListview
+            <com.example.think.citypass.myview.MysoclListview
                 android:id="@+id/listView_house_information"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="@color/white"></com.www.ccoocity.view.MysoclListview>
+                android:background="@color/white"></com.example.think.citypass.myview.MysoclListview>
         </LinearLayout>
     </ScrollView>
 

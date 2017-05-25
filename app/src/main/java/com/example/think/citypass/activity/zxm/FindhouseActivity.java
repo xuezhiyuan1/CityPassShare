@@ -30,8 +30,8 @@ public class FindhouseActivity  extends BaseActivity {
 
     @Override
     protected void initView() {
-     likelistview= (ListView) findViewById(R.id.findhouse_like_listview);
-        fangchanlistview= (ListView) findViewById(R.id.findhouse_fangchan_listview);
+     likelistview= (ListView) findViewById(R.id.listView_house_like);
+        fangchanlistview= (ListView) findViewById(R.id.listView_house_information);
     }
 
     @Override

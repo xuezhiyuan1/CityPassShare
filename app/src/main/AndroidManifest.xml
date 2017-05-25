@@ -144,6 +144,7 @@
         <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity"/>
         <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity"/>
         <activity android:name=".activity.zxm.WebView_Activity"/>
+        <activity android:name=".activity.zxm.CityListActivity"/>
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />

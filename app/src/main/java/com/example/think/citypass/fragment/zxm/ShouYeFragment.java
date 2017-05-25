@@ -380,6 +380,9 @@ public class ShouYeFragment extends BaseFragment {
             hodler.mText_Name.setText(stu.getData().get(0).getTitle()+ "");
             hodler.mText_Address.setText(stu.getData().get(0).getVariable8()+ "");
             hodler.textView.setText(stu.getData().get(0).getVariable1()+"");
+            if (stu.getData().get(0).getImage()==null){
+                Glide.with(getContext()).load(R.drawable.city).into(hodler.imageView);
+            }
             Glide.with(getContext()).load(stu.getData().get(0).getImage()).into(hodler.imageView);
             return convertView;
 

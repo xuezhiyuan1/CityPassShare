@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
-import com.example.think.citypass.activity.zxm.shareboard.MainActivity;
-import com.example.think.citypass.activity.zxm.shareboard.ShareboardActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.model.bean.ShouyeDetailBean;
 import com.example.think.citypass.utils.LinuxUtils;
@@ -221,6 +219,10 @@ public class WebView_Activity extends BaseActivity {
                         Gson gson = new Gson();
                         ShouyeDetailBean webBean = gson.fromJson(string, ShouyeDetailBean.class);
 
+
+                        if(webBean.getServerInfo().getNewsInfo().get(0).getBody()==null){
+                            Toast.makeText(WebView_Activity.this, "暂无详情", Toast.LENGTH_SHORT).show();
+                        }
                         url = webBean.getServerInfo().getNewsInfo().get(0).getBody();
                         SharedPreferencesUtils.setParam(WebView_Activity.this,"url",url);
                         //如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript
@@ -251,8 +253,7 @@ public class WebView_Activity extends BaseActivity {
         @Override
         public void onClick(View v) {
             initFenXiang();
-//            Intent  in=new Intent(WebView_Activity.this, ShareboardActivity.class);
-//            startActivity(in);
+
         }
     });
     }
