@@ -82,62 +82,62 @@ public class LoadFragmentOne extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void loadData() {
-        /*JSONObject jo = new JSONObject();
-        try {
-            jo.put("siteID",2422);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String time = df.format(new Date().getTime());
-
-        JSONObject pp = new JSONObject();
-        try {
-            pp.put("customerID",8001);
-            pp.put("requestTime", time);
-            pp.put("Method", "PHSocket_GetFindNavigationInfo");
-            pp.put("customerKey", "+6Hp9X5zR39SOI6oP0685Bk77gG56m7PkV89xYvl86A=PHSocket_GetFindNavigationInfo"+time);
-            pp.put("appName", "CcooCity");
-            pp.put("version","1.0");
-            pp.put("Param", jo);
-            pp.put("Statis", createTongji());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        String str=pp.toString();
-
-        Log.d("FXFragment", str);
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
-        FormBody.Builder formBody = new FormBody.Builder();
-        Map<String, String> param = new HashMap<>();
-        param.put("param",str);
-        if (param != null && param.size() > 0) {
-            Set<String> set = param.keySet();
-            for (String key : set) {
-                String value = param.get(key);
-                formBody.add(key, value);
-            }
-        }
-        Request request = new Request.Builder()
-                .url("http://appnew.ccoo.cn/appserverapi.ashx")
-                .post(formBody.build())
-                .build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String string = response.body().string();
-                Log.d("FXFragment", string);
-                Gson gson=new Gson();
-                FindBean fxBean = gson.fromJson(string, FindBean.class);
-
-            }
-        });*/
+//        JSONObject jo = new JSONObject();
+//        try {
+//            jo.put("siteID",2422);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String time = df.format(new Date().getTime());
+//
+//        JSONObject pp = new JSONObject();
+//        try {
+//            pp.put("customerID",8001);
+//            pp.put("requestTime", time);
+//            pp.put("Method", "PHSocket_GetFindNavigationInfo");
+//            pp.put("customerKey", "+6Hp9X5zR39SOI6oP0685Bk77gG56m7PkV89xYvl86A=PHSocket_GetFindNavigationInfo"+time);
+//            pp.put("appName", "CcooCity");
+//            pp.put("version","1.0");
+//            pp.put("Param", jo);
+//            pp.put("Statis", createTongji());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        String str=pp.toString();
+//
+//        Log.d("FXFragment", str);
+//        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+//        FormBody.Builder formBody = new FormBody.Builder();
+//        Map<String, String> param = new HashMap<>();
+//        param.put("param",str);
+//        if (param != null && param.size() > 0) {
+//            Set<String> set = param.keySet();
+//            for (String key : set) {
+//                String value = param.get(key);
+//                formBody.add(key, value);
+//            }
+//        }
+//        Request request = new Request.Builder()
+//                .url("http://appnew.ccoo.cn/appserverapi.ashx")
+//                .post(formBody.build())
+//                .build();
+//        Call call = okHttpClient.newCall(request);
+//        call.enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                String string = response.body().string();
+//                Log.d("FXFragment", string);
+//                Gson gson=new Gson();
+//                FindBean fxBean = gson.fromJson(string, FindBean.class);
+//
+//            }
+//        });
     }
 
     @Override
