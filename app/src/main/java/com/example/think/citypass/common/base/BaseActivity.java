@@ -18,7 +18,6 @@ import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.utils.Zhuangtailan.StatusBarCompat;
 
-import static com.example.think.citypass.App.activity;
 import static com.zhy.autolayout.utils.ScreenUtils.getStatusBarHeight;
 
 /**
@@ -31,7 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activity = this;
+        App.activity=this;
         setContentView(layoutId());
         fragmentManager = getSupportFragmentManager();
         initView();
@@ -75,6 +74,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        activity = this;
+        App.activity = this;
     }
 }

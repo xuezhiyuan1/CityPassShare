@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_webviewtitlebar">
+
+    </include>
+
+    <include
+        layout="@layout/progreass"
+        android:visibility="gone"></include>
+
+    <ProgressBar
+        android:id="@+id/webView_Progress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ff44"
+        android:max="100"
+        android:visibility="invisible" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <WebView
+            android:id="@+id/NewsList_WebView"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        </WebView>
+        <LinearLayout
+            android:background="#ccc8c8"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <LinearLayout
+
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
+                <TextView
+                    android:background="#fff"
+                    android:text="觉得不错就给个赞吧"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+                <TextView
+                    android:background="#cacac4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp" />
+
+                <LinearLayout
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+                       <CheckBox
+                           android:id="@+id/detail_zan"
+                           android:button="@null"
+                           android:text="赞"
+                           android:textSize="12sp"
+                           android:layout_margin="5dp"
+                           android:gravity="center"
+                           android:drawableTop="@drawable/detailzan"
+                           android:layout_width="50dp"
+                           android:layout_height="match_parent" />
+                    <CheckBox
+                        android:id="@+id/detail_comment"
+                        android:button="@null"
+                        android:text="评论"
+                        android:textSize="12sp"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/detail_ping"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent" />
+                    <CheckBox
+                        android:id="@+id/detail_share"
+                        android:button="@null"
+                        android:text="分享"
+                        android:textSize="12sp"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ccoo_icon_more_big"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                     <TableLayout
+                         android:id="@+id/detail_tablayout"
+                         android:background="#fff"
+                         android:layout_marginTop="10dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="30dp"></TableLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/detail_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

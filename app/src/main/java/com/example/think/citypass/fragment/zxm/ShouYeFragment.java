@@ -30,6 +30,7 @@ import com.example.think.citypass.activity.zxm.ShouyeFenleiLife;
 import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
+import com.example.think.citypass.activity.zxm.WebView_Activity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
@@ -487,10 +488,11 @@ public class ShouYeFragment extends BaseFragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(getContext(),WebView_Activity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(),WebView_Activity.class);
+                intent.putExtra("id",mll.get(position-1).getTheirID());
+                startActivity(intent);
 
-                Toast.makeText(getContext(), "暂无详情", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "暂无详情", Toast.LENGTH_SHORT).show();
             }
         });
 

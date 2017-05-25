@@ -143,7 +143,7 @@
         <activity android:name=".activity.zxm.ShouyeSendPhoto"/>
         <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity"/>
         <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity"/>
-
+        <activity android:name=".activity.zxm.WebView_Activity"/>
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
@@ -163,9 +163,26 @@
 
 
         </activity>
+
+        <!--百度地图-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="uQTGvwqnlZ1tUjg8qVq3CtZM7Wf7Xo5i" />
+
+        <!--微信分享-->
+        <activity
+            android:name=".activity.zxm.shareboard.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59098346f5ade43dc00001c8" >
+        </meta-data>
+
+
+
     </application>
 
 </manifest>

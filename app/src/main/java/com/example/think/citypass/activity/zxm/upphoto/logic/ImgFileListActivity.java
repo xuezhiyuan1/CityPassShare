@@ -41,7 +41,7 @@ public class ImgFileListActivity extends Activity implements OnItemClickListener
 			bitmap=new Bitmap[locallist.size()];
 			for (int i = 0; i < locallist.size(); i++) {
 				HashMap<String, String> map=new HashMap<String, String>();
-				map.put("filecount", locallist.get(i).filecontent.size()+"��");
+				map.put("filecount", locallist.get(i).filecontent.size()+"张");
 				map.put("imgpath", locallist.get(i).filecontent.get(0)==null?null:(locallist.get(i).filecontent.get(0)));
 				map.put("filename", locallist.get(i).filename);
 				listdata.add(map);

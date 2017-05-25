@@ -39,9 +39,9 @@ public class ShouyeSendTie   extends BaseActivity {
     ImageView  photoimage;
     TextView  textViewloc;
     String addrStr;
-
-    ListView alistView;
     ArrayList<String> alistfile=new ArrayList<String>();
+    //选择图片后返回的数据结果集
+    ListView alistView;
 
 
     @Override
