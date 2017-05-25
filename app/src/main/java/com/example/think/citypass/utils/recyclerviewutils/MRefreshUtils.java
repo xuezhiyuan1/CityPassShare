@@ -128,6 +128,10 @@ public class MRefreshUtils {
         });
     }
 
+    public void movelayoutDismiss() {
+        moveLayout.setVisibility(View.GONE);
+    }
+
     public void requestData() {
         isLoadMore = false;
         if (isRefresh) {

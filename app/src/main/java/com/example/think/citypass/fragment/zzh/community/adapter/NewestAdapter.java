@@ -1,4 +1,4 @@
-package com.example.think.citypass.fragment.zzh.naonao;
+package com.example.think.citypass.fragment.zzh.community.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,16 +10,16 @@ import com.example.think.citypass.R;
 
 import java.util.List;
 
-public class NaonaoAdapter extends RecyclerView.Adapter<NaonaoAdapter.ViewHolder> {
+public class NewestAdapter extends RecyclerView.Adapter<NewestAdapter.ViewHolder> {
     private List<String> data;
 
-    public NaonaoAdapter(List<String> data) {
+    public NewestAdapter(List<String> data) {
         this.data = data;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.naonaodi_item, null));
+        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.newest_item, null));
         return holder;
     }
 
@@ -39,7 +39,7 @@ public class NaonaoAdapter extends RecyclerView.Adapter<NaonaoAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.userNameText);
+            tv = (TextView) itemView.findViewById(R.id.name_tv);
         }
     }
 }

@@ -25,7 +25,7 @@
             android:maxEms="8"
             android:maxLines="1"
             android:text="波波大人"
-            android:textColor="@color/squareUserName"
+            android:textColor="@color/color_666"
             android:textSize="16dp" />
 
         <LinearLayout
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="5-16"
-                android:textColor="@color/squareTime"
+                android:textColor="@color/color_ccc"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="的商家的骄傲是大家大祭司爱打架三角地拿手机嗲手机第三基地撒娇埃及第四季度"
-        android:textColor="@color/squareTextColor"
+        android:textColor="@color/color_333"
         android:textSize="16sp" />
 
 </LinearLayout>

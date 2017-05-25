@@ -1,78 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/shaitu_background">
+
+    <com.example.think.citypass.myview.RoundAngleImageView
+        android:id="@+id/shaitu_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tieba_top_bg3"
+        app:roundHeight="7dp"
+        app:roundWidth="7dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shaitu_btn"
+        android:gravity="top|center"
+        android:paddingBottom="3dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="3dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ccoo_icon_zan2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/shaitu_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/shaitu_image"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="的接口赛季大家说就嗲瑟吉欧大街上激动啊瑟吉欧的骄傲搜激动啊瑟吉欧大瑟吉欧的骄傲手"
+        android:textColor="@color/color_666"
+        android:textSize="16sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shaitu_background"
+        android:layout_below="@id/shaitu_details"
         android:padding="5dp">
 
-        <com.example.think.citypass.myview.SquareItemImageView
-            android:id="@+id/shaitu_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shaitu_btn"
-            android:gravity="top|center"
-            android:padding="5dp">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/ccoo_icon_zan_2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:text="3"
-                android:textColor="#FFFFFF"
-                android:textSize="10sp" />
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/shaitu_details"
-            android:layout_width="match_parent"
+            android:id="@+id/shaitu_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shaitu_image"
-            android:maxLines="2"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="的接口赛季大家说就嗲瑟吉欧大街上激动啊瑟吉欧的骄傲搜激动啊瑟吉欧大瑟吉欧的骄傲手"
-            android:textColor="#6F6F6F"
+            android:text="名字"
+            android:textColor="@color/color_999"
             android:textSize="14sp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/shaitu_time"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shaitu_details">
-
-            <TextView
-                android:id="@+id/shaitu_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="名字"
-                android:textColor="#A4A4A4"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/shaitu_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="05-12"
-                android:textColor="#D6D6D6"
-                android:textSize="12sp" />
-
-        </RelativeLayout>
-
+            android:layout_alignParentRight="true"
+            android:text="05-12"
+            android:textColor="@color/color_ccc"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.fragment.zzh.naonao.adapter.SquareAdapter;
 import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 
 import java.util.ArrayList;

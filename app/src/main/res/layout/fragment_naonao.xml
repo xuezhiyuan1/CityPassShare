@@ -58,11 +58,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true">
 
-            <ImageView
+            <Button
                 android:id="@+id/main_theall_right_message_imageview"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/naonao_camera" />
+                android:background="@drawable/naonao_camera" />
 
         </LinearLayout>
     </RelativeLayout>

@@ -58,17 +58,17 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true">
 
-            <ImageView
+            <Button
                 android:id="@+id/community_search"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/btn_search" />
+                android:background="@drawable/btn_search" />
 
-            <ImageView
+            <Button
                 android:id="@+id/community_sendpost"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/btn_tiezi" />
+                android:background="@drawable/btn_tiezi" />
 
         </LinearLayout>
     </RelativeLayout>

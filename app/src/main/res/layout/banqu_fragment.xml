@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="5">
+s
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/color_f0"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/banqu_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/myfollow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="我的关注"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/baixingshi"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="百姓事"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/xingququan"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="兴趣圈"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/shenghuoguan"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="生活馆"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:layout_weight="0"
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/wenshibang"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="问事帮"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="#E3E3E3" />
+
+            <RadioButton
+                android:id="@+id/zhaokefu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="找客服"
+                android:textColor="@drawable/banqu_btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="#E3E3E3" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/banqu_frame"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"></FrameLayout>
+
+</LinearLayout>

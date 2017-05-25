@@ -8,7 +8,7 @@ import android.widget.RelativeLayout;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.example.think.citypass.fragment.zzh.naonao.NaonaoAdapter;
+import com.example.think.citypass.fragment.zzh.community.adapter.MingrenAdapter;
 import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class PengchangFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         headView = View.inflate(App.activity, R.layout.cover_ranking_item, null);
-        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg3);
+        headView.findViewById(R.id.top_relay).setBackgroundResource(R.drawable.tieba_top_bg1);
     }
 
     @Override
@@ -52,10 +52,11 @@ public class PengchangFragment extends BaseFragment {
 
         mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(), onListStateListener);
 
+        mRefreshUtils.movelayoutDismiss();
+
         mRefreshUtils.addHeadView(headView);
 
-        mRefreshUtils.setAdapter(1, new NaonaoAdapter(data));
-
+        mRefreshUtils.setAdapter(1, new MingrenAdapter(data));
 
     }
 

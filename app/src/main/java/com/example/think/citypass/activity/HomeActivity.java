@@ -31,6 +31,7 @@ import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
+import com.example.think.citypass.fragment.zzh.CommunityFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
@@ -140,7 +141,7 @@ public class HomeActivity extends BaseActivity {
                     case R.id.SheQuBtn:
                         //这是首页的titlebar所以在别的fragment隐藏
                         top.setVisibility(View.GONE);
-//                        FragmentBuilder.getInstance().show().builder();
+                        FragmentBuilder.getInstance().show(CommunityFragment.class).builder();
                         break;
                     case R.id.ShengHuoBtn:
                         //这是首页的titlebar所以在别的fragment隐藏

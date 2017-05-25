@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.fragment.zzh.naonao.adapter.NaonaoAdapter;
 import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 
 import java.util.ArrayList;
@@ -53,6 +54,8 @@ public class NaonaoXingFragment extends BaseFragment {
         data = new ArrayList<>();
 
         mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(),  onListStateListener);
+
+        mRefreshUtils.movelayoutDismiss();
 
         mRefreshUtils.addHeadView(headView);
 

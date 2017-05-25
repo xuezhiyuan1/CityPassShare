@@ -10,7 +10,6 @@
         <attr name="roundHeight" format="dimension" />
     </declare-styleable>
 
-
     <!--gif播放-->
     <declare-styleable name="PlayGifImageView">
         <attr name="auto_play" format="boolean"></attr>

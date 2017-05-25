@@ -1,4 +1,4 @@
-package com.example.think.citypass.fragment.zzh.naonao;
+package com.example.think.citypass.fragment.zzh.naonao.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,26 +8,28 @@ import android.widget.TextView;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 
-/**
- * Created by ASUS on 2017/5/18.
- */
+public class SquareAdapter extends RecyclerView.Adapter<SquareAdapter.ViewHolder> {
 
-public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> {
+//    private List<String> data;
+//
+//    public SquareAdapter(List<String> data) {
+//        this.data = data;
+//    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.topic_item, null));
+        ViewHolder holder = new ViewHolder(View.inflate(App.activity, R.layout.square_item1, null));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tv.setText("人气11");
+        holder.tv.setText("111");
     }
 
     @Override
     public int getItemCount() {
-        return 30;
+        return 3;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -36,7 +38,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.topic_title_renqu);
+            tv = (TextView) itemView.findViewById(R.id.userNameText);
         }
     }
+
 }
