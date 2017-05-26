@@ -4,6 +4,7 @@ import java.util.Map;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -22,5 +23,10 @@ public interface NetWork {
 
     @FormUrlEncoded
     @POST
-    Call<ResponseBody> getLoadpost(@Url String url, @FieldMap Map<String, String> paramse);
+    Call<ResponseBody> getLoadpost(@Url String url, @FieldMap Map<String, String> params);
+
+    @FormUrlEncoded
+    @POST("appserverapi.ashx")
+    Call<ResponseBody> getPost(@Field("param") String value);
+
 }

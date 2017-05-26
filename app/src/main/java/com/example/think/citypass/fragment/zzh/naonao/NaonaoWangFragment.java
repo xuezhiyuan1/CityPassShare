@@ -30,7 +30,7 @@ public class NaonaoWangFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
-                mRefreshUtils.requestData();
+                mRefreshUtils.requestData("成功");
             }
         }
     };
@@ -94,7 +94,7 @@ public class NaonaoWangFragment extends BaseFragment {
         }
 
         @Override
-        public void onSuccess(boolean Refresh, String result) {
+        public void onSuccess(boolean Refresh, Object result) {
 //            if (Refresh) {
 //                data.clear();
 //            }
@@ -110,7 +110,7 @@ public class NaonaoWangFragment extends BaseFragment {
         }
 
         @Override
-        public void onFailure(boolean Refresh, String result) {
+        public void onFailure(boolean Refresh, Object result) {
 
         }
 

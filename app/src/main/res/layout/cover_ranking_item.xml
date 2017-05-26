@@ -6,11 +6,11 @@
 
     <RelativeLayout
         android:id="@+id/top_relay"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="250dp">
 
         <ImageView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="105dp"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="10dp"
@@ -33,10 +33,12 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/tieba_top_tou2">
 
-                <ImageView
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerInParent="true" />
+                <com.example.think.citypass.myview.RoundImageView
+                    android:id="@+id/image_silvery"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY" />
 
             </RelativeLayout>
 
@@ -66,10 +68,12 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/tieba_top_tou1">
 
-                <ImageView
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerInParent="true" />
+                <com.example.think.citypass.myview.RoundImageView
+                    android:id="@+id/image_golden"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY" />
 
             </RelativeLayout>
 
@@ -100,10 +104,12 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/tieba_top_tou3">
 
-                <ImageView
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerInParent="true" />
+                <com.example.think.citypass.myview.RoundImageView
+                    android:id="@+id/image_coppery"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY" />
 
             </RelativeLayout>
 

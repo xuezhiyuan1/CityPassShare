@@ -47,10 +47,11 @@
             android:id="@+id/userImage"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:scaleType="fitXY"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/level_relay"
-            android:background="@drawable/login_icon_account" />
+            android:src="@mipmap/bbs_moren" />
 
         <TextView
             android:id="@+id/userNameText"
@@ -63,7 +64,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/position_text"
+            android:id="@+id/location_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/userNameText"
@@ -89,14 +90,16 @@
             android:textSize="10sp" />
 
         <TextView
+            android:id="@+id/naonao_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/repliesCount"
-            android:text="回帖数："
+            android:text="回帖数"
             android:textColor="@color/color_999" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:id="@+id/repliesCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

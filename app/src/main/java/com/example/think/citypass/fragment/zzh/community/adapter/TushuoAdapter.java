@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
+import com.example.think.citypass.model.enitity.TushuoBean;
 
 import java.util.List;
 
@@ -15,11 +16,10 @@ import java.util.List;
  */
 
 public class TushuoAdapter extends RecyclerView.Adapter<TushuoAdapter.ViewHolder> {
-    private List<String> data;
+    private List<TushuoBean.ServerInfoBean> data;
 
-    private int[] images = {R.drawable.login_bg, R.drawable.my_main_advice1, R.drawable.main_theall_bg, R.drawable.none_sj2, R.drawable.task_center_top, R.drawable.tieba_top_bg1, R.drawable.bike_city};
 
-    public TushuoAdapter(List<String> data) {
+    public TushuoAdapter(List<TushuoBean.ServerInfoBean> data) {
         this.data = data;
     }
 
@@ -31,21 +31,22 @@ public class TushuoAdapter extends RecyclerView.Adapter<TushuoAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.iv.setImageResource(images[position]);
+//        holder.iv.setImageResource(images[position]);
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return data == null ? 0 : data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView iv;
+        private ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            iv = (ImageView) itemView.findViewById(R.id.shaitu_image);
+            imageView = (ImageView) itemView.findViewById(R.id.shaitu_image);
+
         }
     }
 }

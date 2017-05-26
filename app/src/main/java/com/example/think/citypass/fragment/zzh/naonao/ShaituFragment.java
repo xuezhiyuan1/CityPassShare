@@ -4,9 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.zzh.naonao.adapter.ShaituAdapter;
@@ -32,7 +30,7 @@ public class ShaituFragment extends BaseFragment {
                 for (int i = 0; i < 5; i++) {
                     data.add("大黄蜂");
                 }
-                mRefreshUtils.requestData();
+                mRefreshUtils.requestData("成功");
             }
         }
     };
@@ -89,13 +87,13 @@ public class ShaituFragment extends BaseFragment {
         }
 
         @Override
-        public void onSuccess(boolean Refresh, String result) {
+        public void onSuccess(boolean Refresh,Object result) {
 //            if (Refresh) {
 //                data.clear();
 //            }
 //            data.addAll(data1);
 //            mRefreshUtils.setPageNums(data.size() / 10 + 1);
-            Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
 //            adapter.notifyDataSetChanged();
             mRefreshUtils.showNormal();
             if (Refresh) {
@@ -105,7 +103,7 @@ public class ShaituFragment extends BaseFragment {
         }
 
         @Override
-        public void onFailure(boolean Refresh, String result) {
+        public void onFailure(boolean Refresh, Object result) {
 
         }
 

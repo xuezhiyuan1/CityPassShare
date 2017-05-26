@@ -4,9 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.zzh.naonao.adapter.SquareAdapter;
@@ -31,7 +29,7 @@ public class SquareFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
-                mRefreshUtils.requestData();
+                mRefreshUtils.requestData("成功");
             }
         }
     };
@@ -84,14 +82,14 @@ public class SquareFragment extends BaseFragment {
         }
 
         @Override
-        public void onSuccess(boolean Refresh, String result) {
+        public void onSuccess(boolean Refresh, Object result) {
 //            if (Refresh) {
 //                data.clear();
 //            }
 //            data.addAll(data1);
 //            mRefreshUtils.setPageNums(data.size() / 10 + 1);
 //
-            Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(App.activity, result, Toast.LENGTH_SHORT).show();
             mRefreshUtils.showNormal();
             if (Refresh) {
                 mRefreshUtils.startUpdate(10);
@@ -100,7 +98,7 @@ public class SquareFragment extends BaseFragment {
         }
 
         @Override
-        public void onFailure(boolean Refresh, String result) {
+        public void onFailure(boolean Refresh, Object result) {
 
         }
 

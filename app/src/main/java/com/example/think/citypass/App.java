@@ -28,8 +28,9 @@ public class App extends Application {
     public static BaseActivity activity;
     public static BaseFragment lastFragment;
     public static BaseFragment banquFragment;
-   public static String phoneNumber="0";
-    public static  String  PHONEID;
+    public static String phoneNumber = "0";
+    public static String PHONEID;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,16 +44,17 @@ public class App extends Application {
          * 初始化定位sdk，建议在Application中创建
          */
         locationService = new LocationService(getApplicationContext());
-        mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
+        mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
         SDKInitializer.initialize(getApplicationContext());
 
 
-        phoneNumber =getPhoneNumber();
+        phoneNumber = getPhoneNumber();
         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         PHONEID = tm.getDeviceId();
 
 
     }
+
     private String getPhoneNumber() {
         TelephonyManager mTelephonyMgr;
         mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
@@ -64,7 +66,7 @@ public class App extends Application {
 
 
     {
-     //分享
+        //分享
         PlatformConfig.setWeixin("wx4c93b58a42957cf8", "8afb5d7fc0cf39fa638d0815deb0ae48");
 //        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
 //        PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");

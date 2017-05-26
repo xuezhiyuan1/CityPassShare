@@ -1,11 +1,11 @@
 package com.example.think.citypass.utils.retrofitutils;
 
+import com.example.think.citypass.App;
 import com.example.think.citypass.model.http.IHttp;
 import com.example.think.citypass.model.http.callback.ResaultCallBack;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-
 import java.util.Map;
 
 import okhttp3.ResponseBody;
@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitUtil implements IHttp {
 
     //公用的Url
-    private String baseUrl = "http://www.baidu.com/";
+    private String baseUrl = "http://appnew.ccoo.cn/";
     private Retrofit retrofit;
     private static RetrofitUtil retrofitUtil = null;
     private NetWork netWork;
@@ -46,55 +46,132 @@ public class RetrofitUtil implements IHttp {
     public void getRetrofit(String url, Map<String, String> params, final ResaultCallBack callBack, final Class tClass) {
         if (params.size() == 0 || params == null) {
             callBack.onErrorParams("参数错误");
-            throw  new RuntimeException("参数错误");
-        } else
-        {
+            throw new RuntimeException("参数错误");
+        } else {
             Call<ResponseBody> call = netWork.getLoad(url, params);
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     if (response.isSuccessful()) {
                         try {
-                            callBack.onSuccess(getGeneric(response.body().string(),tClass));
+                            final String body = response.body().string();
+                            App.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callBack.onSuccess(getGeneric(body, tClass));
+                                }
+                            });
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
+
                     } else {
-                        callBack.notNet("无网络连接");
+                        App.activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                callBack.notNet("无网络连接");
+                            }
+                        });
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    callBack.onError(t.getMessage());
+                public void onFailure(Call<ResponseBody> call, final Throwable t) {
+                    App.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            callBack.onError(t.getMessage());
+                        }
+                    });
                 }
             });
         }
     }
 
 
-    public  void postRetrofit(String url, Map<String, String> params, final ResaultCallBack callBack, final Class tClass) {
+    public void postRetrofit(String url,Map<String,String> params, final ResaultCallBack callBack, final Class tClass) {
         if (params.size() == 0 || params == null) {
             callBack.onErrorParams("参数错误");
         } else {
-            Call<ResponseBody> loadpost =netWork.getLoadpost(url,params);
+            Call<ResponseBody> loadpost = netWork.getLoadpost(url,params);
             loadpost.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     if (response.isSuccessful()) {
                         try {
-                            callBack.onSuccess(getGeneric(response.body().string(),tClass));
+                            final String body = response.body().string();
+                            App.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callBack.onSuccess(getGeneric(body, tClass));
+                                }
+                            });
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     } else {
-                        callBack.notNet("无网络连接");
+                        App.activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                callBack.notNet("无网络连接");
+                            }
+                        });
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    callBack.onError(t.getMessage());
+                public void onFailure(Call<ResponseBody> call, final Throwable t) {
+                    App.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            callBack.onError(t.getMessage());
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+
+    public void postRetrofitTwo(String value, final ResaultCallBack callBack, final Class tClass) {
+        if (value.length() == 0 || value == null) {
+            callBack.onErrorParams("参数错误");
+        } else {
+            Call<ResponseBody> post = netWork.getPost(value);
+            post.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    if (response.isSuccessful()) {
+                        try {
+                            final String body = response.body().string();
+                            App.activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callBack.onSuccess(getGeneric(body, tClass));
+                                }
+                            });
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        App.activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                callBack.notNet("无网络连接");
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, final Throwable t) {
+                    App.activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            callBack.onError(t.getMessage());
+                        }
+                    });
                 }
             });
         }
@@ -104,6 +181,6 @@ public class RetrofitUtil implements IHttp {
         Gson gson = new Gson();
 //        Type[] types = callBack.getClass().getGenericInterfaces();
 //        Type[] typeArguments = ((ParameterizedType) types[0]).getActualTypeArguments();
-         return gson.fromJson(jsonData, c);
+        return gson.fromJson(jsonData, c);
     }
 }

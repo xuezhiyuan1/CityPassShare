@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,7 +25,6 @@ public class MRefreshUtils {
     private Context context;
     private RelativeLayout mainLayout;
     private TextView update, moveTextview;
-    private ImageView moveImageview;
     private LinearLayout moveLayout, loadLayout, failureLayout;
     public MRecyclerView mRecyclerView;
 
@@ -132,19 +130,19 @@ public class MRefreshUtils {
         moveLayout.setVisibility(View.GONE);
     }
 
-    public void requestData() {
+    public void requestData(Object result) {
         isLoadMore = false;
         if (isRefresh) {
             mRecyclerView.refreshComplete();
             isRefresh = false;
             isAll = false;
             if (onListStateListener != null) {
-                onListStateListener.onSuccess(true, "刷新成功");
+                onListStateListener.onSuccess(true, result);
             }
         } else {
             mRecyclerView.loadMoreComplete();
             if (onListStateListener != null) {
-                onListStateListener.onSuccess(false, "加载成功");
+                onListStateListener.onSuccess(false, result);
             }
         }
     }
@@ -238,9 +236,9 @@ public class MRefreshUtils {
 
         public void onRefresh();
 
-        public void onSuccess(boolean Refresh, String result);
+        public void onSuccess(boolean Refresh, Object result);
 
-        public void onFailure(boolean Refresh, String result);
+        public void onFailure(boolean Refresh, Object result);
 
         public void onFirstFailure();
     }

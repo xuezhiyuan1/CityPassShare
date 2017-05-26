@@ -7,15 +7,19 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
+import com.example.think.citypass.model.enitity.WorthBean;
+import com.example.think.citypass.myview.RoundImageView;
 
 import java.util.List;
 
 public class WorthAdapter extends RecyclerView.Adapter<WorthAdapter.ViewHolder> {
-    private List<String> data;
+    private List<WorthBean.ServerInfoBean> data;
 
-    public WorthAdapter(List<String> data) {
+    public WorthAdapter(List<WorthBean.ServerInfoBean> data) {
         this.data = data;
     }
 
@@ -27,14 +31,28 @@ public class WorthAdapter extends RecyclerView.Adapter<WorthAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tv.setText("大黄蜂");
-        holder.rl.setVisibility(View.GONE);
-
+        if(data.get(position).getImagesNum() == 0)
+            holder.rl.setVisibility(View.GONE);
+        holder.nameTv.setText(data.get(position).getRole());
+        holder.contentTv.setText(data.get(position).getTbody());
+        holder.laoziTv.setText(data.get(position).getBName());
+        if(data.get(position).getReplyTime().contains("2017")){
+            holder.timeTv.setText(data.get(position).getReplyTime().substring(5));
+        }else{
+            holder.timeTv.setText(data.get(position).getReplyTime());
+        }
+        holder.zanTv.setText(String.valueOf(data.get(position).getSUP()));
+        holder.replyTv.setText(String.valueOf(data.get(position).getReply()));
+        Glide.with(App.activity)
+                .load(data.get(position).getUserface())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.shape_image_zhanwei)
+                .centerCrop()
+                .into(holder.headIv);
         SpannableString spanStr = getSpannableString(
-                holder.worthTv, "及第三基地阿斯接地啊手机的骄傲司机考试课东山口第四大祭司",
+                holder.worthTv, data.get(position).getTitle(),
                 holder.titleTv);
         holder.titleTv.setText(spanStr);
-
     }
 
     private SpannableString getSpannableString(TextView worthTv, String content, TextView titleTv) {
@@ -63,21 +81,30 @@ public class WorthAdapter extends RecyclerView.Adapter<WorthAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 20;
+        return data == null ? 0 : data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv, worthTv, titleTv;
+        private TextView nameTv, worthTv, titleTv,contentTv,laoziTv,timeTv,zanTv,replyTv;
+
+        private RoundImageView headIv;
 
         private RelativeLayout rl;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.name_tv);
+
             worthTv = (TextView) itemView.findViewById(R.id.newest_worth);
             titleTv = (TextView) itemView.findViewById(R.id.newest_title_tv);
+            contentTv = (TextView) itemView.findViewById(R.id.newest_content_tv);
+            laoziTv = (TextView) itemView.findViewById(R.id.laizi_tv);
+            headIv = (RoundImageView) itemView.findViewById(R.id.head_iv);
+            nameTv = (TextView) itemView.findViewById(R.id.name_tv);
+            timeTv = (TextView) itemView.findViewById(R.id.time_tv);
+            zanTv = (TextView) itemView.findViewById(R.id.zan_tv);
+            replyTv= (TextView) itemView.findViewById(R.id.reply_tv);
             rl = (RelativeLayout) itemView.findViewById(R.id.newest_image_relative);
         }
     }

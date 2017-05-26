@@ -17,7 +17,7 @@ public interface IHttp {
      * @param params
      * @param callBack
      */
-    void getRetrofit(String url, Map<String, String> params, ResaultCallBack callBack,Class tClass);
+    void getRetrofit(String url, Map<String, String> params, ResaultCallBack callBack, Class tClass);
 
     /**
      * post请求
@@ -25,6 +25,16 @@ public interface IHttp {
      * @param url
      * @param params
      * @param callBack
+     * @param tClass
      */
-    void postRetrofit(String url, Map<String, String> params, final ResaultCallBack callBack,Class tClass);
+    void postRetrofit(String url, Map<String, String> params, final ResaultCallBack callBack, Class tClass);
+
+    /**
+     * post请求
+     *
+     * @param value
+     * @param callBack
+     * @param tClass
+     */
+    void postRetrofitTwo(String value, final ResaultCallBack callBack, final Class tClass);
 }
