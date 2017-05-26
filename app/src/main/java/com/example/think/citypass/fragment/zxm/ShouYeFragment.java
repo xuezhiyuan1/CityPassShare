@@ -100,7 +100,7 @@ public class ShouYeFragment extends BaseFragment {
                     String str = (String) msg.obj;
                     Gson gson = new Gson();
                     ShouyeDataEntity NewsBean = gson.fromJson(str, ShouyeDataEntity.class);
-                    List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList = NewsBean.getServerInfo().getHeadTInfoList();
+                    headTInfoList = NewsBean.getServerInfo().getHeadTInfoList();
                     mll.addAll(headTInfoList);
                     int i = headTInfoList.get(0).getTheirID();
                     Log.d("ShouYeFragment", "i:" + i);
@@ -109,9 +109,7 @@ public class ShouYeFragment extends BaseFragment {
             }
         }
     };
-
-
-
+    private List<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean> headTInfoList;
 
 
     @Override
@@ -444,7 +442,7 @@ public class ShouYeFragment extends BaseFragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Toast.makeText(getContext(), "加载失败，请重新加载。。。", Toast.LENGTH_SHORT).show();
+        //        Toast.makeText(getContext(), "加载失败，请重新加载。。。", Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.think.citypass.myview.MRecyclerView
+ <!--   <com.example.think.citypass.myview.MRecyclerView
         android:id="@+id/m_refresh_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" />-->
 
     <TextView
         android:id="@+id/update"
@@ -81,25 +81,25 @@
             android:src="@drawable/ccoo_icon_todown" />
     </LinearLayout>
 
-    <include
+  <!--  <include
         android:id="@+id/load_layout"
         layout="@layout/layout_loading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-     <!--   xiu  gai-->
-    <LinearLayout
+        android:layout_height="match_parent" />-->
+    <!--   xiu  gai-->
+   <!-- <LinearLayout
         android:id="@+id/failure_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone">
-        <!--   xiu  gai-->
+        &lt;!&ndash;   xiu  gai&ndash;&gt;
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_fault"
             android:scaleType="fitCenter" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 </RelativeLayout>

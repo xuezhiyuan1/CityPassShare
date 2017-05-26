@@ -10,6 +10,8 @@ import com.example.think.citypass.common.base.BaseFragment;
  */
 
 public class FindCTyoutaidu extends BaseFragment{
+
+
     @Override
     protected int layoutId() {
         return R.layout.shouye_haoli_one;

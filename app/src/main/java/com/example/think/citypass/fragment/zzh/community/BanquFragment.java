@@ -26,9 +26,7 @@ public class BanquFragment extends BaseFragment {
     private RadioGroup mRadioGroup;
     private RadioButton xingququan;
     private RadioButton zhaokefu;
-
     private MyProgressDialog dialog;
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

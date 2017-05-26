@@ -11,7 +11,9 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
+import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
+import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,8 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
     List<BaseFragment>  fragmentList;
     ViewpagerAdapter  adapter;
     ImageView imageView;
+    private int TYPE = 1;
+
     @Override
     protected int layoutId() {
         return R.layout.findcitything;
@@ -51,20 +55,25 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
         stringList.add("正事");
         stringList.add("生活");
         stringList.add("娱乐");
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new NaonaoXingFragment());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
+
+
+
+        for (int i = 0; i < stringList.size(); i++) {
+            if(i == 5){
+                NaonaoXingFragment naonaoXingFragment = new NaonaoXingFragment();
+                fragmentList.add(naonaoXingFragment);
+            }else {
+                WangyouFragment wangyouFragment = new WangyouFragment();
+                fragmentList.add(wangyouFragment);
+            }
+        }
+
+
         adapter=new ViewpagerAdapter(getSupportFragmentManager(),stringList,fragmentList);
         viewPager.setAdapter(adapter);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         tabLayout.setupWithViewPager(viewPager);
         adapter.notifyDataSetChanged();
-
     }
 
     @Override

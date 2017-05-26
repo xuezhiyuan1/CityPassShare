@@ -27,6 +27,7 @@ public class App extends Application {
     public BDLocationListener myListener = (BDLocationListener) new MyLocationListener();
     public static BaseActivity activity;
     public static BaseFragment lastFragment;
+    public static BaseFragment banquFragment;
    public static String phoneNumber="0";
     public static  String  PHONEID;
     @Override

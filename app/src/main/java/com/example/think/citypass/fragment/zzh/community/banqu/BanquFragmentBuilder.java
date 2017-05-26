@@ -8,7 +8,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 
-import static com.example.think.citypass.App.banquFragment;
+
 
 
 public class BanquFragmentBuilder {
@@ -57,8 +57,8 @@ public class BanquFragmentBuilder {
             transaction.add(R.id.banqu_frame, baseFragment, simpleName);
         }
 
-        if (banquFragment != null) {
-            transaction.hide(banquFragment);
+        if (App.banquFragment != null) {
+            transaction.hide(App.banquFragment);
         }
 
         transaction.show(baseFragment);
@@ -69,7 +69,7 @@ public class BanquFragmentBuilder {
     }
 
     public BaseFragment builder() {
-        banquFragment = baseFragment;
+        App.banquFragment = baseFragment;
         transaction.commit();
         return baseFragment;
     }

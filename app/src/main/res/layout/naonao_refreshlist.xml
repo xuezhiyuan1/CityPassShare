@@ -4,10 +4,13 @@
     android:layout_height="match_parent"
     android:background="@color/color_f0"
     android:orientation="vertical">
-
+   <!--  -->
     <include
         android:id="@+id/listview_layout"
         layout="@layout/m_gif_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <!--  -->
+
+
 </RelativeLayout>

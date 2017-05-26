@@ -3,6 +3,7 @@ package com.example.think.citypass.fragment.xzy;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +19,9 @@ import com.example.think.citypass.activity.xzy.Sao1SaoActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.common.config.Urls;
+import com.example.think.citypass.fragment.zzh.community.BanquFragment;
 import com.example.think.citypass.model.entity.FindBean;
 import com.example.think.citypass.model.http.callback.ResaultCallBack;
 import com.example.think.citypass.utils.retrofitutils.RetrofitUtil;
@@ -31,6 +34,19 @@ import java.util.Map;
  */
 
 public class LoadFragmentTwo extends BaseFragment implements View.OnClickListener{
+    //美女秀
+    LinearLayout linearLayout1;
+    //型男秀
+    LinearLayout linearLayout2;
+    //萌宝秀
+    LinearLayout linearLayout3;
+    //交流场
+    //社区
+    LinearLayout layout1;
+    //圈子
+    LinearLayout layout2;
+    //问事
+    LinearLayout layout3;
     //热门事   One
     private ImageView imageView;
     private TextView textView1;
@@ -89,6 +105,15 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initView(View view) {
+
+        linearLayout1 = (LinearLayout) view.findViewById(R.id.layout1);
+        linearLayout2 = (LinearLayout) view.findViewById(R.id.layout2);
+        linearLayout3 = (LinearLayout) view.findViewById(R.id.layout3);
+
+        layout1 = (LinearLayout) view.findViewById(R.id.home_layout1);
+        layout2 = (LinearLayout) view.findViewById(R.id.home_layout2);
+        layout3 = (LinearLayout) view.findViewById(R.id.home_layout3);
+
         //热门事   One
         imageView = (ImageView) view.findViewById(R.id.bg_imagview);
         textView1 = (TextView) view.findViewById(R.id.title_textview);
@@ -131,7 +156,6 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         imageView21 = (ImageView) view.findViewById(R.id.imageView_baishitong7);
         imageView22 = (ImageView) view.findViewById(R.id.imageView_baishitong8);
 
-
         imageView23 = (ImageView) view.findViewById(R.id.imageView_title1);
         imageView24 = (ImageView) view.findViewById(R.id.imageView_title2);
         imageView25 = (ImageView) view.findViewById(R.id.imageView_title3);
@@ -166,6 +190,7 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
             @Override
             public void onSuccess(Object pbj) {
                 FindBean findBean = (FindBean) pbj;
+                Log.d("FindBean",findBean.toString());
                 //热门事   One
                 String channelName = findBean.getServerInfo().get(0).getChannelList().get(0).getChannelName();
                 textView2.setText(channelName);
@@ -277,6 +302,15 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         //城市  生活
         bglsyout.setOnClickListener(this);
         bglayout2.setOnClickListener(this);
+
+        linearLayout1.setOnClickListener(this);
+        linearLayout2.setOnClickListener(this);
+        linearLayout3.setOnClickListener(this);
+
+        layout1.setOnClickListener(this);
+        layout2.setOnClickListener(this);
+        layout3.setOnClickListener(this);
+
     }
 
     @Override
@@ -312,8 +346,33 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
                 Intent intentErweima = new Intent(getContext(), Sao1SaoActivity.class);
                 startActivity(intentErweima);
                 break;
-
-
+            //美女秀
+            case R.id.layout1:
+                Intent intentBeauty = new Intent(getContext(), Sao1SaoActivity.class);
+                startActivity(intentBeauty);
+                break;
+            //型男秀
+            case R.id.layout2:
+                Intent intentNan = new Intent(getContext(), Sao1SaoActivity.class);
+                startActivity(intentNan);
+                break;
+            //萌宝秀
+            case R.id.layout3:
+                Intent intentBao = new Intent(getContext(), Sao1SaoActivity.class);
+                startActivity(intentBao);
+                break;
+            //社区
+            case R.id.home_layout1:
+                FragmentBuilder.getInstance().show(BanquFragment.class).builder();
+                break;
+            //圈子
+            case R.id.home_layout2:
+                FragmentBuilder.getInstance().show(BanquFragment.class).builder();
+                break;
+            //问事
+            case R.id.home_layout3:
+                FragmentBuilder.getInstance().show(BanquFragment.class).builder();
+                break;
         }
     }
 }

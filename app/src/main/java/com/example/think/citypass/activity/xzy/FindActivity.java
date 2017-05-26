@@ -11,6 +11,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
+import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,16 +53,10 @@ public class FindActivity  extends BaseActivity implements View.OnClickListener 
         stringList.add("促销优惠");
         stringList.add("公益活动");
         stringList.add("工作生活");
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
-        fragmentList.add(new FindCTyoutaidu());
+        for (int i = 0; i < stringList.size(); i++) {
+            WangyouFragment wangyouFragment = new WangyouFragment();
+            fragmentList.add(wangyouFragment);
+        }
         adapter=new ViewpagerAdapter(getSupportFragmentManager(),stringList,fragmentList);
         viewPager.setAdapter(adapter);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
