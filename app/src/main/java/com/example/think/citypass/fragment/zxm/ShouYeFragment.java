@@ -125,7 +125,7 @@ public class ShouYeFragment extends BaseFragment {
     @Override
     public void initView(View view) {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
-        int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.54);
+        int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.45);
         slidingUpPanelLayout.setPanelHeight(height);
         zhuanbi= (LinearLayout) view.findViewById(R.id.zhuanbi_layout);
         huabi= (LinearLayout) view.findViewById(R.id.huabi_layout);

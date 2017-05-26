@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="50dp"
-    android:background="@color/blue">
+    android:background="@color/all_top_bg">
 
     <Button
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_back_erweima"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerVertical="true"

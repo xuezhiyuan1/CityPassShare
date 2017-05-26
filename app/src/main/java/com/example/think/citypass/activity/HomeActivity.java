@@ -130,7 +130,7 @@ public class HomeActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.TouTiaoBtn:
-                         top.setVisibility(View.VISIBLE);
+                        top.setVisibility(View.VISIBLE);
                         FragmentBuilder.getInstance().show(ShouYeFragment.class).builder();
                         break;
                     case R.id.NaoNaoBtn:

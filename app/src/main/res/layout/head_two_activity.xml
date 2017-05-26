@@ -62,7 +62,7 @@
     <com.jude.rollviewpager.RollPagerView
         android:id="@+id/RollPagerView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         ></com.jude.rollviewpager.RollPagerView>
 
 
@@ -84,7 +84,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="100dp">
 
         <LinearLayout
             android:background="@drawable/layoutselector"
@@ -100,7 +100,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
             <TextView
-                android:text="找工作"    android:layout_marginTop="5dp"
+                android:text="找工作"
+                android:textColor="@color/line"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -122,6 +124,7 @@
             <TextView
                 android:text="找房子"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -144,6 +147,7 @@
             <TextView
                 android:text="分类生活"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -164,6 +168,7 @@
                 android:layout_height="40dp" />
             <TextView
                 android:text="同城咨询"
+                android:textColor="@color/line"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

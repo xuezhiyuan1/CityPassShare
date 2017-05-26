@@ -3,8 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F0F0F0"
-    >
+    android:background="#F0F0F0">
+
+    <WebView
+        android:id="@+id/webview_erweima"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="50dp"

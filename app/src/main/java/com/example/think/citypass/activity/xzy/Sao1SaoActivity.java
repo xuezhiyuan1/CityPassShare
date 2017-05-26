@@ -11,6 +11,9 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.view.SurfaceHolder.Callback;
 import com.example.think.citypass.R;
@@ -41,7 +44,7 @@ public class Sao1SaoActivity extends Activity implements Callback{
     private boolean playBeep;
     private static final float BEEP_VOLUME = 0.10f;
     private boolean vibrate;
-
+    private Button imageView;
 
     /**
      * Called when the activity is first created.
@@ -57,6 +60,13 @@ public class Sao1SaoActivity extends Activity implements Callback{
         CameraManager.init(getApplication());
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);
+        imageView = (Button) findViewById(R.id.btn_back_erweima);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
