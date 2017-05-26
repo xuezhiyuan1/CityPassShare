@@ -18,6 +18,7 @@ import com.example.think.citypass.activity.zxm.baidumap.LocationService;
 import com.example.think.citypass.activity.zxm.upphoto.logic.FileTraversal;
 import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListActivity;
 import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListAdapter;
+import com.example.think.citypass.activity.zxm.upphoto.logic.ImgsActivity;
 import com.example.think.citypass.activity.zxm.upphoto.logic.Util;
 import com.example.think.citypass.common.base.BaseActivity;
 
@@ -63,10 +64,13 @@ public class ShouyeSendTie   extends BaseActivity {
             if (bundle.getStringArrayList("files")!=null) {
                 alistfile= bundle.getStringArrayList("files");
                 alistView.setVisibility(View.VISIBLE);
+                ImgsActivity  imgsActivity=new ImgsActivity();
+//                List<ImageView> imageview = imgsActivity.getImageview();
                 ArrayAdapter<String> arryAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listfile);
                 alistView.setAdapter(arryAdapter);
             }
         }
+
 
 
         listView=(ListView) findViewById(com.example.think.citypass.R.id.after_listview);

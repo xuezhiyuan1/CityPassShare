@@ -3,6 +3,8 @@ package com.example.think.citypass.activity.zxm.upphoto.logic;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 
 import android.annotation.SuppressLint;
@@ -152,4 +154,19 @@ public class ImgsActivity extends Activity {
 		startActivity(intent);
 		
 	}
+
+
+//
+//	public List<ImageView> getImageview(){
+//		ImageView imageView = null;
+//		List<ImageView>  mlist=new ArrayList<>();
+//		Set<Integer> integers = hashImage.keySet();
+//		for (Integer  ss:integers){
+//			imageView = hashImage.get(ss);
+//           mlist.add(imageView);
+//		}
+//		return  mlist;
+//	}
+
+
 }
