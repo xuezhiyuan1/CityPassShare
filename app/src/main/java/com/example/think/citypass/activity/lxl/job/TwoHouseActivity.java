@@ -18,7 +18,7 @@ public class TwoHouseActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mCloseText= (TextView) findViewById(R.id.Close_mTextTwo);
+        mCloseText= (TextView) findViewById(R.id.Close_Two);
 
     }
 

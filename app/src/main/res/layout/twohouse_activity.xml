@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <include
+        android:id="@+id/Close"
         layout="@layout/house_title"></include>
+
     <LinearLayout
         android:id="@+id/search_layout"
         android:layout_width="match_parent"
