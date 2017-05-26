@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,7 +26,7 @@ import com.example.think.citypass.model.http.callback.ResaultCallBack;
 import com.example.think.citypass.utils.retrofitutils.RetrofitUtil;
 import java.util.HashMap;
 import java.util.Map;
-
+//提交526
 
 /**
  * Created by think on 2017/5/19.
