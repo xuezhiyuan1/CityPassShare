@@ -31,6 +31,7 @@ import com.example.think.citypass.activity.zxm.ShouyeHaoli;
 import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.activity.zxm.WebView_Activity;
+import com.example.think.citypass.activity.zxm.Workdetail;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
@@ -186,7 +187,7 @@ public class ShouYeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "找工作", Toast.LENGTH_SHORT).show();
-                Intent  intent=new Intent(getContext(), FindworkActivity.class);
+                Intent  intent=new Intent(getContext(), Workdetail.class);
                 startActivity(intent);
             }
         });
