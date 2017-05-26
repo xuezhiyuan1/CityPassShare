@@ -11,7 +11,7 @@ public class NewHouseActivity extends BaseActivity {
     @Override
     protected int layoutId() {
 //        return R.layout.new_house;
-        return 0;
+        return R.layout.findhouse_fangchan_item;
     }
 
     @Override

@@ -148,6 +148,12 @@ public class WebView_Activity extends BaseActivity {
     }
 
 
+
+
+
+
+
+
     /***
      * 通过前面传过来的newsID  在这里进行网络请求  然后返回一个对象里面的URI   webview直接加载
      */
@@ -220,7 +226,7 @@ public class WebView_Activity extends BaseActivity {
                         ShouyeDetailBean webBean = gson.fromJson(string, ShouyeDetailBean.class);
 
 
-                        if(webBean.getServerInfo().getNewsInfo().get(0).getBody()==null){
+                            if(webBean.getServerInfo().getNewsInfo().get(0).getBody()==null){
                             Toast.makeText(WebView_Activity.this, "暂无详情", Toast.LENGTH_SHORT).show();
                         }
                         url = webBean.getServerInfo().getNewsInfo().get(0).getBody();
