@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
-import com.example.think.citypass.activity.lxl.job.bean.LifeBean;
 import com.example.think.citypass.activity.lxl.job.demo.GridViewAdapter;
+import com.example.think.citypass.activity.lxl.job.demo.LifeBean;
 import com.example.think.citypass.activity.lxl.job.demo.Model;
 import com.example.think.citypass.activity.lxl.job.demo.ViewPagerAdapter;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
@@ -234,16 +234,16 @@ public class AllRecruitmentFragment extends BaseFragment {
 
     class Holder extends BaseAdapter {
         private Context mContext;
-        private ArrayList<LifeBean> mList;
+//        private ArrayList<LifeBean> mList;
 
         public Holder(Context mContext, ArrayList<LifeBean> mList) {
             this.mContext = mContext;
-            this.mList = mList;
+//            this.mList = mList;
         }
 
         @Override
         public int getCount() {
-            return mList.isEmpty() ? 0 : mList.size();
+            return 0;
         }
 
         @Override
@@ -268,9 +268,9 @@ public class AllRecruitmentFragment extends BaseFragment {
             } else {
                 holderView = (HolderView) convertView.getTag();
             }
-            LifeBean lifeBean = mList.get(position);
-            holderView.mText.setText(lifeBean.getTitle() + "");
-            holderView.mText.setText(lifeBean.getName() + "");
+//            LifeBean lifeBean = mList.get(position);
+//            holderView.mText.setText(lifeBean.getTitle() + "");
+//            holderView.mText.setText(lifeBean.getName() + "");
             return convertView;
         }
 
