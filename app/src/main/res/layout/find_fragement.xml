@@ -13,8 +13,7 @@
     <include
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        layout="@layout/layout_loading"
-        android:visibility="gone">
+        layout="@layout/layout_loading">
 
     </include>
 
