@@ -39,6 +39,7 @@
                     android:layout_height="match_parent"
                     layout="@layout/find_three_layout"/>
                 <include
+                    android:id="@+id/clever"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     layout="@layout/find_four_layout"/>

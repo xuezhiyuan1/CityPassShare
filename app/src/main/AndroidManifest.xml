@@ -165,7 +165,7 @@
 
 
         </activity>
-
+        <activity android:name=".activity.xzy.FindShopWebView"></activity>
         <!--百度地图-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

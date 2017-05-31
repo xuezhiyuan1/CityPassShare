@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.think.citypass.ParamUtils;
 import com.example.think.citypass.R;
@@ -18,6 +19,7 @@ import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
 import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
 import com.example.think.citypass.model.bean.TitleBean;
+import com.example.think.citypass.model.entity.InfoBean;
 import com.example.think.citypass.model.http.callback.ResaultCallBack;
 import com.example.think.citypass.utils.retrofitutils.RetrofitUtil;
 
@@ -34,13 +36,15 @@ import java.util.Map;
  */
 
 public class FindCityThings  extends BaseActivity implements View.OnClickListener{
+
     TabLayout  tabLayout;
     ViewPager  viewPager;
     List<String>  stringList;
     List<BaseFragment>  fragmentList;
     ViewpagerAdapter  adapter;
     ImageView imageView;
-    private List<TitleBean> titleBeen;
+    List<TitleBean> titleBeen;
+    InfoBean infoBean;
 
     @Override
     protected int layoutId() {
@@ -57,6 +61,7 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void initData() {
+        infoBean = new InfoBean();
         titleBeen = new ArrayList<>();
         stringList=new ArrayList<>();
         fragmentList=new ArrayList<>();
@@ -89,6 +94,8 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
                 }
                 for (int i = 0; i < stringList.size(); i++) {
                     if(i == 5){
+                        String s5 = stringList.get(5);
+                        Toast.makeText(FindCityThings.this, s5, Toast.LENGTH_SHORT).show();
                         NaonaoXingFragment naonaoXingFragment = new NaonaoXingFragment();
                         fragmentList.add(naonaoXingFragment);
                     }else {
@@ -96,8 +103,6 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
                         fragmentList.add(wangyouFragment);
                     }
                 }
-
-
                 adapter=new ViewpagerAdapter(getSupportFragmentManager(),stringList,fragmentList);
                 viewPager.setAdapter(adapter);
                 tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);

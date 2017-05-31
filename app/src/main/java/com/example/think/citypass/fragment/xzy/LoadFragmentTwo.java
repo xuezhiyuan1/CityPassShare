@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.xzy.FindActivity;
 import com.example.think.citypass.activity.xzy.FindCityThings;
+import com.example.think.citypass.activity.xzy.FindShopWebView;
 import com.example.think.citypass.activity.xzy.Sao1SaoActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
@@ -96,6 +97,27 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
     private ImageView erweima;
     //无网络加载试图
     LinearLayout linearLayout;
+    //聪明购
+    LinearLayout jiaju,qiche,hunqing,qizi,jiudian,mingdian;
+
+    //Type5
+    LinearLayout linearLayoutNewsHome;
+    LinearLayout linearLayoutFindWork;
+    LinearLayout linearLayoutFindHome;
+    LinearLayout linearLayoutTwoBuy;
+    LinearLayout linearLayoutCarBuy;
+    LinearLayout linearLayoutLifeFW;
+    LinearLayout linearLayoutCommonCity;
+    LinearLayout linearLayoutPetFW;
+
+    LinearLayout linearLayoutFindPhone;
+    LinearLayout linearLayoutFindTime;
+    LinearLayout linearLayoutFindFoot;
+    LinearLayout linearLayoutFindWG;
+    LinearLayout linearLayoutFindGJ;
+    LinearLayout linearLayoutFindBus;
+    LinearLayout linearLayoutTrins;
+    LinearLayout linearLayoutPlane;
     @Override
     protected int layoutId() {
         return R.layout.find_fragement;
@@ -103,6 +125,32 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initView(View view) {
+        //TYPE5
+        linearLayoutNewsHome = (LinearLayout) view.findViewById(R.id.imageNewHome);
+        linearLayoutFindWork = (LinearLayout) view.findViewById(R.id.findWork);
+        linearLayoutFindHome = (LinearLayout) view.findViewById(R.id.findHome);
+        linearLayoutTwoBuy = (LinearLayout) view.findViewById(R.id.TwoBuy);
+        linearLayoutCarBuy = (LinearLayout) view.findViewById(R.id.carBuy);
+        linearLayoutLifeFW = (LinearLayout) view.findViewById(R.id.lifeFuWu);
+        linearLayoutCommonCity = (LinearLayout) view.findViewById(R.id.CommonCity);
+        linearLayoutPetFW = (LinearLayout) view.findViewById(R.id.PetFuWu);
+
+        linearLayoutFindPhone = (LinearLayout) view.findViewById(R.id.checkedPhone);
+        linearLayoutFindTime = (LinearLayout) view.findViewById(R.id.checkedTime);
+        linearLayoutFindFoot = (LinearLayout) view.findViewById(R.id.checkedFoot);
+        linearLayoutFindWG = (LinearLayout) view.findViewById(R.id.checkedWeiGui);
+        linearLayoutFindGJ = (LinearLayout) view.findViewById(R.id.checkedGJ);
+        linearLayoutFindBus = (LinearLayout) view.findViewById(R.id.checkedBus);
+        linearLayoutTrins = (LinearLayout) view.findViewById(R.id.checkedTrins);
+        linearLayoutPlane = (LinearLayout) view.findViewById(R.id.checkedPlane);
+
+        //聪明购  webview
+        jiaju = (LinearLayout) view.findViewById(R.id.top_lay_one);
+        qiche = (LinearLayout) view.findViewById(R.id.top_lay2_two);
+        hunqing = (LinearLayout) view.findViewById(R.id.top_lay_three);
+        qizi = (LinearLayout) view.findViewById(R.id.top_lay2_four);
+        jiudian = (LinearLayout) view.findViewById(R.id.top_lay_five);
+        mingdian = (LinearLayout) view.findViewById(R.id.top_lay2_six);
 
         linearLayout1 = (LinearLayout) view.findViewById(R.id.layout1);
         linearLayout2 = (LinearLayout) view.findViewById(R.id.layout2);
@@ -185,6 +233,9 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         Map<String, String> map = new HashMap<>();
         map.put("param", "{\"customerID\":8001,\"requestTime\":\"2017-05-16 15:25:59\",\"Method\":\"PHSocket_GetAppSetInfo\",\"customerKey\":\"CEE365A69C5ADE99398408693ABAEE95\",\"appName\":\"CityGeneral\",\"version\":\"1.0\",\"Param\":{\"siteID\":2488,\"type\":3},\"Statis\":{\"SiteId\":0,\"UserId\":0,\"PhoneNo\":\"Le X620\",\"SystemNo\":2,\"System_VersionNo\":\"Android 6.0\",\"PhoneId\":\"\",\"PhoneNum\":\"0\"}}");
         RetrofitUtil.getInstance().postRetrofit(Urls.FINDPAGE, map, new ResaultCallBack() {
+
+
+
             @Override
             public void onSuccess(Object pbj) {
                 FindBean findBean = (FindBean) pbj;
@@ -295,6 +346,7 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initListener() {
+
         //二维码
         erweima.setOnClickListener(this);
         //城市  生活
@@ -308,6 +360,32 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
         layout1.setOnClickListener(this);
         layout2.setOnClickListener(this);
         layout3.setOnClickListener(this);
+
+        //聪明购
+        jiaju.setOnClickListener(this);
+        qiche.setOnClickListener(this);
+        hunqing.setOnClickListener(this);
+        qizi.setOnClickListener(this);
+        jiudian.setOnClickListener(this);
+        mingdian.setOnClickListener(this);
+        //Type5
+        linearLayoutNewsHome.setOnClickListener(this);
+        linearLayoutFindWork.setOnClickListener(this);
+        linearLayoutFindHome.setOnClickListener(this);
+        linearLayoutTwoBuy.setOnClickListener(this);
+        linearLayoutCarBuy.setOnClickListener(this);
+        linearLayoutLifeFW.setOnClickListener(this);
+        linearLayoutCommonCity.setOnClickListener(this);
+        linearLayoutPetFW.setOnClickListener(this);
+
+        linearLayoutFindPhone.setOnClickListener(this);
+        linearLayoutFindTime.setOnClickListener(this);
+        linearLayoutFindFoot.setOnClickListener(this);
+        linearLayoutFindWG.setOnClickListener(this);
+        linearLayoutFindGJ.setOnClickListener(this);
+        linearLayoutFindBus.setOnClickListener(this);
+        linearLayoutTrins.setOnClickListener(this);
+        linearLayoutPlane.setOnClickListener(this);
 
     }
 
@@ -330,16 +408,6 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
                 Intent  intent2=new Intent(getContext(), FindActivity.class);
                 startActivity(intent2);
                 break;
-            case R.id.imageView_baishitong2:
-                Toast.makeText(getContext(), "找工作", Toast.LENGTH_SHORT).show();
-                Intent  intent3=new Intent(getContext(), FindworkActivity.class);
-                startActivity(intent3);
-                break;
-            case R.id.imageView_baishitong3:
-                Toast.makeText(getContext(), "找房子", Toast.LENGTH_SHORT).show();
-                Intent  intent4=new Intent(getContext(), FindhouseActivity.class);
-                startActivity(intent4);
-                break;
             case R.id.right_image_erweima_find:
                 Intent intentErweima = new Intent(getContext(), Sao1SaoActivity.class);
                 startActivity(intentErweima);
@@ -361,7 +429,10 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
                 break;
             //社区
             case R.id.home_layout1:
-                FragmentBuilder.getInstance().show(BanquFragment.class).builder();
+                Intent intent1 = new Intent(getActivity(), FindShopWebView.class);
+
+                startActivity(intent1);
+            //  FragmentBuilder.getInstance().show(BanquFragment.class).builder();
                 break;
             //圈子
             case R.id.home_layout2:
@@ -370,6 +441,145 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
             //问事
             case R.id.home_layout3:
                 FragmentBuilder.getInstance().show(BanquFragment.class).builder();
+                break;
+
+            //家具   http://m.chaoyang.ccoo.cn//store/shop/store_list.aspx?Sort=5#andriod_redirect
+            case R.id.top_lay_one:
+                Intent intentjiaju = new Intent(getActivity(), FindShopWebView.class);
+                intentjiaju.putExtra("url","http://m.yanqing.ccoo.cn//store/shop/store_list.aspx?Sort=2#andriod_redirect");
+                intentjiaju.putExtra("title","家具商城");
+                startActivity(intentjiaju);
+                break;
+            //汽车
+            case R.id.top_lay2_two:
+                Intent intentqiche = new Intent(getActivity(), FindShopWebView.class);
+                intentqiche.putExtra("url","http://m.yanqing.ccoo.cn//store/shop/store_list.aspx?Sort=5#andriod_redirect");
+                intentqiche.putExtra("title","汽车商城");
+                startActivity(intentqiche);
+                break;
+            //婚庆
+            case R.id.top_lay_three:
+                Intent intenthunqing = new Intent(getActivity(),FindShopWebView.class);
+                intenthunqing.putExtra("url","http://m.yanqing.ccoo.cn//store/shop/store_list.aspx?Sort=1#andriod_redirect");
+                intenthunqing.putExtra("title","婚庆商城");
+                startActivity(intenthunqing);
+                break;
+            //亲子
+            case R.id.top_lay2_four:
+                Intent intentqinzi = new Intent(getActivity(),FindShopWebView.class);
+                intentqinzi.putExtra("url","http://m.yanqing.ccoo.cn//store/shop/store_list.aspx?Sort=1#andriod_redirect");
+                intentqinzi.putExtra("title","亲子商城");
+                startActivity(intentqinzi);
+                break;
+            case R.id.top_lay_five:
+                Intent intentjiudian = new Intent(getActivity(),FindShopWebView.class);
+                intentjiudian.putExtra("url","http://m.yanqing.ccoo.cn//store/shop/store_list.aspx?Sort=3#andriod_redirect");
+                intentjiudian.putExtra("title","酒店商城");
+                startActivity(intentjiudian);
+                break;
+            case R.id.top_lay2_six:
+                Intent intentfamous = new Intent(getActivity(),FindShopWebView.class);
+                intentfamous.putExtra("url","http://m.yanqing.ccoo.cn//store/");
+                intentfamous.putExtra("title","名店商城");
+                startActivity(intentfamous);
+                break;
+            //百事通
+
+            case R.id.imageNewHome:
+                Intent intentnewhome = new Intent(getActivity(),FindShopWebView.class);
+                intentnewhome.putExtra("url","http://m.yanqing.ccoo.cn//post/xinloupan/#andriod_redirect");
+                intentnewhome.putExtra("title","新楼盘");
+                startActivity(intentnewhome);
+                break;
+            case R.id.findWork:
+                Intent intentfindwork = new Intent(getActivity(),FindShopWebView.class);
+                intentfindwork.putExtra("url","http://m.yanqing.ccoo.cn//post/zhaopin/#andriod_redirect");
+                intentfindwork.putExtra("title","找工作");
+                startActivity(intentfindwork);
+                break;
+            case R.id.findHome:
+                Intent intentfindhome = new Intent(getActivity(),FindShopWebView.class);
+                intentfindhome.putExtra("url","http://m.yanqing.ccoo.cn//post/fangwu/#andriod_redirect");
+                intentfindhome.putExtra("title","找房子");
+                startActivity(intentfindhome);
+                break;
+            case R.id.TwoBuy:
+                Intent intenttwobuy = new Intent(getActivity(),FindShopWebView.class);
+                intenttwobuy.putExtra("url","http://m.yanqing.ccoo.cn//post/zhaopin/#andriod_redirect");
+                intenttwobuy.putExtra("title","二手交易");
+                startActivity(intenttwobuy);
+                break;
+            case R.id.carBuy:
+                Intent intentcarbuy = new Intent(getActivity(),FindShopWebView.class);
+                intentcarbuy.putExtra("url","http://m.yanqing.ccoo.cn//post/fangwu/#andriod_redirect");
+                intentcarbuy.putExtra("title","车辆买卖");
+                startActivity(intentcarbuy);
+                break;
+            case R.id.lifeFuWu:
+                Intent intentfuwu = new Intent(getActivity(),FindShopWebView.class);
+                intentfuwu.putExtra("url","http://m.yanqing.ccoo.cn//post/shenghuo/live_search.aspx");
+                intentfuwu.putExtra("title","生活服务");
+                startActivity(intentfuwu);
+                break;
+            case R.id.CommonCity:
+                Intent intentcc = new Intent(getActivity(),FindShopWebView.class);
+                intentcc.putExtra("url","http://m.yanqing.ccoo.cn//post/jiaoyou/#andriod_redirect");
+                intentcc.putExtra("title","同城交友");
+                startActivity(intentcc);
+                break;
+            case R.id.PetFuWu:
+                Intent intentpfw = new Intent(getActivity(),FindShopWebView.class);
+                intentpfw.putExtra("url","http://m.yanqing.ccoo.cn//post/pet/#andriod_redirect");
+                intentpfw.putExtra("title","宠物服务");
+                startActivity(intentpfw);
+                break;
+            case R.id.checkedPhone:
+                Intent intentfindphone = new Intent(getActivity(),FindShopWebView.class);
+                intentfindphone.putExtra("url","http://m.yanqing.ccoo.cn//tel/");
+                intentfindphone.putExtra("title","查电话");
+                startActivity(intentfindphone);
+                break;
+            case R.id.checkedTime:
+                Intent intentct = new Intent(getActivity(),FindShopWebView.class);
+                intentct.putExtra("url","http://m.yanqing.ccoo.cn//yp/");
+                intentct.putExtra("title","查黄页");
+                startActivity(intentct);
+                break;
+            case R.id.checkedFoot:
+                Intent intentctft = new Intent(getActivity(),FindShopWebView.class);
+                intentctft.putExtra("url","http://m.kuaidi100.com/uc/index.html");
+                intentctft.putExtra("title","查快递");
+                startActivity(intentctft);
+                break;
+            case R.id.checkedWeiGui:
+                Intent intentctwg = new Intent(getActivity(),FindShopWebView.class);
+                intentctwg.putExtra("url","http://chaweizhang.eclicks.cn/webapp/index?appid=11");
+                intentctwg.putExtra("title","查违规");
+                startActivity(intentctwg);
+                break;
+            case R.id.checkedGJ:
+                Intent intentctgl = new Intent(getActivity(),FindShopWebView.class);
+                intentctgl.putExtra("url","http://m.yanqing.ccoo.cn//bianmin/bus/");
+                intentctgl.putExtra("title","查公交");
+                startActivity(intentctgl);
+                break;
+            case R.id.checkedBus:
+                Intent intentbus = new Intent(getActivity(),FindShopWebView.class);
+                intentbus.putExtra("url","http://m.yanqing.ccoo.cn//bianmin/coach/");
+                intentbus.putExtra("title","查客车");
+                startActivity(intentbus);
+                break;
+            case R.id.checkedTrins:
+                Intent intentts = new Intent(getActivity(),FindShopWebView.class);
+                intentts.putExtra("url","http://dynamic.m.tuniu.com/train");
+                intentts.putExtra("title","火车票");
+                startActivity(intentts);
+                break;
+            case R.id.checkedPlane:
+                Intent intentpe = new Intent(getActivity(),FindShopWebView.class);
+                intentpe.putExtra("url","http://m.tuniu.com/flight/");
+                intentpe.putExtra("title","飞机票");
+                startActivity(intentpe);
                 break;
         }
     }

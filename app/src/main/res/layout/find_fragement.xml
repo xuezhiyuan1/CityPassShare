@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <include
         android:id="@+id/in_clude"
         android:layout_width="match_parent"
@@ -12,7 +13,8 @@
     <include
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        layout="@layout/layout_loading">
+        layout="@layout/layout_loading"
+        android:visibility="gone">
 
     </include>
 

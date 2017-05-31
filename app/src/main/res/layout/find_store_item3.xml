@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/top_lay"
+
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -24,7 +24,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/layout"
+                android:id="@+id/top_lay_five"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -75,7 +75,7 @@
             android:background="@color/line" />
 
         <LinearLayout
-            android:id="@+id/top_lay2"
+
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -83,7 +83,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/layout2"
+                android:id="@+id/top_lay2_six"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"

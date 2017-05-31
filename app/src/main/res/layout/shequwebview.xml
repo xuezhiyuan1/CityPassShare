@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:background="#f13030"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:id="@+id/findhouse_close"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/btn_back_normal"
+                android:id="@+id/image1"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <TextView
+                android:text="关闭"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_toRightOf="@id/image1"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/text_fount"
+            android:text="二手信息"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/findhouse_more"
+            android:src="@drawable/new_con_share_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_parent"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:progressDrawable="@color/bbs_bt_after"
+        android:max="100"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+</LinearLayout>
