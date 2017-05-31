@@ -146,6 +146,10 @@
         <activity android:name=".activity.zxm.WebView_Activity"/>
         <activity android:name=".activity.zxm.CityListActivity"/>
         <activity android:name=".activity.zxm.Workdetail"></activity>
+        <activity android:name=".activity.zxm.findhouse.HouseChushou"/>
+        <activity android:name=".activity.zxm.findhouse.HouseChuzu"/>
+        <activity android:name=".activity.zxm.findhouse.HouseQiugou"/>
+        <activity android:name=".activity.zxm.findhouse.HouseQiuzu"/>
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
@@ -178,6 +182,8 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".activity.zxm.findhouse.HouseQiugou" />
+
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="59098346f5ade43dc00001c8" >

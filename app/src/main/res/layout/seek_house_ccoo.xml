@@ -148,7 +148,7 @@
                     android:layout_weight="1">
 
                     <RelativeLayout
-                        android:id="@+id/relative_house_catalog02"
+                        android:id="@+id/relative_house_catalog01"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -182,7 +182,7 @@
                         android:background="@color/grayline" />
 
                     <RelativeLayout
-                        android:id="@+id/relative_house_catalog01"
+                        android:id="@+id/relative_house_catalog02"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

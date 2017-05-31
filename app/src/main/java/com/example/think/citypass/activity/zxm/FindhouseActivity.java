@@ -1,14 +1,20 @@
 package com.example.think.citypass.activity.zxm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.zxm.findhouse.HouseChushou;
+import com.example.think.citypass.activity.zxm.findhouse.HouseChuzu;
+import com.example.think.citypass.activity.zxm.findhouse.HouseQiugou;
+import com.example.think.citypass.activity.zxm.findhouse.HouseQiuzu;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.model.bean.ModelOneBean;
 
@@ -23,6 +29,10 @@ public class FindhouseActivity  extends BaseActivity {
     ArrayList<ModelOneBean>  likelist,fangchanlist;
     ListviewAdapter  listviewAdapter;
     FangchanAdapter fangchanAdapter;
+    RelativeLayout  relative_house_catalog01,relative_house_catalog02,relative_house_catalog03,relative_house_catalog04;
+
+
+
     @Override
     protected int layoutId() {
         return R.layout.seek_house_ccoo;
@@ -32,6 +42,10 @@ public class FindhouseActivity  extends BaseActivity {
     protected void initView() {
      likelistview= (ListView) findViewById(R.id.listView_house_like);
         fangchanlistview= (ListView) findViewById(R.id.listView_house_information);
+        relative_house_catalog01= (RelativeLayout) findViewById(R.id.relative_house_catalog01);
+        relative_house_catalog02= (RelativeLayout) findViewById(R.id.relative_house_catalog02);
+        relative_house_catalog03= (RelativeLayout) findViewById(R.id.relative_house_catalog03);
+        relative_house_catalog04= (RelativeLayout) findViewById(R.id.relative_house_catalog04);
     }
 
     @Override
@@ -59,7 +73,37 @@ public class FindhouseActivity  extends BaseActivity {
 
     @Override
     protected void initListener() {
+        relative_house_catalog01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(FindhouseActivity.this, HouseChushou.class);
+                startActivity(intent);
+            }
+        });
 
+        relative_house_catalog02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(FindhouseActivity.this, HouseChuzu.class);
+                startActivity(intent);
+            }
+        });
+
+        relative_house_catalog03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(FindhouseActivity.this, HouseQiuzu.class);
+                startActivity(intent);
+            }
+        });
+
+        relative_house_catalog04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(FindhouseActivity.this, HouseQiugou.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -84,6 +84,25 @@ public class Workdetail  extends BaseActivity{
     }
 
 
+    private void load(){
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        FormBody.Builder formBody = new FormBody.Builder();
+        Map<String, String> param = new HashMap<>();
+        param.put("param", RequestData01());
+        if (param != null && param.size() > 0) {
+            Set<String> set = param.keySet();
+            for (String key : set) {
+                String value = param.get(key);
+                formBody.add(key, value);
+            }
+        }
+        Request request = new Request.Builder()
+                .url("http://appnew.ccoo.cn/appserverapi.ashx")
+                .post(formBody.build())
+                .build();
+        Call call = okHttpClient.newCall(request);
+    }
+
 
 
     /**
