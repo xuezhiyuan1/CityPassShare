@@ -150,13 +150,17 @@
         <activity android:name=".activity.zxm.findhouse.HouseChuzu"/>
         <activity android:name=".activity.zxm.findhouse.HouseQiugou"/>
         <activity android:name=".activity.zxm.findhouse.HouseQiuzu"/>
+
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />
         <activity android:name=".activity.xzy.FindActivity" />
-        <activity android:name=".activity.zxm.LoginActivity"></activity>
+        <activity android:name=".activity.zxm.LoginActivity">
+
+
+        </activity>
         <activity android:name=".activity.zxm.RegisterActivity"></activity>
         <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->
         <!-- <meta-data -->

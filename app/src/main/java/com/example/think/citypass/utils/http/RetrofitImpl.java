@@ -8,7 +8,9 @@ import com.example.think.citypass.model.exception.ConfigException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
+import okhttp3.Headers;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -110,6 +112,59 @@ public class RetrofitImpl implements IHttp {
         }
         return map;
     }
+
+
+
+
+
+
+
+    public void login(final Class classDemo, String url, Map<String, String> map, final HttpCallBack httpCallBack) {
+        Call<ResponseBody> login = iRetrofit.login(url, map);
+        login.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+
+                    savecooike(response);
+                    String str = null;
+                    try {
+                        str = response.body().string();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    httpCallBack.onSuccessful(GsonUtils.gsonBean(str, classDemo));
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                httpCallBack.onError(t.getMessage());
+            }
+        });
+
+    }
+
+    private static void savecooike(Response<ResponseBody> response) {
+        String cookie = "";
+        Headers headers = response.headers();
+        Set<String> names = headers.names();
+        for (String name : names) {
+            String key = name;
+//            List<String> values = headers.values(key);
+            String values = headers.get(key);
+
+            if (key.contains("Set-Cookie"))
+                cookie += values + ";";
+        }
+
+        if (cookie.length() > 0) {
+            cookie = cookie.substring(0, cookie.length() - 1);
+        }
+//        App.sharedPreferences.edit().putString(KeyUtils.COOKIE,cookie).commit();
+    }
+
 
 
 }

@@ -13,6 +13,7 @@ import com.example.think.citypass.activity.zxm.baidumap.LocationService;
 import com.example.think.citypass.activity.zxm.baidumap.MyLocationListener;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -21,6 +22,7 @@ import com.umeng.socialize.UMShareAPI;
  */
 
 public class App extends Application {
+    public  static  Integer  TAG=0;
     public LocationClient mLocationClient = null;
     public LocationService locationService;
     public Vibrator mVibrator;
@@ -34,7 +36,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        Config.DEBUG = true;
         //友盟分享
         UMShareAPI.get(this);
         //开启全局捕获异常

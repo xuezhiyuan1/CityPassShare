@@ -5,6 +5,7 @@ import android.graphics.pdf.PdfDocument;
 
 import com.example.think.citypass.App;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.security.MessageDigest;
@@ -121,4 +122,23 @@ public class LinuxUtils {
         int d2 = n % 16;
         return hexDigits[d1] + hexDigits[d2];
     }
+
+
+    //用户信息获取
+    public static String createParamsPerson(String username) {
+        JSONObject jo = new JSONObject();
+        try {
+            jo.put("siteID", 2422);
+            jo.put("userName", username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String params = LinuxUtils.createnewsParam(
+                "PHSocket_GetBBSUsersInfoNew", jo);
+        return params;
+    }
+
+
+
+
 }

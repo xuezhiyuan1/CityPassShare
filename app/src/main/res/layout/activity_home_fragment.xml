@@ -10,13 +10,15 @@
         android:layout_height="65dp" />
 
     <LinearLayout
+        android:id="@+id/user_login_begin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="4">
 
-        <ImageView
+        <com.example.think.citypass.myview.RoundImageView
+            android:id="@+id/userimage_meng"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,6 +49,7 @@
                     android:weightSum="2">
 
                     <TextView
+                        android:id="@+id/username_meng"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -56,6 +59,7 @@
                         android:textSize="18dp" />
 
                     <TextView
+                        android:id="@+id/usersign"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"

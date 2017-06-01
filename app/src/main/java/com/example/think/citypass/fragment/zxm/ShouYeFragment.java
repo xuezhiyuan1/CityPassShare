@@ -3,6 +3,7 @@ package com.example.think.citypass.fragment.zxm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -23,8 +24,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.HomeActivity;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
-import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeFenleiLife;
 import com.example.think.citypass.activity.zxm.ShouyeHaoli;
@@ -32,15 +33,21 @@ import com.example.think.citypass.activity.zxm.ShouyeHuabi;
 import com.example.think.citypass.activity.zxm.ShouyeZBActivity;
 import com.example.think.citypass.activity.zxm.WebView_Activity;
 import com.example.think.citypass.activity.zxm.Workdetail;
+import com.example.think.citypass.catchexception.LogUtils;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.model.bean.LoginBean;
 import com.example.think.citypass.model.bean.ShouyeDataEntity;
 import com.example.think.citypass.model.bean.ShouyeModelBean;
+import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
 import com.google.gson.Gson;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -60,6 +67,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.example.think.citypass.R.id.top_name;
+
 /**
 zhangxiaomeng
  * 重首页点击  加载 Fragment  用来完成首页业务
@@ -67,16 +76,20 @@ zhangxiaomeng
 
 public class ShouYeFragment extends BaseFragment {
     LinearLayout findwork_lay,findhouse_lay,fenlei,tongchengh;
-    LinearLayout haoli,zhuanbi,choujiang,huabi;
+    LinearLayout haoli,zhuanbi,choujiang,huabi,loginline,top_redlay;
+    TextView  logintext1,loginqiandao;
     private Boolean isLoadMore = false;
     private int pageSize = 10;
     private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>   mll = new ArrayList<>();
     private View inflate;
+    TextView  login_after_name;
     private View footView;
     private int  page = 1 ;
     private MyAdapter myAdapter;
     TextView  logintext;
-
+    TextView  denglu_textview;
+    TextView  top_name;
+    LinearLayout layout1,layout2,layout3,layout4;
     private ArrayList<ShouyeModelBean>  datalist=new ArrayList<>();
     private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>  dataList=new ArrayList<>();
     private RelativeLayout layout;
@@ -125,6 +138,10 @@ public class ShouYeFragment extends BaseFragment {
      */
     @Override
     public void initView(View view) {
+
+
+
+
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
         int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.45);
         slidingUpPanelLayout.setPanelHeight(height);
@@ -141,28 +158,93 @@ public class ShouYeFragment extends BaseFragment {
         fenlei= (LinearLayout) view1.findViewById(R.id.fenleilife_layout);
         tongchengh= (LinearLayout) view1.findViewById(R.id.tongcheng_layout);
         rollPagerView = (RollPagerView) view1.findViewById(R.id.RollPagerView);
+        loginline= (LinearLayout) view.findViewById(R.id.login_linelayout);
+        loginqiandao= (TextView) view.findViewById(R.id.login_qiandao);
+        logintext= (TextView) view.findViewById(R.id.login_text);
+        denglu_textview= (TextView) view1.findViewById(R.id.denglu_textview);
 
-
-
-
+        top_redlay= (LinearLayout) view.findViewById(R.id.top_redlay);
         myAdapter = new MyAdapter(getActivity(),mll);
         listView.setAdapter(myAdapter);
         getPhoto();
         //添加头部
        listView.addHeaderView(view1);
-
+        //更换布局
+         layout1 = (LinearLayout) view.findViewById(R.id.top_begin);
+        layout2 = (LinearLayout) view.findViewById(R.id.top_after);
+        View  v=LayoutInflater.from(getContext()).inflate(R.layout.head_two_activity,null);
+        layout3= (LinearLayout) view.findViewById(R.id.head_one);
+        layout4= (LinearLayout) view.findViewById(R.id.head_two);
+        login_after_name= (TextView) view.findViewById(R.id.login_after_name);
+        top_name= (TextView) view.findViewById(R.id.top_name);
     }
+
+    SharedPreferences share;
+    SharedPreferences.Editor  editor;
 
     @Override
     protected void initData() {
 
 
 
-        }
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        layout1.setVisibility(View.VISIBLE);
+        layout2.setVisibility(View.GONE);
+        layout3.setVisibility(View.VISIBLE);
+        layout4.setVisibility(View.GONE);
+        share=getContext().getSharedPreferences("data",Context.MODE_PRIVATE);
+        editor=share.edit();
+//        System.out.print("3333333333333333333333333333333333333333333333333333333333333");
+        boolean login = share.getBoolean("login", false);
+        if(login){
+            String name = share.getString("rolename", "未得到名字");
+            String image = share.getString("roleimg", "未得到图片");
+            login_after_name.setText(name);
+            top_name.setText(name);
+            layout2.setVisibility(View.VISIBLE);
+            layout1.setVisibility(View.GONE);
+            layout4.setVisibility(View.VISIBLE);
+            layout3.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //        注销
+        EventBus.getDefault().unregister(this);
+    }
 
     @Override
     protected void initListener() {
+        loginline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logintext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loginqiandao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
@@ -269,6 +351,13 @@ public class ShouYeFragment extends BaseFragment {
          */
         listener();
 
+        denglu_textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -524,6 +613,7 @@ public class ShouYeFragment extends BaseFragment {
         });
 
     }
+
 
 
 

@@ -17,6 +17,7 @@ public class CityChoiceActivity  extends BaseActivity {
     TextView  rightText,hometext2,liketext2,jobtext2;
     ImageView  homeimage,likeimage,jobimage;
     boolean  isSet=false;
+    ImageView  back_text;
     RelativeLayout  citylay;
     @Override
     protected int layoutId() {
@@ -33,7 +34,7 @@ public class CityChoiceActivity  extends BaseActivity {
         liketext2= (TextView) findViewById(R.id.school_text2);
         jobtext2= (TextView) findViewById(R.id.job_text2);
         citylay= (RelativeLayout) findViewById(R.id.choice_relay);
-
+        back_text= (ImageView) findViewById(R.id.back_text);
     }
 
     @Override
@@ -88,6 +89,13 @@ public class CityChoiceActivity  extends BaseActivity {
          }
      });
 
+
+        back_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

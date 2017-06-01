@@ -32,4 +32,9 @@ public interface IRetrofit {
     @FormUrlEncoded
     @POST
     Call<ResponseBody> post(@Url String url, @FieldMap Map<String, String> map);
+
+    @FormUrlEncoded
+    @POST
+    Call<ResponseBody> login(@Url String url, @FieldMap Map<String, String> map);
+
 }

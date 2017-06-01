@@ -25,6 +25,7 @@ import static com.zhy.autolayout.utils.ScreenUtils.getStatusBarHeight;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
     protected FragmentManager fragmentManager;
 
     @Override
@@ -75,5 +76,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         App.activity = this;
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        App.TAG=0;
     }
 }

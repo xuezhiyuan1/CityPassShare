@@ -5,7 +5,7 @@
     android:background="#cc0202">
     <!--  Activity头镖  Include引用 -->
     <com.example.think.citypass.myview.RoundImageView
-        android:id="@+id/titleBar_imageView"
+        android:id="@+id/titleBar_imageView_meng"
         android:layout_margin="5dp"
         android:layout_width="38dp"
         android:layout_height="38dp"
@@ -14,7 +14,7 @@
         android:src="@drawable/main_intro1" />
 
     <TextView
-        android:id="@+id/Title_Text"
+        android:id="@+id/Title_Text_meng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -29,7 +29,7 @@
         android:focusableInTouchMode="true"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/Title_Text"
+        android:layout_toRightOf="@id/Title_Text_meng"
         android:background="@drawable/btn_back_normal_title"/>
 
     <ImageView

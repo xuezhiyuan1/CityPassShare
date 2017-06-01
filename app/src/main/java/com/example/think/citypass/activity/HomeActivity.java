@@ -2,9 +2,11 @@ package com.example.think.citypass.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -20,11 +22,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.*;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
+import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeNotice;
 import com.example.think.citypass.activity.zxm.ShouyeSendTie;
 import com.example.think.citypass.common.base.BaseActivity;
@@ -33,8 +38,15 @@ import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.CommunityFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
+import com.example.think.citypass.model.bean.LoginBean;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
+import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
+import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +65,9 @@ public class HomeActivity extends BaseActivity {
     private Handler handler = new Handler();
     private List<String> mlist;
     private List<Integer> mDList;
+    ImageView  imageView;
+    SharedPreferences share;
+    SharedPreferences.Editor  editor;
 
     RelativeLayout  layout;
     ImageView  titleimage;
@@ -99,7 +114,7 @@ public class HomeActivity extends BaseActivity {
         layout= (RelativeLayout) vi.findViewById(R.id.layout);
         linkPageGridview = (MyGradeView) vi.findViewById(R.id.link_page_gridview);
 
-//        titleimage= (ImageView) findViewById(R.id.titleBar_imageView);
+        titleimage= (ImageView) findViewById(R.id.titleBar_imageView_meng);
         im1= (ImageView) findViewById(R.id.title_choose1);
         im2= (ImageView) findViewById(R.id.title_choose2);
         im3= (ImageView) findViewById(R.id.title_choose3);
@@ -108,16 +123,21 @@ public class HomeActivity extends BaseActivity {
         mRadioGroup = (RadioGroup) findViewById(R.id.Bottom_Group);
         mCityMoney= (TextView) findViewById(R.id.My_City_MoneyText);
         mSheZhi= (TextView) findViewById(R.id.SheZhi);
+        View  view=LayoutInflater.from(HomeActivity.this).inflate(R.layout.include_titlebar,null);
+            imageView= (ImageView) view.findViewById(R.id.titleBar_imageView_meng);
+//          TextView  textView= (TextView) view.findViewById(R.id.Title_Text_meng);
+
 
 
     }
-
 
 
     @Override
     protected void initData() {
         adddata();
         getPopup();
+        share=getSharedPreferences("data",MODE_PRIVATE);
+        editor=share.edit();
 
 //        第一次进入显示的Fragment
         top.setVisibility(View.VISIBLE);
@@ -226,7 +246,7 @@ public class HomeActivity extends BaseActivity {
 //        });
 
         //点击选择城市
-       im1.setOnClickListener(new View.OnClickListener() {
+        im1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent  intent=new Intent(HomeActivity.this, CityChoiceActivity.class);
@@ -251,6 +271,16 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
+//        boolean  boo= (boolean) SharedPreferencesUtils.getParam(HomeActivity.this,"login",false);
+//        if(boo){
+//            String logindata = (String) SharedPreferencesUtils.getParam(HomeActivity.this, "logindata", "");
+//            Gson  gson=new Gson();
+//            LoginBean loginBean = gson.fromJson(logindata, LoginBean.class);
+//            String roleImg = loginBean.getServerInfo().getRoleImg();
+//            Glide.with(HomeActivity.this).load(roleImg).into(imageView);
+//
+//        }else
+
     }
 
     @Override
@@ -259,10 +289,45 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+//        System.out.print("onRestartonRestartonRestartonRestartonRestartonRestartonRestartonRestartonRestartonRestart11111");
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean login = share.getBoolean("login", false);
+        if(login){
+            String name = share.getString("rolename", "未得到名字");
+            String image = share.getString("roleimg", "未得到图片");
+            Glide.with(HomeActivity.this).load(image).into(titleimage);
+//            Toast.makeText(this, "home---"+name+image, Toast.LENGTH_SHORT).show();
+        }
+//        titleimage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent  intent=new Intent(HomeActivity.this, LoginActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
+
+
+//        System.out.print("onResume()onResume()onResume()onResume()onResume()onResume()onResume()onResume()2222222");
+    }
+
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (popupWindow != null) {
+                popupWindow.dismiss();
+            }
             exit();
             return false;
+
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -447,6 +512,7 @@ public class HomeActivity extends BaseActivity {
             private ImageView imageView;
         }
     }
+
 
 
 }

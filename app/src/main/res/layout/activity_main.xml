@@ -14,7 +14,7 @@
         android:layout_weight="7.5"
         android:background="@drawable/ccoo_welcome_top">
 
-        <ImageView
+        <com.example.think.citypass.myview.RoundImageView
             android:id="@+id/main_Icon"
             android:layout_width="60dp"
             android:layout_height="60dp"

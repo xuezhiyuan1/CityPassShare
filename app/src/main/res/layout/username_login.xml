@@ -63,7 +63,7 @@
                 android:layout_marginLeft="10dp" >
 
                 <EditText
-                    android:id="@+id/editText_user_login_name"
+                    android:id="@+id/login_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
@@ -110,7 +110,7 @@
                 android:layout_marginLeft="10dp" >
 
                 <EditText
-                    android:id="@+id/editText_user_login_pwd"
+                    android:id="@+id/login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
@@ -144,7 +144,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/button_user_login"
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
