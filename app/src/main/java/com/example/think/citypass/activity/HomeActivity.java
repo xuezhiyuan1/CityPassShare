@@ -44,9 +44,6 @@ import com.example.think.citypass.myview.MyGradeView;
 import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
 import com.google.gson.Gson;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;

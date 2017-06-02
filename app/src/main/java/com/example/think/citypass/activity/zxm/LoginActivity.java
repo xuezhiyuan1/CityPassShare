@@ -30,7 +30,6 @@ import com.example.think.citypass.utils.retrofitutils.RetrofitUtil;
 import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
 import com.google.gson.Gson;
 
-import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
 import org.json.JSONObject;
 

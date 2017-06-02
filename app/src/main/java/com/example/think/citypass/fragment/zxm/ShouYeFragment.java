@@ -45,9 +45,7 @@ import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -221,7 +219,6 @@ public class ShouYeFragment extends BaseFragment {
     public void onDestroy() {
         super.onDestroy();
         //        注销
-        EventBus.getDefault().unregister(this);
     }
 
     @Override
