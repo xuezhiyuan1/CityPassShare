@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+<RelativeLayout
+    android:background="@color/all_top_bg"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <ImageView
+        android:id="@+id/btn_back_line"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_back"
+        android:contentDescription="@string/desc" />
+
+    <TextView
+        android:id="@+id/toptitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="个人中心"
+        android:textColor="@color/white"
+        android:textSize="22dip" />
+</RelativeLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <TextView
+                android:text="个人中心"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.example.think.citypass.myview.RoundImageView
+                android:id="@+id/logindetail_image"
+                android:src="@drawable/login_icon_account"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="账号"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_zhanghao"
+                android:text="ANDBDHIWHE3BHD"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="昵称"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_nicheng"
+                android:text="柠萌"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="姓名"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_name"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="性别"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_sex"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="年龄/星座"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_old"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="职业"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_work"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="情感状态"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_mood"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="居住地"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_loc"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="签名"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_sign"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#d1c8c8"
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="手机绑定"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_bindphone"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="微信"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_WeChat"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="QQ"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_QQ"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="等级"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_dengji"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="勋章"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_xunzhang"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <!--dddddddddddddddddddddddddd分割ddddddddddddddddddddddddddddddddddddddd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:text="城市币"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/logindetail_citybi1"
+                android:text="未设置"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:background="#b7b3b3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

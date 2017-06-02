@@ -163,19 +163,48 @@ public class LoginActivity extends BaseActivity {
                 if(loginBean.getMessageList().getCode()==1000){
                     String roleImg = loginBean.getServerInfo().getRoleImg();
                     String roleName = loginBean.getServerInfo().getRoleName();
+                    String userName = loginBean.getServerInfo().getUserName();
                     editor.putString("rolename",roleName);
                     editor.putString("roleimg",roleImg);
                     editor.putBoolean("login",true);
                     editor.commit();
                     Map<String, String> map = new HashMap<String, String>();
-                    String par = LinuxUtils.createParamsPerson(roleName);
+                    String par = LinuxUtils.createParamsPerson(userName);
                     map.put("param", par);
                     RetrofitImpl.getInstance().Post(UserMessage.class, "http://appnew.ccoo.cn/appserverapi.ashx", map, new HttpCallBack() {
                         @Override
                         public void onSuccessful(Object success) {
                             UserMessage  ss= (UserMessage) success;
-                            String roleName1 =ss.getServerInfo().getName();
-                            Log.i("--string222",success.toString()+"----"+roleName1);
+                            String zhanghao = ss.getServerInfo().getUserName();
+                            String name = ss.getServerInfo().getNick();
+                            String image = ss.getServerInfo().getUserFace();
+                            String sex = ss.getServerInfo().getSex();
+                            String xingZuo = ss.getServerInfo().getXingZuo();
+                            String loc = ss.getServerInfo().getLifeAddr();
+                            String work = ss.getServerInfo().getJob();
+                            String sign = ss.getServerInfo().getInfo();
+                            String mobile = ss.getServerInfo().getMobile();
+                            String paiming = ss.getServerInfo().getIntegralRank();
+                            String honorName = ss.getServerInfo().getHonorName();
+                            int coin = ss.getServerInfo().getCoin();
+                            int level = ss.getServerInfo().getLevel();
+
+                            editor.putString("zhanghao",zhanghao);
+                            editor.putString("name",name);
+                            editor.putString("image",image);
+                            editor.putString("sex",sex);
+                            editor.putString("xingzuo",xingZuo);
+                            editor.putString("loc",loc);
+                            editor.putString("work",work);
+                            editor.putString("sign",sign);
+                            editor.putString("mobile",mobile);
+                            editor.putString("paiming",paiming);
+                            editor.putString("honorname",honorName);
+                            editor.putInt("level",level);
+                            editor.putInt("coin",coin);
+                            editor.commit();
+
+//                            Log.i("--string222",success.toString()+"----"+roleName1);
                         }
 
                         @Override

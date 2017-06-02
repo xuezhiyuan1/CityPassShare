@@ -1,4 +1,4 @@
-package com.example.think.citypass.activity.zxm.shareboard.wxapi;
+package com.example.think.citypass.wxapi;
 
 
 import com.umeng.weixin.callback.WXCallbackActivity;

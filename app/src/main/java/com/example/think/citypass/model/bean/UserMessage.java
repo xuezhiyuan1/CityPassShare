@@ -5,7 +5,18 @@ public class UserMessage {
 
     /**
      * MessageList : {"code":1000,"message":"Success"}
-     * ServerInfo : {"Id":"29784509","SiteID":2422,"SiteName":"延庆在线","SiteURL":"m.yanqing.ccoo.cn","SiteSqURL":"m.yanqing.ccoo.cn","SiteAreaName":"延庆","Initial":"yqzx","UserName":"sid094424170215354","Nick":"醉梦","UserFace":"http://p9.pccoo.cn/app_avatar/20170527/2017052709440479913992_520_520.jpg","Sex":"男","Name":"未设置","Birthday":"1980-01-01","XingZuo":"37岁 摩羯座","Info":"暂未设置签名","Mobile":"18511315924","Tel1":"","Tel":"18511315924","Email":"","TrueEmail":"","QQ":"仅关注好友可见","WeiXin":"仅关注好友可见","LifeAddr":"北京吉利大学","Marry":"未知","Job":"未设置","Position":"","PositionName":"","FrendNum":0,"FansNum":0,"Coin":0,"Level":1,"Integral":0,"Image":"","HonorName":"新居民","TaskCount":0,"IntegralRank":"暂无排名","MedalCount":0,"MedalImags":"","IsCity":1,"TState":{"code":1000,"rate":0},"BBID":0,"IsFirstPub":1,"MsgCount":0,"MsgAlert":{"title":"","headimg":"","firstid":0,"secondid":0},"IsQQBind":0,"IsWXBind":0,"IsWBBind":0}
+     * ServerInfo : {"Id":"29784509","SiteID":2422,"SiteName":"延庆在线","SiteURL":"m.yanqing.ccoo.cn","
+     * SiteSqURL":"m.yanqing.ccoo.cn","SiteAreaName":"延庆","Initial":"yqzx",
+     * "UserName":"sid094424170215354","Nick":"醉梦","UserFace":"http://p9.pccoo.cn/app_avatar/20170527/2017052709440479913992_520_520.jpg",
+     * "Sex":"男","Name":"未设置","Birthday":"1980-01-01","XingZuo":"37岁 摩羯座","
+     * Info":"暂未设置签名","Mobile":"18511315924","Tel1":"","Tel":"18511315924",
+     * "Email":"","TrueEmail":"","QQ":"仅关注好友可见",
+     * "WeiXin":"仅关注好友可见","LifeAddr":"北京吉利大学","Marry":"未知",
+     * "Job":"未设置","Position":"","PositionName":""
+     * ,"FrendNum":0,"FansNum":0,"Coin":0,"Level":1,"Integral":0,"Image":"","HonorName":"新居民","
+     * TaskCount":0,"IntegralRank":"暂无排名","MedalCount":0,"MedalImags":"",
+     * "IsCity":1,"TState":{"code":1000,"rate":0},"BBID":0,"IsFirstPub":1,"MsgCount":0,
+     * "MsgAlert":{"title":"","headimg":"","firstid":0,"secondid":0},"IsQQBind":0,"IsWXBind":0,"IsWBBind":0}
      * Extend : null
      * Count : 0
      * GxNum : 0

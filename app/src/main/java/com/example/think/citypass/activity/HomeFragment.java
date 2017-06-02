@@ -94,7 +94,7 @@ public class HomeFragment extends BaseFragment {
             String image = share.getString("roleimg", "未得到图片");
             Glide.with(getContext()).load(image).into(imageView);
             username.setText(name);
-            textView.setText("暂无个性签名");
+            textView.setText(share.getString("sign",""));
 //            Toast.makeText(this, "home---"+name+image, Toast.LENGTH_SHORT).show();
         }
     }

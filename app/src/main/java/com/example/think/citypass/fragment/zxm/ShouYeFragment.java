@@ -82,12 +82,12 @@ public class ShouYeFragment extends BaseFragment {
     private int pageSize = 10;
     private ArrayList<ShouyeDataEntity.ServerInfoBean.HeadTInfoListBean>   mll = new ArrayList<>();
     private View inflate;
-    TextView  login_after_name;
+    TextView  login_after_name,coin_textview;
     private View footView;
     private int  page = 1 ;
     private MyAdapter myAdapter;
     TextView  logintext;
-    TextView  denglu_textview;
+    TextView  denglu_textview,tag_textview;
     TextView  top_name;
     LinearLayout layout1,layout2,layout3,layout4;
     private ArrayList<ShouyeModelBean>  datalist=new ArrayList<>();
@@ -140,8 +140,8 @@ public class ShouYeFragment extends BaseFragment {
     public void initView(View view) {
 
 
-
-
+        tag_textview= (TextView) view.findViewById(R.id.tag_textview);
+        coin_textview= (TextView) view.findViewById(R.id.coin_textview);
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
         int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.45);
         slidingUpPanelLayout.setPanelHeight(height);
@@ -210,6 +210,11 @@ public class ShouYeFragment extends BaseFragment {
             layout4.setVisibility(View.VISIBLE);
             layout3.setVisibility(View.GONE);
         }
+
+        coin_textview.setText("财富:  "+share.getInt("coin",1)+""+"城市币");
+        tag_textview.setText(share.getString("honoename",""));
+
+
     }
 
     @Override

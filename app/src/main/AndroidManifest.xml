@@ -53,7 +53,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
@@ -70,35 +69,26 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- 这个权限用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <!-- 这个权限用于访问GPS定位 -->
-    <uses-permission android:name="android.permission." >
-    </uses-permission>ACCESS_FINE_LOCATION
+    <uses-permission android:name="android.permission."></uses-permission>
+    ACCESS_FINE_LOCATION
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
     <!-- 用于读取手机当前的状态 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- SD卡读取权限，用户写入离线定位数据 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
     <!-- 允许应用读取低级别的系统日志文件 -->
-    <uses-permission android:name="android.permission.READ_LOGS" >
-    </uses-permission>
-
+    <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
 
     <application
         android:name=".App"
@@ -114,19 +104,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.lxl.job.JobActivity"/>
+        <activity android:name=".activity.lxl.job.JobActivity" />
         <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.shezhi.SheZhiActivity"></activity>
-        <activity android:name=".activity.lxl.job.MyMoneyActivity"></activity>
-        <activity android:name=".activity.shezhi.MessageInfoActivity"></activity>
-        <activity android:name=".activity.shezhi.MyPasswordActivity"></activity>
-        <activity android:name=".activity.lxl.job.JianLiKuActivity"></activity>
-        <activity android:name=".activity.lxl.job.Recruitment_JianZhiActivity"></activity>
-        <activity android:name=".activity.lxl.job.Recuitment_QuanZhiActivity"></activity>
-        <activity android:name=".activity.lxl.job.FindWorkActivity"></activity>
-        <activity android:name=".activity.lxl.job.FingSouseActivity"></activity>
-        <activity android:name=".activity.lxl.job.Two_houseActivity"></activity>
-        <activity android:name=".activity.lxl.job.NewHouseActivity"></activity>
+        <activity android:name=".activity.shezhi.SheZhiActivity" />
+        <activity android:name=".activity.lxl.job.MyMoneyActivity" />
+        <activity android:name=".activity.shezhi.MessageInfoActivity" />
+        <activity android:name=".activity.shezhi.MyPasswordActivity" />
+        <activity android:name=".activity.lxl.job.JianLiKuActivity" />
+        <activity android:name=".activity.lxl.job.Recruitment_JianZhiActivity" />
+        <activity android:name=".activity.lxl.job.Recuitment_QuanZhiActivity" />
+        <activity android:name=".activity.lxl.job.FindWorkActivity" />
+        <activity android:name=".activity.lxl.job.FingSouseActivity" />
+        <activity android:name=".activity.lxl.job.Two_houseActivity" />
+        <activity android:name=".activity.lxl.job.NewHouseActivity" />
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.zxm.ShouyeHaoli" />
         <activity android:name=".activity.zxm.CityChoiceActivity" />
@@ -137,19 +127,19 @@
         <activity android:name=".activity.zxm.ShouyeFenleiLife" />
         <activity android:name=".activity.zxm.ShouyeNotice" />
         <activity android:name=".activity.zxm.FindworkActivity" />
-        <activity android:name=".activity.zxm.baidumap.LocationOption"/>
-        <activity android:name=".activity.zxm.baidumap.LocationActivity"/>
-        <activity android:name=".activity.zxm.ShouyeSendTie"/>
-        <activity android:name=".activity.zxm.ShouyeSendPhoto"/>
-        <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity"/>
-        <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity"/>
-        <activity android:name=".activity.zxm.WebView_Activity"/>
-        <activity android:name=".activity.zxm.CityListActivity"/>
-        <activity android:name=".activity.zxm.Workdetail"></activity>
-        <activity android:name=".activity.zxm.findhouse.HouseChushou"/>
-        <activity android:name=".activity.zxm.findhouse.HouseChuzu"/>
-        <activity android:name=".activity.zxm.findhouse.HouseQiugou"/>
-        <activity android:name=".activity.zxm.findhouse.HouseQiuzu"/>
+        <activity android:name=".activity.zxm.baidumap.LocationOption" />
+        <activity android:name=".activity.zxm.baidumap.LocationActivity" />
+        <activity android:name=".activity.zxm.ShouyeSendTie" />
+        <activity android:name=".activity.zxm.ShouyeSendPhoto" />
+        <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity" />
+        <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity" />
+        <activity android:name=".activity.zxm.WebView_Activity" />
+        <activity android:name=".activity.zxm.CityListActivity" />
+        <activity android:name=".activity.zxm.Workdetail" />
+        <activity android:name=".activity.zxm.findhouse.HouseChushou" />
+        <activity android:name=".activity.zxm.findhouse.HouseChuzu" />
+        <activity android:name=".activity.zxm.findhouse.HouseQiugou" />
+        <activity android:name=".activity.zxm.findhouse.HouseQiuzu" />
 
         <!-- 二维码  扫描 -->
 
@@ -157,11 +147,8 @@
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />
         <activity android:name=".activity.xzy.FindActivity" />
-        <activity android:name=".activity.zxm.LoginActivity">
-
-
-        </activity>
-        <activity android:name=".activity.zxm.RegisterActivity"></activity>
+        <activity android:name=".activity.zxm.LoginActivity"></activity>
+        <activity android:name=".activity.zxm.RegisterActivity" />
         <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->
         <!-- <meta-data -->
         <!-- android:name="design_width" -->
@@ -169,32 +156,26 @@
         <!-- <meta-data -->
         <!-- android:name="design_height" -->
         <!-- android:value="1430"></meta-data> -->
-        <activity android:name=".activity.xzy.TextActivity">
-
-
-        </activity>
-        <activity android:name=".activity.xzy.FindShopWebView"></activity>
-        <!--百度地图-->
+        <activity android:name=".activity.xzy.TextActivity"></activity>
+        <activity android:name=".activity.xzy.FindShopWebView" />
+        <!-- 百度地图 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="uQTGvwqnlZ1tUjg8qVq3CtZM7Wf7Xo5i" />
 
-        <!--微信分享-->
+        <!-- 微信分享 -->
         <activity
-            android:name=".activity.zxm.shareboard.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".activity.zxm.findhouse.HouseQiugou" />
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="59098346f5ade43dc00001c8" >
-        </meta-data>
+            android:value="59098346f5ade43dc00001c8"></meta-data>
 
-
-
+        <activity android:name=".activity.zxm.MyDetail"></activity>
     </application>
 
 </manifest>
