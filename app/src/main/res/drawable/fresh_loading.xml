@@ -3,8 +3,8 @@
     android:oneshot="false">
 
     <item
-        android:drawable="@drawable/bike_1"
-        android:duration="100" />
+    android:drawable="@drawable/bike_1"
+    android:duration="100" />
     <!--<item android:duration="50" android:drawable="@drawable/bike_2" />-->
     <item
         android:drawable="@drawable/bike_3"

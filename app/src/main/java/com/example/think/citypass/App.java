@@ -13,7 +13,6 @@ import com.example.think.citypass.activity.zxm.baidumap.LocationService;
 import com.example.think.citypass.activity.zxm.baidumap.MyLocationListener;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
-import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -22,7 +21,6 @@ import com.umeng.socialize.UMShareAPI;
  */
 
 public class App extends Application {
-    public  static  Integer  TAG=0;
     public LocationClient mLocationClient = null;
     public LocationService locationService;
     public Vibrator mVibrator;
@@ -36,7 +34,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Config.DEBUG = true;
+
         //友盟分享
         UMShareAPI.get(this);
         //开启全局捕获异常
@@ -69,7 +67,7 @@ public class App extends Application {
 
     {
         //分享
-        PlatformConfig.setWeixin("wx4c93b58a42957cf8", "a807a98ac1f782c4cc1b08d8d94215aa");
+        PlatformConfig.setWeixin("wx4c93b58a42957cf8", "8afb5d7fc0cf39fa638d0815deb0ae48");
 //        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
 //        PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");
     }

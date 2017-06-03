@@ -63,7 +63,7 @@ public class TushuoFragment extends BaseFragment {
         data = new ArrayList<>();
         adapter = new TushuoAdapter(data);
         mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(), onListStateListener);
-
+        mRefreshUtils.setItemDecoration(5);
     }
 
     @Override
@@ -87,7 +87,7 @@ public class TushuoFragment extends BaseFragment {
                 isFrist = false;
                 data.addAll(infoBeanList);
                 mRefreshUtils.setPageNums(tushuoBean.getPageNum());
-                mRefreshUtils.setAdapter(1, adapter);
+                mRefreshUtils.setAdapter(2, adapter);
                 mRefreshUtils.showNormal();
             } else {
                 Message message = new Message();

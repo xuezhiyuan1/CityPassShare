@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/all_top_bg"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/post_btn_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/post_btn_back">
+
+
+        </Button>
+
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/main_theall_right_title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="帖子详情"
+                android:textColor="@color/white"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/post_btn_fatie"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_tiezi" />
+
+            <Button
+                android:id="@+id/post_btn_share"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/post_btn_share" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/post_loading"
+        layout="@layout/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.think.citypass.myview.MRecyclerView
+            android:id="@+id/post_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/post_bottom_menu_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fafafa"
+                android:gravity="bottom"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/post_bottom_zan_imageview"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cover_main_zan_n" />
+
+                <ImageView
+                    android:id="@+id/post_bottom_other_imageview"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cover_main_add_n" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/post_bottom_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/edittext_bac"
+                        android:gravity="bottom"
+                        android:hint="回复楼主 "
+                        android:maxLines="3"
+                        android:paddingBottom="7dp"
+                        android:text=""
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/post_message_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/post_type_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:layout_toLeftOf="@+id/red_relay"
+                            android:text="抢沙发"
+                            android:textColor="@color/color_ccc"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/post_num_textview"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:background="@drawable/task_redround"
+                            android:gravity="center"
+                            android:text="99"
+                            android:textColor="@color/white"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/post_bottom_submit"
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/usermain_drawable_bottom_bg"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="发送" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/post_bottom_gongneng_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_fa"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/post_biaoqing_imageview"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/reply_bottom_biaoqing_drawable" />
+
+                <RelativeLayout
+                    android:id="@+id/photo_top"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="10dp">
+
+                    <ImageView
+                        android:id="@+id/post_photo_imageview"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/reply_bottom_photo_drawable" />
+
+                    <TextView
+                        android:id="@+id/post_photo_yuandian"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/yuandian_shape"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/post_aite_imageview"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/reply_bottom_aite_drawable" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

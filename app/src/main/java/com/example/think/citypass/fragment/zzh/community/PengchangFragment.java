@@ -134,7 +134,12 @@ public class PengchangFragment extends BaseFragment {
                 goldenTextName.setText(headData.get(0).getNick());
                 goldenTextCount.setText(headData.get(0).getSum());
                 goldenTextType.setText("回帖数");
-
+                goldenImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(App.activity, String.valueOf(headData.get(0).getUserID()), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }else{
                 goldenImage.setImageResource(R.drawable.shape_image_zhanwei);
             }
@@ -150,7 +155,12 @@ public class PengchangFragment extends BaseFragment {
                 silveryTextName.setText(headData.get(1).getNick());
                 silveryTextCount.setText(headData.get(1).getSum());
                 silveryTextType.setText("回帖数");
-
+                goldenImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(App.activity, String.valueOf(headData.get(1).getUserID()), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }else{
                 silveryImage.setImageResource(R.drawable.shape_image_zhanwei);
             }
@@ -166,6 +176,12 @@ public class PengchangFragment extends BaseFragment {
                 copperyTextName.setText(headData.get(2).getNick());
                 copperyTextCount.setText(headData.get(2).getSum());
                 copperyTextType.setText("回帖数");
+                goldenImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(App.activity, String.valueOf(headData.get(1).getUserID()), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }else{
                 copperyImage.setImageResource(R.drawable.shape_image_zhanwei);
             }

@@ -13,6 +13,7 @@ import com.example.think.citypass.fragment.zzh.community.PengchangFragment;
 import com.example.think.citypass.fragment.zzh.community.ThematicFragment;
 import com.example.think.citypass.fragment.zzh.community.TushuoFragment;
 import com.example.think.citypass.fragment.zzh.community.WorthFragment;
+import com.example.think.citypass.fragment.zzh.community.HotNewestFragment;
 import com.example.think.citypass.myview.ChildViewPager;
 
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class CommunityFragment extends BaseFragment {
         MingrenFragment mingrenFragment = new MingrenFragment();
         BanquFragment banquFragment = new BanquFragment();
         NewestFragment newestFragment = new NewestFragment();
-        NewestFragment newestFragment1 = new NewestFragment();
+        HotNewestFragment hotNewestFragment = new HotNewestFragment();
         TushuoFragment tushuoFragment = new TushuoFragment();
         ThematicFragment thematicFragment = new ThematicFragment();
         WorthFragment worthFragment = new WorthFragment();
@@ -64,7 +65,7 @@ public class CommunityFragment extends BaseFragment {
         data.add(mingrenFragment);
         data.add(banquFragment);
         data.add(newestFragment);
-        data.add(newestFragment1);
+        data.add(hotNewestFragment);
         data.add(tushuoFragment);
         data.add(thematicFragment);
         data.add(worthFragment);

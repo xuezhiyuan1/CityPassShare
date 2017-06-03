@@ -2,7 +2,6 @@ package com.example.think.citypass.fragment.zzh.community;
 
 import android.os.Handler;
 import android.os.Message;
-import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -22,14 +21,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by ASUS on 2017/5/23.
  */
 
-public class NewestFragment extends BaseFragment {
+public class HotNewestFragment extends BaseFragment {
     private MRefreshUtils mRefreshUtils;
 
     private NewestAdapter adapter;
@@ -39,8 +37,6 @@ public class NewestFragment extends BaseFragment {
     private int page = 1;
 
     private boolean isFrist = true;
-
-    private String oldTime = "";
 
     private Handler handler = new Handler() {
         @Override
@@ -144,9 +140,6 @@ public class NewestFragment extends BaseFragment {
             data.addAll(infoBeen);
             adapter.notifyDataSetChanged();
 
-            Date time = new Date();
-            oldTime = DateFormat.format("yyyy'-'MM'-'dd'  'kk':'mm':'ss'", time)
-                    .toString();
         }
 
         @Override
@@ -164,11 +157,10 @@ public class NewestFragment extends BaseFragment {
         JSONObject jo = new JSONObject();
         try {
             jo.put("siteID", 2422);
-            jo.put("flag", 2);
+            jo.put("flag", 1);
             jo.put("boardID", 0);
             jo.put("curPage", page);
             jo.put("pageSize", 10);
-            jo.put("oldTime", oldTime);
             jo.put("userID", 0);
         } catch (JSONException e) {
             e.printStackTrace();

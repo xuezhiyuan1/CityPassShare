@@ -139,7 +139,7 @@ public class MingrenFragment extends BaseFragment {
                 goldenImage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(App.activity, headData.get(0).getUserID(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(App.activity, String.valueOf(headData.get(0).getUserID()), Toast.LENGTH_SHORT).show();
                     }
                 });
             }else{
@@ -160,7 +160,7 @@ public class MingrenFragment extends BaseFragment {
                 silveryImage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(App.activity, headData.get(1).getUserID(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(App.activity, String.valueOf(headData.get(1).getUserID()), Toast.LENGTH_SHORT).show();
                     }
                 });
             }else{
@@ -181,7 +181,7 @@ public class MingrenFragment extends BaseFragment {
                 copperyImage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(App.activity, headData.get(2).getUserID(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(App.activity, String.valueOf(headData.get(2).getUserID()), Toast.LENGTH_SHORT).show();
                     }
                 });
             }else{

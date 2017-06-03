@@ -7,6 +7,10 @@ import android.os.Build;
 import android.view.Display;
 import android.view.WindowManager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by froger_mcs on 05.11.14.
  */
@@ -45,4 +49,32 @@ public class Utils {
     public static boolean isAndroid5() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
+
+    public static String getTime(String date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date dt2 = null;
+        try {
+            dt2 = sdf.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        // 继续转换得到秒数的long型
+        long lTime = dt2.getTime();
+        long l = System.currentTimeMillis();
+        int time = (int) (l - lTime) / 1000 / 60;
+        if (time < 60) {
+            if (time < 1) {
+                return "刚刚";
+            }
+            return time + "分钟前";
+        } else {
+            int time1 = time / 60;
+            if (time1 < 24) {
+                return time1 + "小时前";
+            } else {
+                return date.substring(5);
+            }
+        }
+    }
+
 }

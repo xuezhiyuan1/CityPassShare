@@ -15,7 +15,7 @@
             android:id="@+id/shaitu_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:src="@drawable/tieba_top_bg3"
             app:roundHeight="7dp"
             app:roundWidth="7dp" />
@@ -39,6 +39,7 @@
                 android:src="@drawable/ccoo_icon_zan2" />
 
             <TextView
+                android:id="@+id/shaitu_zan_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
@@ -51,7 +52,6 @@
             android:id="@+id/shaitu_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/shaitu_image"
             android:maxLines="2"
             android:padding="5dp"
