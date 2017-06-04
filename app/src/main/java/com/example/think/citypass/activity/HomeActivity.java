@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -23,26 +22,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.home.CeLaUtils;
 import com.example.think.citypass.activity.lxl.job.*;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.activity.zxm.CityChoiceActivity;
-import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.activity.zxm.ShouyeNotice;
-import com.example.think.citypass.activity.zxm.ShouyeSendTie;
+import com.example.think.citypass.activity.zxm.popupwindow.ShouyeSendTie;
+import com.example.think.citypass.activity.zxm.shouyefaphoto.ImgFileListActivity;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.fragment.xzy.LoadFragmentTwo;
 import com.example.think.citypass.fragment.zxm.ShouYeFragment;
 import com.example.think.citypass.fragment.zzh.CommunityFragment;
 import com.example.think.citypass.fragment.zzh.NaonaoFragment;
-import com.example.think.citypass.model.bean.LoginBean;
 import com.example.think.citypass.myview.MyAnimalUtils;
 import com.example.think.citypass.myview.MyGradeView;
-import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
-import com.google.gson.Gson;
 
 
 import java.util.ArrayList;
@@ -437,7 +432,8 @@ public class HomeActivity extends BaseActivity {
                     
                     case 1:
                         Toast.makeText(HomeActivity.this, "发照片", Toast.LENGTH_SHORT).show();
-
+                         Intent  intent1=new Intent(HomeActivity.this, ImgFileListActivity.class);
+                        startActivity(intent1);
                         break;
                     case 2:
                         Toast.makeText(HomeActivity.this, "发视频", Toast.LENGTH_SHORT).show();

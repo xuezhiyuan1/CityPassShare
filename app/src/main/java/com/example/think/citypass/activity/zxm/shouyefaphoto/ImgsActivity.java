@@ -1,4 +1,4 @@
-package com.example.think.citypass.activity.zxm.upphoto.logic;
+package com.example.think.citypass.activity.zxm.shouyefaphoto;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -31,12 +31,14 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.Login;
 import com.example.think.citypass.activity.zxm.popupwindow.ShouyeSendPhoto;
 import com.example.think.citypass.activity.zxm.popupwindow.ShouyeSendTie;
+import com.example.think.citypass.activity.zxm.upphoto.logic.*;
+import com.example.think.citypass.activity.zxm.upphoto.logic.ImgCallBack;
 
 
 public class ImgsActivity extends Activity {
 
 	Bundle bundle;
-	FileTraversal fileTraversal;
+	com.example.think.citypass.activity.zxm.upphoto.logic.FileTraversal fileTraversal;
 	GridView imgGridView;
 	ImgsAdapter imgsAdapter;
 	LinearLayout select_layout;
@@ -93,7 +95,7 @@ public class ImgsActivity extends Activity {
 		return imageView;
 	}
 	
-	ImgCallBack imgCallBack=new ImgCallBack() {
+	com.example.think.citypass.activity.zxm.upphoto.logic.ImgCallBack imgCallBack=new ImgCallBack() {
 		@Override
 		public void resultImgCall(ImageView imageView, Bitmap bitmap) {
 			imageView.setImageBitmap(bitmap);
@@ -181,7 +183,7 @@ public class ImgsActivity extends Activity {
 	 * @param view
 	 */
 	public void sendfiles(View view){
-		Intent intent =new Intent(this, ShouyeSendTie.class);
+		Intent intent =new Intent(this, ShouyeSendPhoto.class);
 		Bundle bundle=new Bundle();
 		bundle.putStringArrayList("files", filelist);
 		intent.putExtras(bundle);

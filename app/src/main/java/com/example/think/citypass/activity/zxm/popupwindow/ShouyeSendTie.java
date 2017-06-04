@@ -1,10 +1,14 @@
-package com.example.think.citypass.activity.zxm;
+package com.example.think.citypass.activity.zxm.popupwindow;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,21 +16,16 @@ import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
+import com.bumptech.glide.Glide;
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.activity.zxm.baidumap.LocationService;
-import com.example.think.citypass.activity.zxm.upphoto.logic.FileTraversal;
 import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListActivity;
-import com.example.think.citypass.activity.zxm.upphoto.logic.ImgFileListAdapter;
 import com.example.think.citypass.activity.zxm.upphoto.logic.ImgsActivity;
-import com.example.think.citypass.activity.zxm.upphoto.logic.Util;
 import com.example.think.citypass.common.base.BaseActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import static com.baidu.location.d.j.R;
 
 /**
  * Created by 张萌 on 2017/5/24.
@@ -36,13 +35,13 @@ public class ShouyeSendTie   extends BaseActivity {
     private LocationService locationService;
     ListView listView;
     ArrayList<String> listfile=new ArrayList<String>();
-
+GridviewAdapter  adapter;
     ImageView  photoimage;
     TextView  textViewloc;
     String addrStr;
     ArrayList<String> alistfile=new ArrayList<String>();
     //选择图片后返回的数据结果集
-    ListView alistView;
+    GridView   gridView;
 
 
     @Override
@@ -58,32 +57,19 @@ public class ShouyeSendTie   extends BaseActivity {
 
     @Override
     protected void initData() {
-        alistView=(ListView) findViewById(com.example.think.citypass.R.id.after_listview);
+        gridView=(GridView) findViewById(com.example.think.citypass.R.id.after_listview);
         Bundle bundle= getIntent().getExtras();
         if (bundle!=null) {
             if (bundle.getStringArrayList("files")!=null) {
                 alistfile= bundle.getStringArrayList("files");
-                alistView.setVisibility(View.VISIBLE);
-                ImgsActivity  imgsActivity=new ImgsActivity();
+                gridView.setVisibility(View.VISIBLE);
+//                ImgsActivity  imgsActivity=new ImgsActivity();
 //                List<ImageView> imageview = imgsActivity.getImageview();
-                ArrayAdapter<String> arryAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listfile);
-                alistView.setAdapter(arryAdapter);
+                adapter=new GridviewAdapter(alistfile,ShouyeSendTie.this);
+                gridView.setAdapter(adapter);
             }
         }
 
-
-
-        listView=(ListView) findViewById(com.example.think.citypass.R.id.after_listview);
-        bundle = getIntent().getExtras();
-
-        if (bundle!=null) {
-            if (bundle.getStringArrayList("files")!=null) {
-                listfile= bundle.getStringArrayList("files");
-                listView.setVisibility(View.VISIBLE);
-                ArrayAdapter<String> arryAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listfile);
-                listView.setAdapter(arryAdapter);
-            }
-        }
 
     }
 
@@ -157,6 +143,49 @@ public class ShouyeSendTie   extends BaseActivity {
     };
 
 
+    class GridviewAdapter  extends BaseAdapter {
+        List<String> mlist;
+        Context context;
 
+        public GridviewAdapter(List<String> mlist, Context context) {
+            this.mlist = mlist;
+            this.context = context;
+        }
+
+        @Override
+        public int getCount() {
+            return mlist.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Holder holder=null;
+            if(convertView==null){
+                holder=new Holder();
+                convertView= LayoutInflater.from(context).inflate(R.layout.shouye_fatie_photoitem,null);
+                holder.imageView= (ImageView) convertView.findViewById(R.id.shouye_photo_item);
+                convertView.setTag(holder);
+            }else{
+                holder= (Holder) convertView.getTag();
+            }
+            String  imageView1=mlist.get(position);
+            Glide.with(context).load(imageView1).into(holder.imageView);
+            return convertView;
+        }
+
+        class Holder  {
+            ImageView  imageView;
+        }
+    }
 
 }

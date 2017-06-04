@@ -129,10 +129,14 @@
         <activity android:name=".activity.zxm.FindworkActivity" />
         <activity android:name=".activity.zxm.baidumap.LocationOption" />
         <activity android:name=".activity.zxm.baidumap.LocationActivity" />
-        <activity android:name=".activity.zxm.ShouyeSendTie" />
+        <activity android:name=".activity.zxm.popupwindow.ShouyeSendTie" />
         <activity android:name=".activity.zxm.ShouyeSendPhoto" />
+        <!--发帖子里面的发表照片-->
         <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity" />
         <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity" />
+        <!--发照片里面的发表照片-->
+        <activity android:name=".activity.zxm.shouyefaphoto.ImgFileListActivity"/>
+        <activity android:name=".activity.zxm.shouyefaphoto.ImgsActivity"/>
         <activity android:name=".activity.zxm.WebView_Activity" />
         <activity android:name=".activity.zxm.CityListActivity" />
         <activity android:name=".activity.zxm.Workdetail" />
@@ -140,6 +144,7 @@
         <activity android:name=".activity.zxm.findhouse.HouseChuzu" />
         <activity android:name=".activity.zxm.findhouse.HouseQiugou" />
         <activity android:name=".activity.zxm.findhouse.HouseQiuzu" />
+        <activity android:name=".activity.zxm.popupwindow.ShouyeSendPhoto"/>
 
         <!-- 二维码  扫描 -->
 
