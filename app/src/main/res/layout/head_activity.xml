@@ -39,6 +39,8 @@
 
         <ListView
             android:id="@+id/mListView"
+            android:fadingEdge="none"
+            android:scrollbars="none"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
 

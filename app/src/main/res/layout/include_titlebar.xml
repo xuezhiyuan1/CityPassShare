@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="#cc0202">
+    android:background="#f13030">
     <!--  Activity头镖  Include引用 -->
     <com.example.think.citypass.myview.RoundImageView
         android:id="@+id/titleBar_imageView_meng"
@@ -39,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="8dp"
         android:layout_toRightOf="@+id/title_choose1"
-        android:background="@mipmap/btn_remind_normal" />
+        android:background="@drawable/btn_remind_press" />
 
     <ImageView
         android:id="@+id/title_choose3"

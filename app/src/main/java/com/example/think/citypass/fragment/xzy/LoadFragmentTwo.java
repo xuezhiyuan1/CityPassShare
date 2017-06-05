@@ -11,10 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.think.citypass.R;
+import com.example.think.citypass.activity.xzy.BeautyWomen;
 import com.example.think.citypass.activity.xzy.FindActivity;
 import com.example.think.citypass.activity.xzy.FindCityThings;
 import com.example.think.citypass.activity.xzy.FindShopWebView;
+import com.example.think.citypass.activity.xzy.MengBaby;
 import com.example.think.citypass.activity.xzy.Sao1SaoActivity;
+import com.example.think.citypass.activity.xzy.XingWoman;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
 import com.example.think.citypass.common.base.BaseFragment;
@@ -414,17 +417,17 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
                 break;
             //美女秀
             case R.id.layout1:
-                Intent intentBeauty = new Intent(getContext(), Sao1SaoActivity.class);
+                Intent intentBeauty = new Intent(getContext(), BeautyWomen.class);
                 startActivity(intentBeauty);
                 break;
             //型男秀
             case R.id.layout2:
-                Intent intentNan = new Intent(getContext(), Sao1SaoActivity.class);
+                Intent intentNan = new Intent(getContext(), XingWoman.class);
                 startActivity(intentNan);
                 break;
             //萌宝秀
             case R.id.layout3:
-                Intent intentBao = new Intent(getContext(), Sao1SaoActivity.class);
+                Intent intentBao = new Intent(getContext(), MengBaby.class);
                 startActivity(intentBao);
                 break;
             //社区

@@ -15,6 +15,8 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
+import com.example.think.citypass.fragment.xzy.citything.LoveWaterTop;
+import com.example.think.citypass.fragment.xzy.citything.YoutaiduFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoXingFragment;
 import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
@@ -93,12 +95,15 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
                     stringList.add(name);
                 }
                 for (int i = 0; i < stringList.size(); i++) {
-                    if(i == 5){
-                        String s5 = stringList.get(5);
-                        Toast.makeText(FindCityThings.this, s5, Toast.LENGTH_SHORT).show();
-                        NaonaoXingFragment naonaoXingFragment = new NaonaoXingFragment();
-                        fragmentList.add(naonaoXingFragment);
-                    }else {
+                    if(i == 2){
+                        String s2= stringList.get(2);
+                        Toast.makeText(FindCityThings.this, s2, Toast.LENGTH_SHORT).show();
+                        LoveWaterTop loveWaterTop = new LoveWaterTop();
+                        fragmentList.add(loveWaterTop);
+                    }else if(i==0){
+                        YoutaiduFragment youtaiduFragment = new YoutaiduFragment();
+                        fragmentList.add(youtaiduFragment);
+                    }else{
                         WangyouFragment wangyouFragment = new WangyouFragment();
                         fragmentList.add(wangyouFragment);
                     }
