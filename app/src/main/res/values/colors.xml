@@ -101,6 +101,7 @@
     <color name="white_lower02">#f9f9f9</color>
     <color name="white_lower01">#F6F6F6</color>
     <color name="pink_text">#FF0033</color>
+    <color name="gray111">#c9c6c6</color>
     <color name="blue_text">#0066CC</color>
     <color name="blue_text_press">#004E9B</color>
     <color name="widget_press_backgroud">#fff0f0f0</color>
@@ -175,7 +176,7 @@
     <color name="task_mycitymoney2">#FEFAF1</color>
     <color name="task_mycitymoney3">#F0F0F0</color>
     <color name="task_mycitymoney4">#F1FBFF</color>
-
+     <color name="white111">#fff</color>
     <!-- 设置 -->
 
     <color name="setup_newversion_textcolor">#979797</color>
