@@ -143,10 +143,10 @@ public class ShouYeFragment extends BaseFragment {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.SlidingUpaneHead);
         int height = (int) ((App.activity.getWindowManager().getDefaultDisplay().getHeight()) * 0.45);
         slidingUpPanelLayout.setPanelHeight(height);
-        zhuanbi= (LinearLayout) view.findViewById(R.id.zhuanbi_layout);
-        huabi= (LinearLayout) view.findViewById(R.id.huabi_layout);
-        haoli= (LinearLayout) view.findViewById(R.id.haoli_layout);
-        choujiang= (LinearLayout) view.findViewById(R.id.choujiang_layout);
+        zhuanbi= (LinearLayout) view.findViewById(R.id.zhuanbi_layout222);
+        huabi= (LinearLayout) view.findViewById(R.id.huabi_layout222);
+        haoli= (LinearLayout) view.findViewById(R.id.haoli_layout222);
+        choujiang= (LinearLayout) view.findViewById(R.id.choujiang_layout222);
         listView = (ListView) view.findViewById(R.id.mListView);
         View view1 = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.head_two_activity, null);
         logintext= (TextView) view1.findViewById(R.id.denglu_textview);
@@ -207,6 +207,10 @@ public class ShouYeFragment extends BaseFragment {
             layout1.setVisibility(View.GONE);
             layout4.setVisibility(View.VISIBLE);
             layout3.setVisibility(View.GONE);
+
+
+
+
         }
 
         coin_textview.setText("财富:  "+share.getInt("coin",1)+""+"城市币");
@@ -289,41 +293,7 @@ public class ShouYeFragment extends BaseFragment {
             }
         });
 //
-        /**
-         * 赚币
-         */
 
-        zhuanbi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  intent=new Intent(getContext(), ShouyeZBActivity.class);
-                startActivity(intent);
-            }
-        });
-//
-/**
- * 花币
- */
-        huabi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  intent=new Intent(getContext(), ShouyeHuabi.class);
-                startActivity(intent);
-//                ghgghghghgh
-                ///dsadsadsadsadsas
-            }
-        });
-        /**
-         * 好礼
-         */
-        haoli.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  intent=new Intent(getContext(), ShouyeHaoli.class);
-                startActivity(intent);
-            }
-        });
-//
 
         /**8
          * 分类内容
@@ -360,6 +330,45 @@ public class ShouYeFragment extends BaseFragment {
                 startActivity(intent);
             }
         });
+
+        /**
+         * 赚币
+         */
+
+        zhuanbi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeZBActivity.class);
+                startActivity(intent);
+            }
+        });
+//
+/**
+ * 花币
+ */
+        huabi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeHuabi.class);
+                startActivity(intent);
+//                ghgghghghgh
+                ///dsadsadsadsadsas
+            }
+        });
+        /**
+         * 好礼
+         */
+        haoli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), ShouyeHaoli.class);
+                startActivity(intent);
+            }
+        });
+//
+
+
+
 
     }
 

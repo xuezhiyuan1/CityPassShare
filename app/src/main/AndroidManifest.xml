@@ -118,40 +118,52 @@
         <activity android:name=".activity.lxl.job.Two_houseActivity" />
         <activity android:name=".activity.lxl.job.NewHouseActivity" />
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.zxm.ShouyeHaoli" />
-        <activity android:name=".activity.zxm.CityChoiceActivity" />
-        <activity android:name=".activity.zxm.FindhouseActivity" />
-        <activity android:name=".activity.zxm.ShouyeZBActivity" />
-        <activity android:name=".activity.zxm.ShouyeNoticePhone" />
-        <activity android:name=".activity.zxm.ShouyeHuabi" />
-        <activity android:name=".activity.zxm.ShouyeFenleiLife" />
-        <activity android:name=".activity.zxm.ShouyeNotice" />
-        <activity android:name=".activity.zxm.FindworkActivity" />
-        <activity android:name=".activity.zxm.baidumap.LocationOption" />
-        <activity android:name=".activity.zxm.baidumap.LocationActivity" />
-        <activity android:name=".activity.zxm.popupwindow.ShouyeSendTie" />
-        <activity android:name=".activity.zxm.ShouyeSendPhoto" />
-        <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity" />
-        <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity" />
-        <activity android:name=".activity.zxm.WebView_Activity" />
-        <activity android:name=".activity.zxm.CityListActivity" />
-        <activity android:name=".activity.zxm.Workdetail" />
-        <activity android:name=".activity.zxm.findhouse.HouseChushou" />
-        <activity android:name=".activity.zxm.findhouse.HouseChuzu" />
-        <activity android:name=".activity.zxm.findhouse.HouseQiugou" />
-        <activity android:name=".activity.zxm.findhouse.HouseQiuzu" />
-        <activity android:name=".activity.zzh.PostDetailActivity" />
+        <activity android:name=".activity.zxm.ShouyeHaoli"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.zxm.CityChoiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.FindhouseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeZBActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeNoticePhone"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeHuabi"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeFenleiLife"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeNotice"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.FindworkActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.baidumap.LocationOption" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.baidumap.LocationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.popupwindow.ShouyeSendTie" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.ShouyeSendPhoto" android:screenOrientation="portrait"/>
+        <!--发帖子里面的发表照片-->
+        <activity android:name=".activity.zxm.upphoto.logic.ImgFileListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.upphoto.logic.ImgsActivity" android:screenOrientation="portrait"/>
+        <!--发照片里面的发表照片-->
+        <activity android:name=".activity.zxm.shouyefaphoto.ImgFileListActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.shouyefaphoto.ImgsActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.WebView_Activity"   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.CityListActivity"   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.Workdetail"  android:screenOrientation="portrait" />
+        <activity android:name=".activity.zxm.findhouse.HouseChushou"   android:screenOrientation="portrait" />
+        <activity android:name=".activity.zxm.findhouse.HouseChuzu"   android:screenOrientation="portrait" />
+        <activity android:name=".activity.zxm.findhouse.HouseQiugou"   android:screenOrientation="portrait" />
+        <activity android:name=".activity.zxm.findhouse.HouseQiuzu"   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.popupwindow.ShouyeSendPhoto"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.zxm.MyZiliao"/>
+
         <!-- 二维码  扫描 -->
 
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />
         <activity android:name=".activity.xzy.FindActivity" />
-        <activity android:name=".activity.xzy.XingWoman"></activity>
-        <activity android:name=".activity.xzy.BeautyWomen"></activity>
-        <activity android:name=".activity.xzy.MengBaby"></activity>
-        <activity android:name=".activity.zxm.LoginActivity"></activity>
-        <activity android:name=".activity.zxm.RegisterActivity" />
+        <activity android:name=".activity.zxm.LoginActivity"  android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.zxm.RegisterActivity"   android:screenOrientation="portrait"/>
         <!-- &lt;!&ndash;设置autolayout的     注明你的设计稿的尺寸。&ndash;&gt; -->
         <!-- <meta-data -->
         <!-- android:name="design_width" -->

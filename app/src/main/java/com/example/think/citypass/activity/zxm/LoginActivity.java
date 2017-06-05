@@ -185,6 +185,8 @@ public class LoginActivity extends BaseActivity {
                             String mobile = ss.getServerInfo().getMobile();
                             String paiming = ss.getServerInfo().getIntegralRank();
                             String honorName = ss.getServerInfo().getHonorName();
+                            String birthday = ss.getServerInfo().getBirthday();
+                            Log.i("--birthday--",birthday);
                             int coin = ss.getServerInfo().getCoin();
                             int level = ss.getServerInfo().getLevel();
 

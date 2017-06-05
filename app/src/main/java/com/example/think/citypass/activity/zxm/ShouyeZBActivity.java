@@ -43,7 +43,7 @@ public class ShouyeZBActivity extends BaseActivity {
         titleList.add("特殊任务");
         titleList.add("日常任务");
         fragmentArrayList.add(new ShouyeZBSpecialTask());
-        fragmentArrayList.add(new ShouyeZBDaysTask());
+        fragmentArrayList.add(new ShouyeZBSpecialTask());
         adapter=new ViewpagerAdapter(getSupportFragmentManager(),titleList,fragmentArrayList);
        viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

@@ -180,7 +180,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="财富：65897城市币"
+                        android:text="财富：0城市币"
                         android:textColor="#ffffff"
                         android:textSize="13dp" />
                 </LinearLayout>
@@ -307,7 +307,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/zhuanbi_layout"
+                        android:id="@+id/zhuanbi_layout222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -334,7 +334,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/huabi_layout"
+                        android:id="@+id/huabi_layout222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -364,7 +364,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/choujiang_layout"
+                        android:id="@+id/choujiang_layout222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -391,7 +391,7 @@
                         android:layout_weight="1" />
 
                     <LinearLayout
-                        android:id="@+id/haoli_layout"
+                        android:id="@+id/haoli_layout222"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"

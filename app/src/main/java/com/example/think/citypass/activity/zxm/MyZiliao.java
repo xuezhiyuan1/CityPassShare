@@ -16,7 +16,7 @@ import com.example.think.citypass.erweima.decoding.Intents;
 
 public class MyZiliao  extends BaseActivity {
     ImageView    head_imageview;
-    TextView top_title;
+    TextView top_title,ziliao_loc,age_textview;
     @Override
     protected int layoutId() {
         return R.layout.my_zhuye;
@@ -26,6 +26,9 @@ public class MyZiliao  extends BaseActivity {
     protected void initView() {
    head_imageview= (ImageView) findViewById(R.id.head_imageview);
         top_title= (TextView) findViewById(R.id.top_title);
+        ziliao_loc= (TextView) findViewById(R.id.ziliao_loc);
+        age_textview= (TextView) findViewById(R.id.age_textview);
+
     }
 
     @Override
