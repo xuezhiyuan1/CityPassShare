@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#ded8d8"
+    android:layout_height="match_parent">
+   <LinearLayout
+       android:id="@+id/one"
+       android:background="@drawable/shoucang"
+       android:gravity="center"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="50dp">
+       <TextView
+           android:id="@+id/text_one"
+           android:text="电话收藏"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/two"
+        android:gravity="center"
+        android:background="@drawable/shoucang"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/text_two"
+            android:text="商家收藏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/three"
+
+        android:gravity="center"
+        android:background="@drawable/shoucang"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/text_three"
+            android:text="生活收藏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/four"
+        android:background="@drawable/shoucang"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/text_four"
+            android:text="城市收藏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/five"
+        android:background="@drawable/shoucang"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/text_five"
+            android:text="闹闹收藏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/six"
+        android:background="@drawable/shoucang"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/text_six"
+            android:text="社区收藏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

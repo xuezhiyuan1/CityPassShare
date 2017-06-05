@@ -15,12 +15,15 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.activity.lxl.job.MyMoneyActivity;
 import com.example.think.citypass.activity.shezhi.SheZhiActivity;
 import com.example.think.citypass.activity.zxm.LoginActivity;
+import com.example.think.citypass.activity.zxm.MyShoucang;
 import com.example.think.citypass.activity.zxm.MyZiliao;
 import com.example.think.citypass.activity.zxm.baidumap.LocationActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.model.bean.LoginBean;
+import com.example.think.citypass.myview.MysoclListview;
 import com.example.think.citypass.utils.sharepreferencesutil.SharedPreferencesUtils;
 import com.google.gson.Gson;
+
 
 /**
  * Created by ASUS on 2017/5/22.
@@ -32,21 +35,22 @@ public class HomeFragment extends BaseFragment {
     ImageView  imageView;
 
     SharedPreferences  share;
-    LinearLayout  user_login_begin,mainccoo_main_layout;
+    LinearLayout  user_login_begin,mainccoo_main_layout,mainccoo_collect_layout;
     @Override
     protected int layoutId() {
-        return R.layout.activity_home_fragment;
+        return com.example.think.citypass.R.layout.activity_home_fragment;
     }
 
     @Override
     protected void initView(View view) {
-        mCityMoney= (TextView)view.findViewById(R.id.My_City_MoneyText);
-        mSheZhi= (TextView)view.findViewById(R.id.SheZhi);
-      username= (TextView) view.findViewById(R.id.username_meng);
-        imageView= (ImageView) view.findViewById(R.id.userimage_meng);
-        textView= (TextView) view.findViewById(R.id.usersign);
-        user_login_begin= (LinearLayout) view.findViewById(R.id.user_login_begin);
-        mainccoo_main_layout= (LinearLayout) view.findViewById(R.id.mainccoo_main_layout);
+        mCityMoney= (TextView)view.findViewById(com.example.think.citypass.R.id.My_City_MoneyText);
+        mSheZhi= (TextView)view.findViewById(com.example.think.citypass.R.id.SheZhi);
+      username= (TextView) view.findViewById(com.example.think.citypass.R.id.username_meng);
+        imageView= (ImageView) view.findViewById(com.example.think.citypass.R.id.userimage_meng);
+        textView= (TextView) view.findViewById(com.example.think.citypass.R.id.usersign);
+        user_login_begin= (LinearLayout) view.findViewById(com.example.think.citypass.R.id.user_login_begin);
+        mainccoo_main_layout= (LinearLayout) view.findViewById(com.example.think.citypass.R.id.mainccoo_main_layout);
+        mainccoo_collect_layout= (LinearLayout) view.findViewById(R.id.mainccoo_collect_layout);
     }
 
     @Override
@@ -82,6 +86,13 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent  intent=new Intent(getContext(), MyZiliao.class);
+                startActivity(intent);
+            }
+        });
+        mainccoo_collect_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent=new Intent(getContext(), MyShoucang.class);
                 startActivity(intent);
             }
         });
