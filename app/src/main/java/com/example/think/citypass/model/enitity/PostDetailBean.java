@@ -8,15 +8,14 @@ import java.util.List;
 
 public class PostDetailBean {
 
-
     /**
      * MessageList : {"code":1000,"message":"Success"}
-     * ServerInfo : {"TopicInfo":{"Title":"王泉营的水还能喝么？","Role":"A.             ??","RoleImg":"http://r9.pccoo.cn/weixin/20170213/2017021313024311167659_640_640_150x150(s).jpg","Level":0,"Addtime":"2017-5-18 21:21:53","Hits":1448,"Reply":4,"Tbody":"事件发生时间:2017-05-18事件发生地点:王泉营村事件描述:王泉营的水变成了这样，里面全都是密密麻麻黑色的东西，给大家带来了极其的不便，饭做不了，衣服洗不了，用布包住水龙头，布上面全是东西[img]http://r9.pccoo.cn/weixin/20170518/2017051808334945582541_1280_960_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335294901183_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335426810812_960_1280_500x300(w).jpg[/img]","Images":"","Videos":"","BoardID":"122029","BoardName":"同城爆料","IsHide":0,"IsNMReply":0},"VoteList":[],"PropLog":[],"ReplyList":[{"ReplyID":42213,"Rtitle":"沙发","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-27 8:34:31","ReplyMemo":"净化不过关","Clild":null,"ClildReplyList":null},{"ReplyID":42234,"Rtitle":"板凳","UserName":"WXIDXNFRIF248191","RoleName":"_喵喵喵","RoleImg":"http://r9.pccoo.cn/weixin/20170527/2017052709395121686862_430_430_150x150(s).jpg","Level":0,"AddTime":"2017-5-27 9:40:07","ReplyMemo":"这是哪里来的水","Clild":null,"ClildReplyList":null},{"ReplyID":42330,"Rtitle":"马扎","UserName":"sid232419523978639","RoleName":"宪宪","RoleImg":"http://r9.pccoo.cn/APPIMAGE/20170526/2017052623233630508556_80_80_150x150(s).jpg","Level":0,"AddTime":"2017-5-27 11:44:31","ReplyMemo":"怎么能这样","Clild":null,"ClildReplyList":null},{"ReplyID":45598,"Rtitle":"4楼","UserName":"WXID14501361","RoleName":"仁义礼智信","RoleImg":"http://r9.pccoo.cn/weixin/20170519/2017051911190185349088_640_1136_150x150(s).jpg","Level":2,"AddTime":"2017-6-2 3:45:04","ReplyMemo":"早就该管管  由于加压水管多处破裂 经常坏  现在又因为加压年久失修   经常出现大量杂质  还让人活吗？","Clild":null,"ClildReplyList":null}]}
+     * ServerInfo : {"TopicInfo":{"Title":"生活区怎么会成垃圾区，没人管吗？","Role":"清晨","RoleImg":"http://r3.pccoo.cn/weixin/20150731/2015073113504990907999_150x150(s).jpg","Level":2,"Addtime":"2017-5-24 8:55:39","Hits":3751,"Reply":5,"Tbody":"事件发生时间:2017-05-23事件发生地点:延庆区香营乡孟官屯村事件描述:请看照片，告诉您，这片垃圾区已经形成一年多了，开始是觉得居民方便，乡里管环境的很快就会请走。可是现在我觉得不是这样的，一方面困扰居民的休闲娱乐，一方面，已进入夏季，垃圾成堆，很容易产生空气污染，病菌很容易传播。况且这是居民生活区，不是垃圾区，这样已成习惯，每个家庭有建筑垃圾就往这空旷的地方倒，希望有关领导和部门重视和关注。在创城进行时，我们居民也希望得到最美的生活空间和呼吸最新鲜的空气！给您带来不便请见谅！[img]http://r9.pccoo.cn/weixin/20170523/2017052314220572677028_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314220918967262_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221376825504_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221684620121_960_1280_500x300(w).jpg[/img]","Images":"","Videos":"","BoardID":"122029","BoardName":"同城爆料","IsHide":0,"IsNMReply":0},"VoteList":[],"PropLog":[],"ReplyList":[{"ReplyID":41930,"Rtitle":"沙发","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-26 20:20:11","ReplyMemo":"乱倒渣土垃圾有违公德","Clild":null,"ClildReplyList":null},{"ReplyID":41932,"Rtitle":"板凳","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-26 20:20:58","ReplyMemo":"乱倒垃圾缺德","Clild":null,"ClildReplyList":null},{"ReplyID":41959,"Rtitle":"马扎","UserName":"WXIDpNiTjbOc3588","RoleName":"延庆板爷","RoleImg":"http://r9.pccoo.cn/APPIMAGE/20170526/2017052620361616875598_80_80_150x150(s).jpg","Level":0,"AddTime":"2017-5-26 20:41:45","ReplyMemo":"表示各个村里都存在此类现象","Clild":null,"ClildReplyList":null},{"ReplyID":42729,"Rtitle":"4楼","UserName":"WXIDoZ7Wmju3-akz","RoleName":"、   ?  ????","RoleImg":"http://r5.pccoo.cn/weixin/20160804/2016080405352539783476_150x150(s).jpg","Level":2,"AddTime":"2017-5-28 6:15:59","ReplyMemo":"怎么没人管呀","Clild":null,"ClildReplyList":null},{"ReplyID":46179,"Rtitle":"5楼","UserName":"QQID97632FB31721","RoleName":"　无梦而安。","RoleImg":"http://r9.pccoo.cn/app_avatar/20170602/2017060219052392866754_780_780_150x150(s).jpg","Level":0,"AddTime":"2017-6-2 19:24:53","ReplyMemo":"这些事压根没人管","Clild":null,"ClildReplyList":null}]}
      * Extend : null
      * Count : 0
      * GxNum : 0
      * PageNum : 0
-     * retime : 0.3056758
+     * retime : 0.346693
      */
 
     private MessageListBean MessageList;
@@ -111,10 +110,10 @@ public class PostDetailBean {
 
     public static class ServerInfoBean {
         /**
-         * TopicInfo : {"Title":"王泉营的水还能喝么？","Role":"A.             ??","RoleImg":"http://r9.pccoo.cn/weixin/20170213/2017021313024311167659_640_640_150x150(s).jpg","Level":0,"Addtime":"2017-5-18 21:21:53","Hits":1448,"Reply":4,"Tbody":"事件发生时间:2017-05-18事件发生地点:王泉营村事件描述:王泉营的水变成了这样，里面全都是密密麻麻黑色的东西，给大家带来了极其的不便，饭做不了，衣服洗不了，用布包住水龙头，布上面全是东西[img]http://r9.pccoo.cn/weixin/20170518/2017051808334945582541_1280_960_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335294901183_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335426810812_960_1280_500x300(w).jpg[/img]","Images":"","Videos":"","BoardID":"122029","BoardName":"同城爆料","IsHide":0,"IsNMReply":0}
+         * TopicInfo : {"Title":"生活区怎么会成垃圾区，没人管吗？","Role":"清晨","RoleImg":"http://r3.pccoo.cn/weixin/20150731/2015073113504990907999_150x150(s).jpg","Level":2,"Addtime":"2017-5-24 8:55:39","Hits":3751,"Reply":5,"Tbody":"事件发生时间:2017-05-23事件发生地点:延庆区香营乡孟官屯村事件描述:请看照片，告诉您，这片垃圾区已经形成一年多了，开始是觉得居民方便，乡里管环境的很快就会请走。可是现在我觉得不是这样的，一方面困扰居民的休闲娱乐，一方面，已进入夏季，垃圾成堆，很容易产生空气污染，病菌很容易传播。况且这是居民生活区，不是垃圾区，这样已成习惯，每个家庭有建筑垃圾就往这空旷的地方倒，希望有关领导和部门重视和关注。在创城进行时，我们居民也希望得到最美的生活空间和呼吸最新鲜的空气！给您带来不便请见谅！[img]http://r9.pccoo.cn/weixin/20170523/2017052314220572677028_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314220918967262_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221376825504_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221684620121_960_1280_500x300(w).jpg[/img]","Images":"","Videos":"","BoardID":"122029","BoardName":"同城爆料","IsHide":0,"IsNMReply":0}
          * VoteList : []
          * PropLog : []
-         * ReplyList : [{"ReplyID":42213,"Rtitle":"沙发","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-27 8:34:31","ReplyMemo":"净化不过关","Clild":null,"ClildReplyList":null},{"ReplyID":42234,"Rtitle":"板凳","UserName":"WXIDXNFRIF248191","RoleName":"_喵喵喵","RoleImg":"http://r9.pccoo.cn/weixin/20170527/2017052709395121686862_430_430_150x150(s).jpg","Level":0,"AddTime":"2017-5-27 9:40:07","ReplyMemo":"这是哪里来的水","Clild":null,"ClildReplyList":null},{"ReplyID":42330,"Rtitle":"马扎","UserName":"sid232419523978639","RoleName":"宪宪","RoleImg":"http://r9.pccoo.cn/APPIMAGE/20170526/2017052623233630508556_80_80_150x150(s).jpg","Level":0,"AddTime":"2017-5-27 11:44:31","ReplyMemo":"怎么能这样","Clild":null,"ClildReplyList":null},{"ReplyID":45598,"Rtitle":"4楼","UserName":"WXID14501361","RoleName":"仁义礼智信","RoleImg":"http://r9.pccoo.cn/weixin/20170519/2017051911190185349088_640_1136_150x150(s).jpg","Level":2,"AddTime":"2017-6-2 3:45:04","ReplyMemo":"早就该管管  由于加压水管多处破裂 经常坏  现在又因为加压年久失修   经常出现大量杂质  还让人活吗？","Clild":null,"ClildReplyList":null}]
+         * ReplyList : [{"ReplyID":41930,"Rtitle":"沙发","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-26 20:20:11","ReplyMemo":"乱倒渣土垃圾有违公德","Clild":null,"ClildReplyList":null},{"ReplyID":41932,"Rtitle":"板凳","UserName":"WXID16366771","RoleName":"大咖","RoleImg":"http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg","Level":2,"AddTime":"2017-5-26 20:20:58","ReplyMemo":"乱倒垃圾缺德","Clild":null,"ClildReplyList":null},{"ReplyID":41959,"Rtitle":"马扎","UserName":"WXIDpNiTjbOc3588","RoleName":"延庆板爷","RoleImg":"http://r9.pccoo.cn/APPIMAGE/20170526/2017052620361616875598_80_80_150x150(s).jpg","Level":0,"AddTime":"2017-5-26 20:41:45","ReplyMemo":"表示各个村里都存在此类现象","Clild":null,"ClildReplyList":null},{"ReplyID":42729,"Rtitle":"4楼","UserName":"WXIDoZ7Wmju3-akz","RoleName":"、   ?  ????","RoleImg":"http://r5.pccoo.cn/weixin/20160804/2016080405352539783476_150x150(s).jpg","Level":2,"AddTime":"2017-5-28 6:15:59","ReplyMemo":"怎么没人管呀","Clild":null,"ClildReplyList":null},{"ReplyID":46179,"Rtitle":"5楼","UserName":"QQID97632FB31721","RoleName":"　无梦而安。","RoleImg":"http://r9.pccoo.cn/app_avatar/20170602/2017060219052392866754_780_780_150x150(s).jpg","Level":0,"AddTime":"2017-6-2 19:24:53","ReplyMemo":"这些事压根没人管","Clild":null,"ClildReplyList":null}]
          */
 
         private TopicInfoBean TopicInfo;
@@ -156,14 +155,14 @@ public class PostDetailBean {
 
         public static class TopicInfoBean {
             /**
-             * Title : 王泉营的水还能喝么？
-             * Role : A.             ??
-             * RoleImg : http://r9.pccoo.cn/weixin/20170213/2017021313024311167659_640_640_150x150(s).jpg
-             * Level : 0
-             * Addtime : 2017-5-18 21:21:53
-             * Hits : 1448
-             * Reply : 4
-             * Tbody : 事件发生时间:2017-05-18事件发生地点:王泉营村事件描述:王泉营的水变成了这样，里面全都是密密麻麻黑色的东西，给大家带来了极其的不便，饭做不了，衣服洗不了，用布包住水龙头，布上面全是东西[img]http://r9.pccoo.cn/weixin/20170518/2017051808334945582541_1280_960_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335294901183_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170518/2017051808335426810812_960_1280_500x300(w).jpg[/img]
+             * Title : 生活区怎么会成垃圾区，没人管吗？
+             * Role : 清晨
+             * RoleImg : http://r3.pccoo.cn/weixin/20150731/2015073113504990907999_150x150(s).jpg
+             * Level : 2
+             * Addtime : 2017-5-24 8:55:39
+             * Hits : 3751
+             * Reply : 5
+             * Tbody : 事件发生时间:2017-05-23事件发生地点:延庆区香营乡孟官屯村事件描述:请看照片，告诉您，这片垃圾区已经形成一年多了，开始是觉得居民方便，乡里管环境的很快就会请走。可是现在我觉得不是这样的，一方面困扰居民的休闲娱乐，一方面，已进入夏季，垃圾成堆，很容易产生空气污染，病菌很容易传播。况且这是居民生活区，不是垃圾区，这样已成习惯，每个家庭有建筑垃圾就往这空旷的地方倒，希望有关领导和部门重视和关注。在创城进行时，我们居民也希望得到最美的生活空间和呼吸最新鲜的空气！给您带来不便请见谅！[img]http://r9.pccoo.cn/weixin/20170523/2017052314220572677028_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314220918967262_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221376825504_960_1280_500x300(w).jpg[/img][img]http://r9.pccoo.cn/weixin/20170523/2017052314221684620121_960_1280_500x300(w).jpg[/img]
              * Images :
              * Videos :
              * BoardID : 122029
@@ -302,14 +301,14 @@ public class PostDetailBean {
 
         public static class ReplyListBean {
             /**
-             * ReplyID : 42213
+             * ReplyID : 41930
              * Rtitle : 沙发
              * UserName : WXID16366771
              * RoleName : 大咖
              * RoleImg : http://r3.pccoo.cn/weixin/20151107/2015110717545092984488_150x150(s).jpg
              * Level : 2
-             * AddTime : 2017-5-27 8:34:31
-             * ReplyMemo : 净化不过关
+             * AddTime : 2017-5-26 20:20:11
+             * ReplyMemo : 乱倒渣土垃圾有违公德
              * Clild : null
              * ClildReplyList : null
              */

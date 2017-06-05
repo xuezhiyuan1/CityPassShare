@@ -5,6 +5,12 @@
     android:background="@color/gray_bg"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_weight="0"
+        android:background="@color/line" />
+
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -66,27 +72,17 @@
                     android:src="@drawable/ccoo_icon_look2" />
 
                 <TextView
-                    android:id="@+id/toptime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="2014-12-12"
-                    android:textColor="@color/color_999"
-                    android:textSize="14dp" />
-
-                <TextView
                     android:id="@+id/huitie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7253"
                     android:textColor="@color/text_welcom2"
                     android:textSize="14sp"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
             </LinearLayout>
         </RelativeLayout>
 
         <ImageView
-            android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:scaleType="fitXY"
@@ -107,22 +103,16 @@
             android:layout_marginRight="10dp"
             android:paddingTop="15dp">
 
-            <RelativeLayout
-                android:id="@+id/reTou"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <com.example.think.citypass.myview.RoundImageView
-                    android:id="@+id/image_tou"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp" />
-            </RelativeLayout>
+            <com.example.think.citypass.myview.RoundImageView
+                android:id="@+id/image_tou"
+                android:layout_width="38dp"
+                android:layout_height="38dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/reTou"
+                android:layout_toRightOf="@+id/image_tou"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -166,22 +156,16 @@
                         android:textSize="10dp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2012-12-03 11:07:05"
-                        android:textColor="@color/text_welcom2"
-                        android:textSize="12dp" />
-                </LinearLayout>
+                    android:text="2012-12-03 11:07:05"
+                    android:textColor="@color/text_welcom2"
+                    android:textSize="12dp" />
             </LinearLayout>
+
         </RelativeLayout>
 
         <TextView
@@ -192,22 +176,18 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:autoLink="web"
-            android:background="@drawable/shape_dash"
             android:padding="5dp"
             android:text="gone"
             android:textColor="@color/color_333"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <LinearLayout
             android:id="@+id/post_images_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical">
-
 
         </LinearLayout>
 
@@ -233,7 +213,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_weight="1"
                 android:textColor="@color/color_ccc"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
             <!-- 北京 昌平 北七家 -->
         </LinearLayout>
 
@@ -241,7 +221,6 @@
             android:id="@+id/huojia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/layout_zan"
             android:background="@color/white"
             android:orientation="vertical"
             android:paddingBottom="10dp">
@@ -323,7 +302,7 @@
                         android:layout_marginTop="5dp"
                         android:text="赏"
                         android:textColor="@color/color_999"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -361,7 +340,7 @@
                         android:layout_marginTop="5dp"
                         android:text="赞"
                         android:textColor="@color/color_999"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -398,7 +377,7 @@
                         android:layout_marginTop="5dp"
                         android:text="分享"
                         android:textColor="@color/color_999"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -441,9 +420,9 @@
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="评论 "
+                    android:text="评论 0"
                     android:textColor="@color/red_text"
-                    android:textSize="16dp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/zuixin_daoxu_tv"
@@ -474,9 +453,9 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="大咖说 "
+                android:text="大咖说 0"
                 android:textColor="@color/color_333"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/scan2_line"
@@ -498,9 +477,9 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="打赏 "
+                android:text="打赏 0"
                 android:textColor="@color/color_333"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/scan3_line"

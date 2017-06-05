@@ -17,10 +17,7 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/post_btn_back">
-
-
-        </Button>
+            android:background="@drawable/post_btn_back" />
 
         <LinearLayout
             android:id="@+id/title_layout"
@@ -62,11 +59,62 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <include
-        android:id="@+id/post_loading"
-        layout="@layout/layout_loading"
+    <LinearLayout
+        android:id="@+id/ll_loading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_loading"
+            android:contentDescription="@string/desc"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/dr_progress" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="正在努力加载..."
+                android:textColor="@color/back_03"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/failure_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_fault"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,8 +128,10 @@
             android:layout_weight="1" />
 
         <LinearLayout
+            android:id="@+id/post_detail_botton_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
             <LinearLayout

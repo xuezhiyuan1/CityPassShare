@@ -85,6 +85,7 @@ public class NewestAdapter extends RecyclerView.Adapter<NewestAdapter.ViewHolder
                 intent.putExtra("BoardID", data.get(position).getBoardID());
                 intent.putExtra("BName", data.get(position).getBName());
                 intent.putExtra("Title", data.get(position).getTitle());
+                intent.putExtra("MapName", data.get(position).getMapName());
                 App.activity.startActivity(intent);
             }
         });

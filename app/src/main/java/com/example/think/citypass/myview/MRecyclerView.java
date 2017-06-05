@@ -139,6 +139,11 @@ public class MRecyclerView extends RecyclerView {
         setNoMore(false);
     }
 
+    public void refreshCompleteTwo() {
+        mRefreshHeader.reset();
+        setNoMore(true);
+    }
+
     public void setRefreshHeader(GifRfreshHeader refreshHeader) {
         mRefreshHeader = refreshHeader;
     }

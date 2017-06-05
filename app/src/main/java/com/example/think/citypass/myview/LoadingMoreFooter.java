@@ -2,7 +2,6 @@ package com.example.think.citypass.myview;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -67,9 +66,12 @@ public class LoadingMoreFooter extends RelativeLayout {
                 this.setVisibility(View.GONE);
                 break;
             case STATE_NOMORE:
-                Log.e("测试","没有更多");
                 m_footer_refresh_pb.setVisibility(GONE);
-                m_footer_refresh_tv.setText("没有更多内容啦~");
+                if (noMoreHint == null)
+                    m_footer_refresh_tv.setText("没有更多内容啦~");
+                else
+                    m_footer_refresh_tv.setText(noMoreHint);
+
                 this.setVisibility(View.VISIBLE);
                 break;
         }

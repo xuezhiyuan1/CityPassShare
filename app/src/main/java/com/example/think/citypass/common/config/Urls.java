@@ -25,4 +25,6 @@ public class Urls {
 
     public static final String BANQUGUAN = "PHSocket_SetUserFollowBoard";
 
+    public static final String POSTINFO = "PHSocket_GetBBSTopicInfo";
+
 }

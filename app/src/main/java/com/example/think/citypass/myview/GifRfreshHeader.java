@@ -23,7 +23,7 @@ import com.example.think.citypass.R;
 public class GifRfreshHeader extends LinearLayout implements BaseRefreshHeader {
 
     private LinearLayout mContainer;
-    private ImageView playGifImageView;
+    private ImageView playGifImageView,backgroudImageView;
     private AnimationDrawable animationDrawable;
     public int mMeasuredHeight;
     private int mState = STATE_NORMAL;
@@ -51,9 +51,10 @@ public class GifRfreshHeader extends LinearLayout implements BaseRefreshHeader {
         lp.setMargins(0, 0, 0, 0);
         this.setLayoutParams(lp);
         this.setPadding(0, 0, 0, 0);
-
         addView(mContainer, new LayoutParams(LayoutParams.MATCH_PARENT, 0));
         setGravity(Gravity.BOTTOM);
+
+        backgroudImageView = (ImageView) mContainer.findViewById(R.id.image_backgroud);
 
         playGifImageView = (ImageView) mContainer.findViewById(R.id.playGifImageView);
         playGifImageView.setImageResource(R.drawable.fresh_loading);
@@ -61,6 +62,11 @@ public class GifRfreshHeader extends LinearLayout implements BaseRefreshHeader {
 
         measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         mMeasuredHeight = getMeasuredHeight();
+    }
+
+    public void setVisibility(){
+        backgroudImageView.setImageResource(R.color.post_refresh);
+        playGifImageView.setVisibility(GONE);
     }
 
     public void setState(int state) {

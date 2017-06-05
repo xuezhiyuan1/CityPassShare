@@ -11,6 +11,7 @@
     <color name="mainRBnoCheck">#6D6D6D</color>
     <color name="mainRBCheck">#EF3631</color>
 
+    <color name="post_refresh">#FAFAFA</color>
     <color name="news_item">#c00</color>
     <color name="gray_bg">#F0F0F0</color>
     <color name="e0">#E0E0E0</color>

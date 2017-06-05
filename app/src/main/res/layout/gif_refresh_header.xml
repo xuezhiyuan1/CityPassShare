@@ -11,6 +11,7 @@
         android:layout_height="70dp">
 
         <ImageView
+            android:id="@+id/image_backgroud"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
