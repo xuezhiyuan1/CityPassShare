@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:clickable="false">
 
     <RelativeLayout
         android:id="@+id/top_relay"
@@ -160,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/gift_text2"
                     android:layout_centerHorizontal="true"
-                    android:text="  "
+                    android:text="点赞数"
                     android:textColor="@color/white"
                     android:textSize="12dp" />
             </RelativeLayout>
@@ -201,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/gift_text1"
                     android:layout_centerHorizontal="true"
-                    android:text="  "
+                    android:text="点赞数"
                     android:textColor="@color/white"
                     android:textSize="12dp" />
             </RelativeLayout>
@@ -243,7 +244,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/gift_text3"
                     android:layout_centerHorizontal="true"
-                    android:text="  "
+                    android:text="点赞数"
                     android:textColor="@color/white"
                     android:textSize="12dp" />
             </RelativeLayout>

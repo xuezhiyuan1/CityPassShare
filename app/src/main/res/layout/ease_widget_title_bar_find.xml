@@ -23,17 +23,13 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp">
 
-            <com.example.think.citypass.myview.RoundImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ccoo_dra_head_bg" />
-
-            <com.example.think.citypass.myview.RoundImageView
+              <com.example.think.citypass.myview.RoundImageView
                 android:id="@+id/main_theall_right_head_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:background="@drawable/login_icon_account" />
+
         </RelativeLayout>
 
         <LinearLayout

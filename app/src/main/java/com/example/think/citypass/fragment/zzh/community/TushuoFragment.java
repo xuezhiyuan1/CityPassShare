@@ -28,6 +28,7 @@ import java.util.List;
  */
 
 public class TushuoFragment extends BaseFragment {
+
     private MRefreshUtils mRefreshUtils;
 
     private TushuoAdapter adapter;

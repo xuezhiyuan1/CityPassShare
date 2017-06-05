@@ -1,7 +1,6 @@
 package com.example.think.citypass.fragment.cityadapter;
 
 import android.content.Context;
-
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.CommonAdapter;
 import com.example.think.citypass.common.base.ViewHolder;

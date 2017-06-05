@@ -20,6 +20,7 @@ import com.example.think.citypass.activity.xzy.Sao1SaoActivity;
 import com.example.think.citypass.activity.xzy.XingWoman;
 import com.example.think.citypass.activity.zxm.FindhouseActivity;
 import com.example.think.citypass.activity.zxm.FindworkActivity;
+import com.example.think.citypass.activity.zxm.LoginActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.common.config.FragmentBuilder;
 import com.example.think.citypass.common.config.Urls;
@@ -121,6 +122,8 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
     LinearLayout linearLayoutFindBus;
     LinearLayout linearLayoutTrins;
     LinearLayout linearLayoutPlane;
+    //登陆
+    ImageView imageViewLogin;
     @Override
     protected int layoutId() {
         return R.layout.find_fragement;
@@ -128,6 +131,10 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initView(View view) {
+        //登陆
+        imageViewLogin  = (ImageView) view.findViewById(R.id.main_theall_right_head_imageview);
+
+
         //TYPE5
         linearLayoutNewsHome = (LinearLayout) view.findViewById(R.id.imageNewHome);
         linearLayoutFindWork = (LinearLayout) view.findViewById(R.id.findWork);
@@ -349,7 +356,8 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void initListener() {
-
+        //登陆
+        imageViewLogin.setOnClickListener(this);
         //二维码
         erweima.setOnClickListener(this);
         //城市  生活
@@ -401,6 +409,10 @@ public class LoadFragmentTwo extends BaseFragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.main_theall_right_head_imageview:
+                Intent intentLogin = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intentLogin);
+                break;
             case R.id.bg_layout:
                 Toast.makeText(getContext(), "城事", Toast.LENGTH_SHORT).show();
                 Intent  intent=new Intent(getContext(), FindCityThings.class);

@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CityPass.iml" filepath="$PROJECT_DIR$/CityPass.iml" />
       <module fileurl="file://$PROJECT_DIR$/CityPassShare.iml" filepath="$PROJECT_DIR$/CityPassShare.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CityPassShare.iml" filepath="$PROJECT_DIR$/CityPassShare.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

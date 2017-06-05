@@ -27,4 +27,7 @@ public class Urls {
 
     public static final String POSTINFO = "PHSocket_GetBBSTopicInfo";
 
+    public static final String ZUIXIN = "";
+
+    public static final String FENGMIANNVLANG = "PHSocket_GetFigureTCoverInfo";
 }
