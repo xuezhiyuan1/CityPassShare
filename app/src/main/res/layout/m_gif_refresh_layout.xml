@@ -19,6 +19,16 @@
         android:textColor="#b86d1c"
         android:textSize="15dp"
         android:visibility="gone" />
+    <TextView
+        android:id="@+id/nullData"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:text="没有更多内容了~"
+        android:textColor="#535353"
+        android:textSize="15dp"
+        android:visibility="gone" />
 
 
     <LinearLayout

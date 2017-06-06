@@ -1,38 +1,43 @@
 package com.example.think.citypass.fragment.xzy.beauty;
 
-
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import com.example.think.citypass.App;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.common.config.Urls;
 import com.example.think.citypass.fragment.xzy.beauty.adapter.FmnlAdapter;
-import com.example.think.citypass.fragment.xzy.beauty.adapter.ZuiXinAdapter;
+import com.example.think.citypass.fragment.zzh.community.adapter.WorthAdapter;
+import com.example.think.citypass.model.enitity.WorthBean;
+import com.example.think.citypass.model.entity.FmnlBean;
 import com.example.think.citypass.model.entity.ZuiXinBean;
 import com.example.think.citypass.model.http.callback.ResaultCallBack;
 import com.example.think.citypass.utils.LinuxUtils;
 import com.example.think.citypass.utils.recyclerviewutils.MRefreshUtils;
 import com.example.think.citypass.utils.retrofitutils.RetrofitUtil;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ASUS on 2017/5/22.
+ * Created by think on 2017/6/6.
  */
 
-public class ZuiXinFragment extends BaseFragment {
+public class FmnlFragment extends BaseFragment {
 
     private MRefreshUtils mRefreshUtils;
 
-    private ZuiXinAdapter adapter;
+    private FmnlAdapter adapter;
 
-    private List<ZuiXinBean.ServerInfoBean.NewTCoverInfoListBeanX.NewTCoverInfoListBean> data = new ArrayList<>();
+    private List<FmnlBean.ServerInfoBean.FigureTCoverInfoListBeanX.FigureTCoverInfoListBean> data = new ArrayList<>();
 
     private int page = 1;
 
@@ -47,6 +52,7 @@ public class ZuiXinFragment extends BaseFragment {
             }
         }
     };
+    private View viewFoot;
 
     @Override
     protected int layoutId() {
@@ -55,15 +61,16 @@ public class ZuiXinFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
+        viewFoot = LayoutInflater.from(getContext()).inflate(R.layout.datasnullmore, null);
 
     }
 
     @Override
     protected void initData() {
         data = new ArrayList<>();
-        adapter = new ZuiXinAdapter(data);
+        adapter = new FmnlAdapter(data);
         mRefreshUtils = new MRefreshUtils(getActivity(), (RelativeLayout) getFragmentLayoutView(), onListStateListener);
-        mRefreshUtils.setItemDecoration(5);
+
     }
 
     @Override
@@ -73,20 +80,21 @@ public class ZuiXinFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
-        RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, ZuiXinBean.class);
+        RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, FmnlBean.class);
     }
 
 
     private ResaultCallBack callBack = new ResaultCallBack() {
         @Override
         public void onSuccess(Object obj) {
-            ZuiXinBean zuiXinBean = (ZuiXinBean) obj;
-            List<ZuiXinBean.ServerInfoBean.NewTCoverInfoListBeanX.NewTCoverInfoListBean> newTCoverInfoList = zuiXinBean.getServerInfo().getNewTCoverInfoList().getNewTCoverInfoList();
+            FmnlBean fmnlBean = (FmnlBean) obj;
+            List<FmnlBean.ServerInfoBean.FigureTCoverInfoListBeanX.FigureTCoverInfoListBean> figureTCoverInfoList = fmnlBean.getServerInfo().getFigureTCoverInfoList().getFigureTCoverInfoList();
+
             if (isFrist) {
                 isFrist = false;
-                data.addAll(newTCoverInfoList);
-                mRefreshUtils.setPageNums(zuiXinBean.getPageNum());
-                mRefreshUtils.setAdapter(2, adapter);
+                data.addAll(figureTCoverInfoList);
+                mRefreshUtils.setPageNums(fmnlBean.getPageNum());
+                mRefreshUtils.setAdapter(1, adapter);
                 mRefreshUtils.showNormal();
             } else {
                 Message message = new Message();
@@ -118,24 +126,25 @@ public class ZuiXinFragment extends BaseFragment {
         @Override
         public void onLoadMore() {
             page++;
-            RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, ZuiXinBean.class);
+            RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, FmnlBean.class);
         }
 
         @Override
         public void onRefresh() {
             page = 1;
-            RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, ZuiXinBean.class);
+            RetrofitUtil.getInstance().postRetrofitTwo(getParams(), callBack, FmnlBean.class);
         }
 
         @Override
         public void onSuccess(boolean Refresh, Object result) {
-            ZuiXinBean zuiXinBean = (ZuiXinBean) result;
-            List<ZuiXinBean.ServerInfoBean.NewTCoverInfoListBeanX.NewTCoverInfoListBean> newTCoverInfoList = zuiXinBean.getServerInfo().getNewTCoverInfoList().getNewTCoverInfoList();
+            FmnlBean fmnlBean = (FmnlBean) result;
+            List<FmnlBean.ServerInfoBean.FigureTCoverInfoListBeanX.FigureTCoverInfoListBean> figureTCoverInfoList = fmnlBean.getServerInfo().getFigureTCoverInfoList().getFigureTCoverInfoList();
+
             if (Refresh) {
-                mRefreshUtils.startUpdate(zuiXinBean.getGxNum());
+                mRefreshUtils.startUpdate(fmnlBean.getGxNum());
                 data.clear();
             }
-            data.addAll(newTCoverInfoList);
+            data.addAll(figureTCoverInfoList);
             adapter.notifyDataSetChanged();
         }
 
@@ -156,12 +165,10 @@ public class ZuiXinFragment extends BaseFragment {
             jo.put("siteID", 2422);
             jo.put("curPage", page);
             jo.put("pageSize", 10);
-            jo.put("ImName", "flag");
-            jo.put("userID", 0);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return LinuxUtils.createnewsParam(Urls.ZUIXIN, jo);
+        return LinuxUtils.createnewsParam(Urls.FENGMIANNVLANG, jo);
     }
 
 }

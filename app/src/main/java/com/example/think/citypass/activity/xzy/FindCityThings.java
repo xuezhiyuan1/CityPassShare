@@ -15,6 +15,7 @@ import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
 import com.example.think.citypass.fragment.xzy.FindCTyoutaidu;
+import com.example.think.citypass.fragment.xzy.beauty.ZuiXinFragment;
 import com.example.think.citypass.fragment.xzy.citything.LoveWaterTop;
 import com.example.think.citypass.fragment.xzy.citything.YoutaiduFragment;
 import com.example.think.citypass.fragment.zzh.naonao.NaonaoDiFragment;
@@ -104,8 +105,10 @@ public class FindCityThings  extends BaseActivity implements View.OnClickListene
                         YoutaiduFragment youtaiduFragment = new YoutaiduFragment();
                         fragmentList.add(youtaiduFragment);
                     }else{
-                        WangyouFragment wangyouFragment = new WangyouFragment();
-                        fragmentList.add(wangyouFragment);
+                        /*WangyouFragment wangyouFragment = new WangyouFragment();
+                        fragmentList.add(wangyouFragment);*/
+                        ZuiXinFragment zuiXinFragment = new ZuiXinFragment();
+                        fragmentList.add(zuiXinFragment);
                     }
                 }
                 adapter=new ViewpagerAdapter(getSupportFragmentManager(),stringList,fragmentList);

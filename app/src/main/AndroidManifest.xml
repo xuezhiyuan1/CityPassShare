@@ -157,7 +157,7 @@
         <activity android:name=".activity.zxm.MyZiliao"/>
 
         <!-- 二维码  扫描 -->
-
+        <activity android:name=".activity.xzy.BeautyWomen"></activity>
         <activity android:name=".activity.xzy.Sao1SaoActivity" />
         <activity android:name=".activity.xzy.Sao1SaoResultActivity" />
         <activity android:name=".activity.xzy.FindCityThings" />

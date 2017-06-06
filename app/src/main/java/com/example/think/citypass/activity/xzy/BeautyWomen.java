@@ -13,7 +13,16 @@ import android.widget.TextView;
 import com.example.think.citypass.R;
 import com.example.think.citypass.common.base.BaseActivity;
 import com.example.think.citypass.common.base.BaseFragment;
+import com.example.think.citypass.fragment.xzy.beauty.FmnlFragment;
+import com.example.think.citypass.fragment.xzy.beauty.MengFragment;
+import com.example.think.citypass.fragment.xzy.beauty.NewPeopleFragment;
+import com.example.think.citypass.fragment.xzy.beauty.NvFragment;
+import com.example.think.citypass.fragment.xzy.beauty.QiZhiFragment;
+import com.example.think.citypass.fragment.xzy.beauty.TuHaoFragment;
 import com.example.think.citypass.fragment.xzy.beauty.XinShangFragment;
+import com.example.think.citypass.fragment.xzy.beauty.XingGanFragment;
+import com.example.think.citypass.fragment.xzy.beauty.ZuiXinFragment;
+import com.example.think.citypass.fragment.xzy.beauty.adapter.FmnlAdapter;
 import com.example.think.citypass.fragment.zzh.community.TushuoFragment;
 import com.example.think.citypass.fragment.zzh.naonao.WangyouFragment;
 
@@ -23,6 +32,7 @@ import java.util.List;
 /**
  * Created by think on 2017/6/1.
  */
+
 //美女秀
 public class BeautyWomen  extends BaseActivity implements View.OnClickListener {
 
@@ -66,12 +76,33 @@ public class BeautyWomen  extends BaseActivity implements View.OnClickListener {
         stringList.add("萌妹子");
         stringList.add("女汉子");
         for (int i = 0; i < stringList.size(); i++) {
-            if(i==1){
+            if(i==1) {
                 XinShangFragment xinShangFragment = new XinShangFragment();
                 fragmentList.add(xinShangFragment);
+            }else if(i==0){
+                TuHaoFragment tuHaoFragment = new TuHaoFragment();
+                fragmentList.add(tuHaoFragment);
             }else if(i==3) {
-                TushuoFragment tushuoFragment = new TushuoFragment();
-                fragmentList.add(tushuoFragment);
+                ZuiXinFragment zuiXinFragment = new ZuiXinFragment();
+                fragmentList.add(zuiXinFragment);
+            }else if(i==4) {
+                FmnlFragment fmnlFragment = new FmnlFragment();
+                fragmentList.add(fmnlFragment);
+            }else if(i==5) {
+                NewPeopleFragment newPeopleFragment = new NewPeopleFragment();
+                fragmentList.add(newPeopleFragment);
+            }else if(i==7) {
+                XingGanFragment xingGanFragment = new XingGanFragment();
+                fragmentList.add(xingGanFragment);
+            }else if(i==8) {
+                QiZhiFragment qiZhiFragment = new QiZhiFragment();
+                fragmentList.add(qiZhiFragment);
+            }else if(i==9) {
+                MengFragment mengFragment = new MengFragment();
+                fragmentList.add(mengFragment);
+            }else if(i==10){
+                NvFragment nvFragment = new NvFragment();
+                fragmentList.add(nvFragment);
             }else{
                 WangyouFragment wangyouFragment = new WangyouFragment();
                 fragmentList.add(wangyouFragment);

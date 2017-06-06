@@ -28,6 +28,7 @@ import java.util.List;
  */
 
 public class WorthFragment extends BaseFragment {
+
     private MRefreshUtils mRefreshUtils;
 
     private WorthAdapter adapter;

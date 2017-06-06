@@ -22,6 +22,7 @@ import java.util.List;
  */
 //型男秀
 public class XingWoman  extends BaseActivity implements View.OnClickListener  {
+
     TabLayout tabLayout;
     ViewPager viewPager;
     List<String> stringList;
